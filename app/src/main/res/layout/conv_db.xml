@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:id="@+id/calcbase"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:fillViewport="true"
+        android:layout_weight="1.0">
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView android:textSize="16.0sp"
+                android:id="@+id/db_textDescr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5.0dip"
+                android:text="@string/db_descr" />
+            <Spinner
+                android:id="@+id/db_spinType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:minWidth="100.0dip"
+                android:layout_below="@+id/db_textDescr"
+                android:layout_alignRight="@+id/db_textDescr" />
+            <TextView
+                android:textSize="16.0sp"
+                android:gravity="center_vertical"
+                android:id="@+id/db_text_spinType"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip"
+                android:text="@string/db_quantity"
+                android:layout_toLeftOf="@+id/db_spinType"
+                android:layout_alignTop="@+id/db_spinType"
+                android:layout_alignBottom="@+id/db_spinType" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/db_btn_decibel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginRight="5.0dip"
+                android:text="@string/decibel"
+                android:layout_toLeftOf="@+id/db_spin_unit"
+                android:layout_below="@+id/db_text_spinType" />
+            <Spinner
+                android:gravity="center_vertical"
+                android:id="@+id/db_spin_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20.0dip"
+                android:layout_alignTop="@+id/db_btn_decibel"
+                android:layout_alignRight="@+id/db_spinType"
+                android:layout_alignBottom="@+id/db_btn_decibel" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/db_btn_ref"
+                android:layout_width="200.0dip"
+                android:layout_height="wrap_content"
+                android:text="@string/db_ref"
+                android:layout_below="@+id/db_btn_decibel"
+                android:layout_centerHorizontal="true" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/db_btn_value"
+                android:layout_width="200.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20.0dip"
+                android:text="***"
+                android:layout_below="@+id/db_btn_ref"
+                android:layout_centerHorizontal="true" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/db_btn_gain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gain"
+                android:layout_below="@+id/db_btn_value"
+                android:layout_alignLeft="@+id/db_btn_value"
+                android:layout_alignRight="@+id/db_btn_value" />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

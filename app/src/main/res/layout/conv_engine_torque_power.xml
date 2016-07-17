@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="334.0dip">
+        <TextView
+            android:id="@+id/engine_description"
+            android:padding="5.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/engine_description"
+            android:maxLines="3" />
+
+        <TextView
+            android:id="@+id/engine_description_torque"
+            android:padding="8.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.0dip"
+            android:layout_below="@+id/engine_description"
+            android:text="@string/engine_description_torque"
+            android:layout_centerInParent="true"
+            android:maxLines="3" />
+        <LinearLayout
+            android:id="@+id/ll_torque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/engine_description_torque"
+            android:layout_centerInParent="true">
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/torque_lbft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="lb-ft"
+                android:width="160.0dip" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/torque_nm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:text="Nm"
+                android:width="160.0dip" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/engine_description_power"
+            android:padding="8.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.0dip"
+            android:layout_below="@+id/ll_torque"
+            android:text="@string/engine_description_power"
+            android:layout_centerInParent="true"
+            android:maxLines="3" />
+        <LinearLayout
+            android:id="@+id/ll_power"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/engine_description_power"
+            android:layout_centerInParent="true">
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/power_hp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hp"
+                android:width="160.0dip" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/power_kw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:text="kW"
+                android:width="160.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

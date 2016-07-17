@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">AutoElectric</string>
+    <string name="action_info">Info</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_version">Version: ___;</string>
+    <string name="app_restart">Restarting app…</string>
+    <string name="vitaliyhtc_copyright">© VitaliyHTC</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="error">Error</string>
+    <string name="save">Save</string>
+
+    <string name="pref_app">Application Preferences</string>
+    <string name="pref_calc">Calculators Preferences</string>
+    <string name="pref_res">Resources Preferences</string>
+    <string name="pref_app_exit">Confirmation on Exit</string>
+    <string name="pref_app_exit_sum">Ask confirmation before exiting</string>
+    <string name="pref_app_language">Change app language</string>
+    <string name="pref_app_language_sum">Select a language different than default</string>
+    <string name="pref_phone_default_lang">Phone default language</string>
+    <string name="pref_calc_texthighl">Highlight text in form input</string>
+    <string name="pref_calc_texthighl_sum_on">Text highlighted</string>
+    <string name="pref_calc_texthighl_sum_off">Text not highlighted</string>
+    <string name="pref_calc_unitSI">Units of measurement</string>
+    <string name="pref_calc_unitSI_sum_on">Use metric system</string>
+    <string name="pref_calc_unitSI_sum_off">Use Imperial system</string>
+    <string name="pref_calc_unitTempC">Temperature unit</string>
+    <string name="pref_calc_unitTempC_sum_on">Use °C (celsius)</string>
+    <string name="pref_calc_unitTempC_sum_off">Use °F (fahrenheit)</string>
+    <string name="pref_res_zoom">Enable Zoom</string>
+    <string name="pref_res_zoom_sum">Enable Zoom in Pin-out/Resources</string>
+    <string name="pref_res_keepScreenOn">Keep Screen On</string>
+    <string name="pref_res_keepScreenOn_sum">Keep the Screen turned on in Resources</string>
+
+    <string name="list_calc_ohm">"Ohm's Law"</string>
+    <string name="list_calc_voltage_divider">Voltage divider</string>
+    <string name="list_calc_sepa">Resistor series/parallel</string>
+    <string name="list_calc_cap_chg">Capacitor charge</string>
+    <string name="list_calc_voltdrop">Voltage Drop Calculator</string>
+    <string name="list_calc_power">Power Calculator</string>
+    <string name="list_conv_freq">Frequency Converter</string>
+    <string name="list_conv_db">Decibel Converter</string>
+    <string name="list_conv_energy">Energy conversion</string>
+    <string name="list_conv_engine">Engine torque/power</string>
+
+
+
+    <string name="cont_desc_circuit">Circuit Image</string>
+    <string name="power_diss_resistor">The power dissipated by the resistor is:</string>
+    <string name="power">Power</string>
+    <string name="voltage">Voltage</string>
+    <string name="current">Current</string>
+    <string name="powerP">Active Power</string>
+    <string name="powerQ">Reactive Power</string>
+    <string name="powerS">Apparent Power</string>
+    <string name="load">Load</string>
+    <string name="frequ">Frequency</string>
+    <string name="none">None</string>
+    <string name="total">Total</string>
+    <string name="or">or</string>
+    <string name="effective">effective</string>
+    <string name="diode">diode</string>
+    <string name="length">Length</string>
+    <string name="diameter">Diameter</string>
+    <string name="copper">Copper</string>
+    <string name="aluminum">Aluminum</string>
+
+    <string name="nearest_value">Nearest Value in the chosen series:</string>
+    <string name="set_this">Set this value</string>
+    <string name="ratio_serie_descr">Use Resistor of series:</string>
+    <string name="x_mustbe_greater_y">%1$s must be greater than %2$s</string>
+    <string name="x_mustbe_less_y">%1$s must be less than %2$s</string>
+    <string name="x_mustbe_y">%1$s must be %2$s</string>
+    <string name="insert_res">Insert the value of %1$s</string>
+    <string name="select_calc">What do you want calculate?</string>
+    <string name="enableRL">Enable load RL</string>
+    <string name="part_txtDescr2">Enter R1,R2,Vin to calculate Vout, or enter the ratio R1/R2 or Vin/Vout to calculate the resistors R1 and R2:</string>
+    <string name="lock_value">Block a value:</string>
+    <string name="power_dissipated">The power dissipated by the circuit is:</string>
+    <string name="ser_par_descr">Find the resistance value in the standard series and calculates the values of resistors in series/parallel</string>
+    <string name="desired_value">Enter the desired value</string>
+    <string name="charge_RC">RC constant</string>
+    <string name="charge_max">The maximum Current and Charge of the circuit will be:</string>
+    <string name="charge_ist">Calculate the Current and the Charge at time t =</string>
+    <string name="volt_drop_mils">Wire cross section:</string>
+    <string name="volt_drop_voltend">Voltage at the end of circuit:</string>
+    <string name="volt_drop_voltdrop">Voltage drop:</string>
+    <string name="volt_drop_volt">Select Voltage</string>
+    <string name="volt_drop_awg">Select Wire Size</string>
+    <string name="volt_drop_material">Select material</string>
+    <string name="volt_drop_length">Wire total length</string>
+    <string name="volt_drop_distance">Distance to the load</string>
+    <string name="voltage_DC">DC</string>
+    <string name="voltage_AC">AC %1$d-phase</string>
+    <string name="voltage_ACw">AC %1$d-phase %2$d-wire</string>
+    <string name="pcb_track_loss">Power Loss:</string>
+    <string name="pw_select_curr">Select current type:</string>
+    <string name="powerfactor">Power factor</string>
+    <string name="phase">Phase</string>
+    <string name="custom">Custom</string>
+    <string name="period">Period</string>
+    <string name="wavelength">Wavelength</string>
+    <string name="freq_wave_vel">Wave Velocity</string>
+    <string name="freq_descr">This tool allows you to calculate the frequency, period, and wavelength.</string>
+    <string name="freq_wave_descr">To calculate the wavelength, insert the wave velocity, or select from common values.</string>
+    <string name="freq_Wvel_1">Light (air)</string>
+    <string name="freq_Wvel_2">Light (water)</string>
+    <string name="freq_Wvel_3">Sound (air)</string>
+    <string name="freq_Wvel_4">Sound (water)</string>
+    <string name="decibel">Decibels</string>
+    <string name="db_descr">Set the quantity type and decibel unit, and enter the value to convert.</string>
+    <string name="db_quantity">Quantity type</string>
+    <string name="db_ref">Reference level</string>
+    <string name="soundpress">Sound pressure</string>
+    <string name="gain">Gain</string>
+    <string name="energy_descr">Convert energy units.</string>
+    <string name="engine_description">Convert engine torque and power units.</string>
+    <string name="engine_description_torque">Torque</string>
+    <string name="engine_description_power">Power</string>
+
+
+
+    <string name="iso_trailer">ISO trailer connectors</string>
+
+    <!--Temp block-->
+    <string name="index_htm">index.htm wroooom!</string>
+    <string name="you_are_in_other_tab">You Are In Other Tab</string>
+    <!--/Temp block-->
+</resources>

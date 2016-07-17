@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_app">
+        <ListPreference
+            android:icon="@drawable/ic_settings_location_map"
+            android:title="@string/pref_app_language"
+            android:key="Language"
+            android:summary="@string/pref_app_language_sum"
+            android:defaultValue="default"
+            android:entries="@array/languages_entries"
+            android:entryValues="@array/languages_entryValues" />
+        <CheckBoxPreference
+            android:icon="@drawable/ic_settings_exit"
+            android:title="@string/pref_app_exit"
+            android:key="Exit_Confirm"
+            android:summary="@string/pref_app_exit_sum"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_calc">
+        <CheckBoxPreference
+            android:icon="@drawable/ic_settings_hardware_keyboard"
+            android:title="@string/pref_calc_texthighl"
+            android:key="Text_Highlighted"
+            android:defaultValue="true"
+            android:summaryOn="@string/pref_calc_texthighl_sum_on"
+            android:summaryOff="@string/pref_calc_texthighl_sum_off" />
+        <CheckBoxPreference
+            android:icon="@drawable/ic_settings_pref_measurement"
+            android:title="@string/pref_calc_unitSI"
+            android:key="Unit_SI"
+            android:defaultValue="true"
+            android:summaryOn="@string/pref_calc_unitSI_sum_on"
+            android:summaryOff="@string/pref_calc_unitSI_sum_off" />
+        <CheckBoxPreference
+            android:icon="@drawable/ic_settings_pref_thermometer"
+            android:title="@string/pref_calc_unitTempC"
+            android:key="Unit_tempC"
+            android:defaultValue="true"
+            android:summaryOn="@string/pref_calc_unitTempC_sum_on"
+            android:summaryOff="@string/pref_calc_unitTempC_sum_off" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_res">
+        <CheckBoxPreference
+            android:icon="@drawable/ic_settings_full_screen"
+            android:title="@string/pref_res_zoom"
+            android:key="Zoom_Enabled"
+            android:summary="@string/pref_res_zoom_sum"
+            android:defaultValue="true" />
+        <CheckBoxPreference
+            android:icon="@drawable/ic_settings_brightness_high"
+            android:title="@string/pref_res_keepScreenOn"
+            android:key="keepScreenOn"
+            android:summary="@string/pref_res_keepScreenOn_sum"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+</PreferenceScreen>

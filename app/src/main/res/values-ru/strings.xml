@@ -1,0 +1,116 @@
+<resources>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Отмена</string>
+    <string name="error">Ошибка</string>
+    <string name="save">Сохранить</string>
+
+    <string name="pref_app">Настройки приложения</string>
+    <string name="pref_calc">Параметры расчёта</string>
+    <string name="pref_res">Параметры справочника</string>
+    <string name="pref_app_exit">Подтверждение выхода</string>
+    <string name="pref_app_exit_sum">Спрашивать подтверждение перед выходом</string>
+    <string name="pref_app_language">Изменить язык приложения</string>
+    <string name="pref_app_language_sum">Выберите язык, отличный от предустановленного</string>
+    <string name="pref_phone_default_lang">Предустановленный язык устройства</string>
+    <string name="pref_calc_texthighl">Подсвечивать вводимый текст</string>
+    <string name="pref_calc_texthighl_sum_on">Подсвечивать текст</string>
+    <string name="pref_calc_texthighl_sum_off">Не подсвечивать текст</string>
+    <string name="pref_calc_unitSI">Единицы измерения</string>
+    <string name="pref_calc_unitSI_sum_on">Использовать метрическую систему</string>
+    <string name="pref_calc_unitSI_sum_off">Использовать английскую систему</string>
+    <string name="pref_calc_unitTempC">Единицы температуры</string>
+    <string name="pref_calc_unitTempC_sum_on">Использовать °C (Цельсий)</string>
+    <string name="pref_calc_unitTempC_sum_off">Использовать °F (Фаренгейт)</string>
+    <string name="pref_res_zoom">Масштабирование</string>
+    <string name="pref_res_zoom_sum">Включить масштабирование в Цоколёвке/Справочнике</string>
+    <string name="pref_res_keepScreenOn">Не выключать дисплей</string>
+    <string name="pref_res_keepScreenOn_sum">Не выключать дисплей в Справочнике</string>
+
+    <string name="list_calc_ohm">Закон Ома</string>
+    <string name="list_calc_voltage_divider">Делитель напряжения</string>
+    <string name="list_calc_sepa">Послед. и паралл. резисторы</string>
+    <string name="list_calc_cap_chg">Заряд конденсатора</string>
+    <string name="list_calc_voltdrop">Расчёт падения напряжения</string>
+    <string name="list_calc_power">Расчёт мощности</string>
+    <string name="list_conv_freq">Преобразователь частоты</string>
+    <string name="list_conv_db">Преобразователь децибел</string>
+    <string name="list_conv_energy">Преобразование энергии</string>
+    <string name="list_conv_engine">Двигатель крут. м./мощность</string>
+
+
+
+    <string name="power_diss_resistor">Мощность, рассеиваемая резистором:</string>
+    <string name="power">Мощность</string>
+    <string name="voltage">Напряжение</string>
+    <string name="current">Ток</string>
+    <string name="powerP">P Активная</string>
+    <string name="powerQ">P Реактивная</string>
+    <string name="powerS">Полная мощность</string>
+    <string name="load">Нагрузка</string>
+    <string name="frequ">Частота</string>
+    <string name="none">Нет</string>
+    <string name="total">Общее</string>
+    <string name="or">или</string>
+    <string name="effective">реальный</string>
+    <string name="diode">диод</string>
+    <string name="length">Длина</string>
+    <string name="diameter">Диаметр</string>
+    <string name="copper">Медь</string>
+    <string name="aluminum">Алюминий</string>
+
+    <string name="nearest_value">Ближайшее значение в ряде:</string>
+    <string name="set_this">Выбрать</string>
+    <string name="ratio_serie_descr">Использовать резистор из ряда:</string>
+    <string name="x_mustbe_greater_y">%1$s должно быть больше %2$s</string>
+    <string name="x_mustbe_less_y">%1$s должно быть меньше %2$s</string>
+    <string name="x_mustbe_y">%1$s должно быть %2$s</string>
+    <string name="insert_res">Введите зачение %1$s</string>
+    <string name="select_calc">Что вы хотите рассчитать?</string>
+    <string name="enableRL">Подключить RL нагрузку</string>
+    <string name="part_txtDescr2">Задайте R1,R2,Vin для расчёта Vout, или задайте отношение R1/R2 или Vin/Vout для расчёта R1 и R2:</string>
+    <string name="lock_value">Закрепить:</string>
+    <string name="power_dissipated">Мощность, рассеиваемая в цепи:</string>
+    <string name="ser_par_descr">Подбор резисторов из стандартного ряда и расчёт сопротивления резисторов при последовательном / параллельном включении</string>
+    <string name="desired_value">Задайте желаемое значение</string>
+    <string name="charge_RC">постоянная RC</string>
+    <string name="charge_max">Максимальный ток и заряд в цепи:</string>
+    <string name="charge_ist">Расчёт тока и заряда конденсатора за время t =</string>
+    <string name="volt_drop_mils">Сечение провода:</string>
+    <string name="volt_drop_voltend">Напряжение на выходе:</string>
+    <string name="volt_drop_voltdrop">Падение напряжения:</string>
+    <string name="volt_drop_volt">Выберите напряжение</string>
+    <string name="volt_drop_awg">Выберите сечение провода</string>
+    <string name="volt_drop_material">Выберите материал</string>
+    <string name="volt_drop_length">Полная длина провода</string>
+    <string name="volt_drop_distance">Расстояние до нагрузки</string>
+    <string name="voltage_DC">DC</string>
+    <string name="voltage_AC">AC %1$d-фазный</string>
+    <string name="voltage_ACw">AC %1$d-фазный %2$d-проводной</string>
+    <string name="pcb_track_loss">Потери мощности:</string>
+    <string name="pw_select_curr">Выберите тип тока:</string>
+    <string name="powerfactor">Коэфф. мощности</string>
+    <string name="phase">Фаза</string>
+    <string name="custom">Пользовательский</string>
+    <string name="period">Период</string>
+    <string name="wavelength">Длина волны</string>
+    <string name="freq_wave_vel">Скорость волны</string>
+    <string name="freq_descr">Этот инструмент позволяет рассчитать частоту, период и длину волны.</string>
+    <string name="freq_wave_descr">Чтобы рассчитать длину волны, введите скорость волны или выберите из стандартных значений.</string>
+    <string name="freq_Wvel_1">Свет (в воздухе)</string>
+    <string name="freq_Wvel_2">Свет (в воде)</string>
+    <string name="freq_Wvel_3">Звук (в воздухе)</string>
+    <string name="freq_Wvel_4">Звук (в воде)</string>
+    <string name="decibel">Децибелы</string>
+    <string name="db_descr">Установите тип величины и децибелы, и введите значение для преобразования.</string>
+    <string name="db_quantity">Тип величины</string>
+    <string name="db_ref">Опорный уровень</string>
+    <string name="soundpress">Звуковое давление</string>
+    <string name="gain">Усиление</string>
+    <string name="energy_descr">Преобразовать единицы энергии</string>
+    <string name="engine_description">Преобразует единицы крутящего момента и мощности двигателя.</string>
+    <string name="engine_description_torque">Крутящий момент</string>
+    <string name="engine_description_power">Мощность</string>
+
+</resources>

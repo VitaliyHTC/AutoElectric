@@ -1,0 +1,11 @@
+body {font-family: sans-serif; font-style: normal;color:black;}
+table,th,td {border:1px solid lightgray;}
+table {border-collapse:collapse;}
+table.w1 {width:100%;}
+
+td {padding-right:5px; padding-left:5px; text-align:center;}
+
+ul {margin: 0 0 0 20px; padding: 0;}
+ul li {margin:0; padding: 0;}
+
+.second_text {color:#777;}

@@ -1,0 +1,116 @@
+<resources>
+    <string name="yes">Так</string>
+    <string name="no">Ні</string>
+    <string name="ok">ОК</string>
+    <string name="cancel">Скасувати</string>
+    <string name="error">Помилка</string>
+    <string name="save">Зберегти</string>
+
+    <string name="pref_app">Параметри додатку</string>
+    <string name="pref_calc">Параметри калькуляторів</string>
+    <string name="pref_res">Параметри довідників</string>
+    <string name="pref_app_exit">Підтвердження про вихід</string>
+    <string name="pref_app_exit_sum">Запитувати підтвердження перед виходом</string>
+    <string name="pref_app_language">Змінити мову додатку</string>
+    <string name="pref_app_language_sum">Виберіть мову відмінну від системної</string>
+    <string name="pref_phone_default_lang">Системна мова пристрою</string>
+    <string name="pref_calc_texthighl">Підсвічувати текст, що вводиться</string>
+    <string name="pref_calc_texthighl_sum_on">Підсвічувати текст</string>
+    <string name="pref_calc_texthighl_sum_off">Не підсвічувати текст</string>
+    <string name="pref_calc_unitSI">Одиниці вимірювання</string>
+    <string name="pref_calc_unitSI_sum_on">Використовувати метричну систему</string>
+    <string name="pref_calc_unitSI_sum_off">Використовувати англ. систему</string>
+    <string name="pref_calc_unitTempC">Одиниця вимірювання температури</string>
+    <string name="pref_calc_unitTempC_sum_on">Використовувати °C (Цельсія)</string>
+    <string name="pref_calc_unitTempC_sum_off">Використовувати °F (Фаренгейта)</string>
+    <string name="pref_res_zoom">Масштабування</string>
+    <string name="pref_res_zoom_sum">Увімкнути масштабування у розпіновках та довідниках</string>
+    <string name="pref_res_keepScreenOn">Тримати екран увімкнутим</string>
+    <string name="pref_res_keepScreenOn_sum">Не вимикати екран в довіднику</string>
+
+    <string name="list_calc_ohm">Закон Ома</string>
+    <string name="list_calc_voltage_divider">Подільник напруги</string>
+    <string name="list_calc_sepa">"Паралел./Послід. з'єднання опорів"</string>
+    <string name="list_calc_cap_chg">Заряд конденсатора</string>
+    <string name="list_calc_voltdrop">Розрахунок падіння напруги</string>
+    <string name="list_calc_power">Розрахунок потужності</string>
+    <string name="list_conv_freq">Перетворювач частоти</string>
+    <string name="list_conv_db">Перетворювач децибел</string>
+    <string name="list_conv_energy">Перетворення енергії</string>
+    <string name="list_conv_engine">Двигун крут. м./потужність</string>
+
+
+
+    <string name="power_diss_resistor">Потужність, розсіювана резистором:</string>
+    <string name="power">Потужність</string>
+    <string name="voltage">Напруга</string>
+    <string name="current">Струм</string>
+    <string name="powerP">P Активна</string>
+    <string name="powerQ">P Реактивна</string>
+    <string name="powerS">Повна потужність</string>
+    <string name="load">Навантаження</string>
+    <string name="frequ">Частота</string>
+    <string name="none">Ні</string>
+    <string name="total">Загалом</string>
+    <string name="or">або</string>
+    <string name="effective">реальний</string>
+    <string name="diode">діод</string>
+    <string name="length">Довжина</string>
+    <string name="diameter">Діаметр</string>
+    <string name="copper">Мідь</string>
+    <string name="aluminum">Алюміній</string>
+
+    <string name="nearest_value">Найближче значення в ряді:</string>
+    <string name="set_this">Замінити</string>
+    <string name="ratio_serie_descr">Використати резистор з ряду:</string>
+    <string name="x_mustbe_greater_y">%1$s має бути більше %2$s</string>
+    <string name="x_mustbe_less_y">%1$s має бути менше %2$s</string>
+    <string name="x_mustbe_y">%1$s має бути %2$s</string>
+    <string name="insert_res">Введіть значення %1$s</string>
+    <string name="select_calc">Що ви хочете розрахувати?</string>
+    <string name="enableRL">Підключити RL-навантаження</string>
+    <string name="part_txtDescr2">Введіть R1, R2, Vin для розрахунку Vout, або введіть співвідношення R1/R2 або Vin/Vout для визначення опорів резисторів R1 та R2</string>
+    <string name="lock_value">Блок. значення:</string>
+    <string name="power_dissipated">Потужність, розсіювана схемою:</string>
+    <string name="ser_par_descr">"Підбір значень резисторів з типового ряду і розрахунок опору при послідовному/паралельному з'єднанні"</string>
+    <string name="desired_value">Введіть бажане значення</string>
+    <string name="charge_RC">стала RC</string>
+    <string name="charge_max">Максимальний струм та заряд має бути:</string>
+    <string name="charge_ist">Розрахунок струму і заряду конденсатора за час t=</string>
+    <string name="volt_drop_mils">Переріз проводу:</string>
+    <string name="volt_drop_voltend">Напруга на виході</string>
+    <string name="volt_drop_voltdrop">Падіння напруги:</string>
+    <string name="volt_drop_volt">Виберіть напругу</string>
+    <string name="volt_drop_awg">Виберіть переріз проводу</string>
+    <string name="volt_drop_material">Виберіть матеріал</string>
+    <string name="volt_drop_length">Загальна довжина проводу</string>
+    <string name="volt_drop_distance">Відстань до навантаження</string>
+    <string name="voltage_DC">DC</string>
+    <string name="voltage_AC">AC %1$d-фазний</string>
+    <string name="voltage_ACw">AC %1$d-фазний %2$d-провідний</string>
+    <string name="pcb_track_loss">Втрати потужності:</string>
+    <string name="pw_select_curr">Виберіть тип струму:</string>
+    <string name="powerfactor">Коеф. потужності</string>
+    <string name="phase">Фаза</string>
+    <string name="custom">Власний</string>
+    <string name="period">Період</string>
+    <string name="wavelength">Довжина хвилі</string>
+    <string name="freq_wave_vel">Швидкість хвилі</string>
+    <string name="freq_descr">Цей інструмент дозволяє розрахувати частоту, період і довжину хвилі.</string>
+    <string name="freq_wave_descr">Для розрахунку довжини хвилі введіть її швидкість або виберіть із типових значень.</string>
+    <string name="freq_Wvel_1">Світло (повітря)</string>
+    <string name="freq_Wvel_2">Світло (вода)</string>
+    <string name="freq_Wvel_3">Звук (повітря)</string>
+    <string name="freq_Wvel_4">Звук (вода)</string>
+    <string name="decibel">Децибели</string>
+    <string name="db_descr">Встановіть тип величини, децибели і введіть значення для конвертації.</string>
+    <string name="db_quantity">Тип величини</string>
+    <string name="db_ref">Опорний рівень</string>
+    <string name="soundpress">Звуковий тиск</string>
+    <string name="gain">Підсилення</string>
+    <string name="energy_descr">Перетворення одиниць енергії</string>
+    <string name="engine_description">Конвертує одиниці крутного моменту та потужності двигуна.</string>
+    <string name="engine_description_torque">Крутний момент</string>
+    <string name="engine_description_power">Потужність</string>
+
+</resources>

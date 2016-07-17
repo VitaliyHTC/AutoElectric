@@ -1,0 +1,668 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>ISO standards for trailer connectors</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<h2>ISO standards for trailer connectors</h1>
+<p>A number of ISO standards cover trailer connectors, the electrical connectors between vehicles and the trailers they tow that provide a means of control for the trailers. These are listed below, with notes on significant deviations from them that can cause problems.</p>
+<h3>Trailer connectors between the trailer and passenger car, light truck or heavy trucks with 12V systems</h3>
+<p>In Europe, both 7-pin (ISO 1724) and 13-pin (ISO 11446) are common. The reason that the 13-pin exists is that the 7-pin is not able to provide all expected services.</p>
+<div class="second_text">
+<p>These connectors are designed for 12V, but exceptions may exist where both 6V and 24V exists.</p>
+<p>Vehicles and trailers with 6V can use the 7-pin or 5-pin connector, but these are rare today. Note that the heavy trucks that may have 12V systems are usually older (Vintage vehicles) or on non-European markets.</p>
+<p>The color coding is defined in ISO 4141-3, but the standard color codes are not always followed and may be different on your particular vehicle.</p>
+</div>
+<br>
+<p><b>13-pin trailer connector (ISO 11446)</b></p>
+<p>Physical design of the standard ISO 11446[2][3] but also called Jaeger-connector from the company that developed it.</p>
+<div>
+<img src="images/trailer_iso_11446_13pin.png">
+<p>13-pin trailer connector of Jaeger type (Towing vehicle side)</p>
+</div>
+<br>
+
+<table style="text-align: center" class="w1">
+<thead><tr>
+	<th rowspan="2">#</th>
+	<th rowspan="2">DIN</th>
+	<th rowspan="2">Signal</th>
+	<th rowspan="2">Color</th>
+	<th colspan="2">Rec. cross-section</th>
+</tr><tr>
+	<th>mm&sup2;</th>
+	<th>AWG</th>
+</tr>
+</thead><tbody>
+<tr>
+	<th>1</th>
+	<td>L</td>
+	<td>Left Turn Signal</td>
+	<td>Yellow</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>2</th>
+	<td></td>
+	<td>Rear fog lamps</td>
+	<td>Blue</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>3</th>
+	<td>31</td>
+	<td>Ground (-) for pin 1 - 8</td>
+	<td>White</td>
+	<td>2.5</td>
+	<td>13</td>
+</tr>
+<tr>
+	<th>4</th>
+	<td>R</td>
+	<td>Right Turn Signal</td>
+	<td>Green</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>5</th>
+	<td>58R</td>
+	<td>Tail lamps, clearance lamps/outline marker lamps and registration plate lamp right side</td>
+	<td>Brown</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>6</th>
+	<td>54</td>
+	<td>Stop lamps</td>
+	<td>Red</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>7</th>
+	<td>58L</td>
+	<td>Tail lamps, clearance lamps/outline marker lamps and registration plate lamp left side</td>
+	<td>Black</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>8</th>
+	<td></td>
+	<td>Reversing lamps, control current to block surge brakes when reversing.</td>
+	<td>Pink</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>9</th>
+	<td>30</td>
+	<td>+12V permanent</td>
+	<td>Orange</td>
+	<td>2.5</td>
+	<td>13</td>
+</tr>
+<tr>
+	<th>10</th>
+	<td>15</td>
+	<td>+12V via ignition lock</td>
+	<td>Grey</td>
+	<td>2.5</td>
+	<td>13</td>
+</tr>
+<tr>
+	<th>11</th>
+	<td>31</td>
+	<td>Ground (-) for pin 10</td>
+	<td>Black/White</td>
+	<td>2.5</td>
+	<td>13</td>
+</tr>
+<tr>
+	<th>12</th>
+	<td></td>
+	<td>Reserved for future allocation</td>
+	<td>Light Grey</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>13</th>
+	<td>31</td>
+	<td>Ground (-) for pin 9</td>
+	<td>Red/White</td>
+	<td>2.5</td>
+	<td>13</td>
+</tr>
+</tbody><tfoot></tfoot></table>
+<p>The following supplementary information exists for the connector:</p>
+<ol>
+	<li>Pin 3, 11 and 13 must not be joined in the trailer[4] to avoid interaction between circuit types and over current if one ground pin isn't working.</li>
+	<li>Pin 5 and 7 must not be joined in the trailer[4] to avoid problems in vehicles with separate circuits for left and right side.</li>
+	<li>Previously allocated to trailer detection in ISO 11446:2002 (the vehicle could detect it was coupled to a trailer using a link between pin 12 and pin 3 in the trailer plug). This function was removed by ISO 11446:2004 and the pin reallocated to reserved. The pin remains reserved for future allocation in ISO 11446-1:2012.</li>
+</ol>
+<p>Other variants of this connector exists but they are rare.[5] One is used in 24V applications while the other is for ADR use. The difference is how they are mechanically keyed. These connectors are not very common.</p>
+<br>
+<p><b>7-pin trailer connector Type 12N (ISO 1724)</b></p>
+<p>Physical design according to standard ISO 1724.</p>
+<p>The 7-pin connector uses on newer trailers all 7 pins according to the ISO standard.</p>
+<p>On older trailers there's sometimes a 5-wire setup using a 7-pin connector. In these cases exclude connection for right tail light (58R) and rear fog light (54G) and connect the tail lights only to pin for left tail light (58L).</p>
+<p>Joining the pins for right and left tail lights (58R and 58L) can cause problems on German cars where it is possible to activate Standing Lamps on only one side of the vehicle.</p>
+<div>
+<img src="images/trailer_iso_1724_7pin.png">
+<p>7-pin ISO 1724 trailer connector type 12N (Towing vehicle side)</p>
+</div><br>
+
+<table style="text-align: center" class="w1">
+<thead><tr>
+	<th rowspan="2">#</th>
+	<th rowspan="2">DIN</th>
+	<th rowspan="2">Signal</th>
+	<th rowspan="2">Color</th>
+	<th colspan="2">Rec. cross-section</th>
+</tr><tr>
+	<th>mm&sup2;</th>
+	<th>AWG</th>
+</tr>
+</thead><tbody>
+<tr>
+	<th>1</th>
+	<td>L</td>
+	<td>Left Turn Signal</td>
+	<td>Yellow</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>2</th>
+	<td>54G</td>
+	<td>+12V from battery <i>or</i> Rear fog lamps</td>
+	<td>Blue</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>3</th>
+	<td>31</td>
+	<td>Ground connected to chassis</td>
+	<td>White or Grey</td>
+	<td>2.5</td>
+	<td>13</td>
+</tr>
+<tr>
+	<th>4</th>
+	<td>R</td>
+	<td>Right Turn Signal</td>
+	<td>Green</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>5</th>
+	<td>58R</td>
+	<td>Tail lamps, clearance lamps/outline marker lamps and registration plate lamp right side</td>
+	<td>Brown</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>6</th>
+	<td>54</td>
+	<td>Stop lamps</td>
+	<td>Red</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>7</th>
+	<td>58L</td>
+	<td>Tail lamps, clearance lamps/outline marker lamps and registration plate lamp left side</td>
+	<td>Black</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+</tbody><tfoot></tfoot></table>
+<p></p>
+
+<p><i>Pin 2 (54G)</i></p>
+<p>According to DIN 72552 pin 54G was initially intended for electrical control of brakes on trailers.</p>
+<p>Later pin 2 (54G) has been used for a variety of functions different from the original intent. A few examples:</p>
+<ul>
+	<li>+12V permanent.</li>
+	<li>+12V via ignition lock.</li>
+	<li>Rear fog lamps.</li>
+	<li>Reversing lamps.</li>
+</ul>
+<p>This is why in regions using this connector, trailers on the road are occasionally seen with the rear fog lights on when they should be off. (Vehicle wired for +12V, permanent or via ignition and trailer wired for fog lamps)</p>
+<p><i>Special case for Australia</i></p>
+<p>Australia uses basically the same wiring with the exception for pin 5 and pin 2. The problematic part here is that pin 5 is used for trailer brake which means that if you for some reason connect an Australian trailer to a towing vehicle with ISO wiring you will get into trouble with the trailer brakes being applied as soon as you turn on the lights.</p>
+
+<br>
+<h3>Trailer connectors between heavy duty trailer and the tractor unit</h3>
+<p>The these connectors are designated as 24 volt.</p>
+<p><b>15-pin trailer connector (ISO 12098)</b></p>
+<p>Physical design according to standard ISO 12098.</p>
+<p>This connector is present on newer heavy duty commercial trucks and trailers following the ISO standard and is intended to replace the combination of connectors according to standards ISO 1185 and ISO 3731. The 15-pin connector is not designed to replace the ISO 7638 connector.</p>
+<div>
+<img src="images/trailer_iso_12098.png">
+<p>24 Volt 15-pin trailer connector ISO 12098 (Towing vehicle side)</p>
+</div><br>
+
+<table class="w1" style="text-align: center">
+<thead><tr>
+<th rowspan="2">#</th>
+<th rowspan="2">DIN</th>
+<th rowspan="2">Signal</th>
+<th rowspan="2">Color</th>
+<th colspan="2">Rec. cross-section</th>
+</tr><tr>
+<th>mm&sup2;</th>
+<th>AWG</th>
+</tr></thead><tbody>
+
+<tr>
+	<th>1</th>
+	<td>L</td>
+	<td>Left Turn Signal</td>
+	<td>Yellow</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>2</th>
+	<td>R</td>
+	<td>Right Turn Signal</td>
+	<td>Green</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>3</th>
+	<td></td>
+	<td>Rear fog lamps</td>
+	<td>Blue</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>4</th>
+	<td>31</td>
+	<td>Ground (-) for pin 1 - 3 and 5 - 12</td>
+	<td>White</td>
+	<td>2.5</td>
+	<td>13</td>
+</tr>
+<tr>
+	<th>5</th>
+	<td>58L</td>
+	<td>Tail lamps, clearance lamps/outline marker lamps, identification lamps and registration plate lamp left side</td>
+	<td>Black</td>
+	<td>1.5</td>
+	<td>15</td>
+<tr>
+	<th>6</th>
+	<td>58R</td>
+	<td>Tail lamps, clearance lamps/outline marker lamps, identification lamps and registration plate lamp right side</td>
+	<td>Brown</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>7</th>
+	<td>54</td>
+	<td>Stop lamps</td>
+	<td>Red</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>8</th>
+	<td></td>
+	<td>Reversing lamps</td>
+	<td>Pink</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>9</th>
+	<td>30</td>
+	<td>+24V permanent</td>
+	<td>Orange</td>
+	<td>2.5</td>
+	<td>13</td>
+</tr>
+<tr>
+	<th>10</th>
+	<td></td>
+	<td>Brake wear indicator</td>
+	<td>Grey</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>11</th>
+	<td></td>
+	<td>Indication of applied parking brake due to loss of air pressure</td>
+	<td>Black/White</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>12</th>
+	<td></td>
+	<td>Lift Axle</td>
+	<td>Blue/White</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>13</th>
+	<td>31</td>
+	<td>ground (-) for pin 14 and 15</td>
+	<td>Red/White</td>
+	<td>2.5</td>
+	<td>13</td>
+</tr>
+<tr>
+	<th>14</th>
+	<td></td>
+	<td>CAN H, Not for EBS or ABS</td>
+	<td>Green/White</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>15</th>
+	<td></td>
+	<td>CAN L, Not for EBS or ABS</td>
+	<td>Brown/White</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+</tbody><tfoot></tfoot></table>
+<p>The following supplementary information exists for the connector:</p>
+<ol>
+	<li>Pin 5 and 6 must not be joined in the trailer[4] to avoid problems in vehicles with separate circuits for left and right side.</li>
+	<li>Identification lamps shall be wired to either pin 5 or 6, not both.</li>
+	<li>EBS and ABS shall be connected through the ISO 7638 connector.</li>
+</ol>
+<p><b>Notice:</b> There was a predecessor to this connector with 13 pins that on a cursory glance is identical to the 15 pin connector but has a different arrangement of the pins.[20] It was not very common but may exist on some vehicles and can result in an unpleasant surprise.</p>
+<br>
+<p><b>7-pin trailer connector for ABS/EBS (ISO 7638-1)</b></p>
+<p>Physical design according to standard ISO 7638-1.</p>
+<p>This connector is intended for 24V ABS and EBS on heavy duty trailers.</p>
+<p>Identified by key tab on outer ring by pin 5.</p>
+<div>
+<img src="images/trailer_iso_7638-1.png">
+<p>24 Volt 7-pin trailer connector ISO 7638 for ABS and EBS (Towing vehicle side)</p>
+</div><br>
+
+<table class="w1" style="text-align: center">
+<thead><tr>
+<th rowspan="2">#</th>
+<th rowspan="2">DIN</th>
+<th rowspan="2">Signal</th>
+<th rowspan="2">Color</th>
+<th colspan="2">Rec. cross-section</th>
+</tr><tr>
+<th>mm&sup2;</th>
+<th>AWG</th>
+</tr></thead><tbody>
+<tr>
+	<th>1</th>
+	<td>30</td>
+	<td>+24V permanent for control valves</td>
+	<td>Red</td>
+	<td>4</td>
+	<td>11</td>
+</tr>
+<tr>
+	<th>2</th>
+	<td>15</td>
+	<td>+24V via ignition lock for electronics</td>
+	<td>Black</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>3</th>
+	<td>31</td>
+	<td>Ground for electronics(Pin 2)</td>
+	<td>Yellow</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>4</th>
+	<td>31</td>
+	<td>Ground for control valves (Pin 1)</td>
+	<td>Brown</td>
+	<td>4</td>
+	<td>11</td>
+</tr>
+<tr>
+	<th>5</th>
+	<td></td>
+	<td>ABS Fault indication</td>
+	<td>White</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>6</th>
+	<td></td>
+	<td>CAN H, For EBS and ABS</td>
+	<td>Green/White</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>7</th>
+	<td></td>
+	<td>CAN L, For EBS and ABS</td>
+	<td>Brown/White</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+</tbody><tfoot></tfoot></table>
+<p>The following supplementary information exists for the connector:</p>
+<ol>
+	<li>Active low, i.e. when the voltage is below +5V. Cite error: Invalid <ref> tag; name "ABS_Fault" defined multiple times with different content (see the help page).</li>
+	<li>CAN bus communication according to ISO 11992.</li>
+	<li>The CAN bus is not necessary for the ABS to work which means that there are also a 5-pin variant of this connector where the CAN bus pins are excluded.</li>
+</ol>
+
+<br>
+<p><b>7-pin trailer connector 24N (ISO 1185)</b></p>
+<p>Physical design according to standard ISO 1185.</p>
+<p>This connector is common on heavy duty commercial trucks and trailers but is replaced by the ISO 12098 connector on newer vehicles.</p>
+<div>
+<img src="images/trailer_iso_1185.png">
+<p>24 Volt 7-pin trailer connector ISO 1185 (Towing vehicle side)</p>
+</div><br>
+<table class="w1" style="text-align: center">
+<thead><tr>
+<th rowspan="2">#</th>
+<th rowspan="2">DIN</th>
+<th rowspan="2">Signal</th>
+<th rowspan="2">Color</th>
+<th colspan="2">Rec. cross-section</th>
+</tr><tr>
+<th>mm&sup2;</th>
+<th>AWG</th>
+</tr></thead><tbody>
+
+<tr>
+	<th>1</th>
+	<td>31</td>
+	<td>Ground (-)</td>
+	<td>White</td>
+	<td>2.5</td>
+	<td>13</td>
+</tr>
+<tr>
+	<th>2</th>
+	<td>58L</td>
+	<td>Tail lamps, clearance lamps/outline marker lamps, identification lamps and registration plate lamp left side</td>
+	<td>Black</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>3</th>
+	<td>L</td>
+	<td>Left Turn Signal</td>
+	<td>Yellow</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>4</th>
+	<td>54</td>
+	<td>Stop lamps</td>
+	<td>Red</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>5</th>
+	<td>R</td>
+	<td>Right Turn Signal</td>
+	<td>Green</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>6</th>
+	<td>58R</td>
+	<td>Tail lamps, clearance lamps/outline marker lamps, identification lamps and registration plate lamp right side</td>
+	<td>Brown</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>7</th>
+	<td></td>
+	<td>Trailer brake control according to ISO 1185, SAE J560 use is different</td>
+	<td>Blue</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+</tbody><tfoot></tfoot></table>
+<p>The following supplementary information exists for the connector:</p>
+<ol>
+	<li>Pin 2 and 6 must not be joined in the trailer[4] to avoid problems in vehicles with separate circuits for left and right side.</li>
+	<li>Identification lamps shall be wired to either pin 2 or 6, not both.</li>
+</ol>
+<p>The physical design is also used by SAE J560 with basically the same configuration. The difference is that SAE J560 uses 12V (larger wire cross-section and higher amp rating on fuses). Pin 7 may also have a different behavior on SAE J560.</p>
+
+<br>
+<p><b>7-pin trailer connector 24S (ISO 3731)</b></p>
+<p>Physical design according to standard ISO 3731.</p>
+<p>This connector is common but on newer vehicles it is replaced by the connectors according to ISO 12098 and ISO 7638.</p>
+<div>
+<img src="images/trailer_iso_3731.png">
+<p>24 Volt 7-pin trailer connector ISO 3731 (Towing vehicle side)</p>
+</div><br>
+<table class="wikitable sortable jquery-tablesorter" style="text-align: center">
+<thead><tr>
+<th rowspan="2">#</th>
+<th rowspan="2">DIN</th>
+<th rowspan="2">Signal</th>
+<th rowspan="2">Color</th>
+<th colspan="2">Rec. cross-section</th>
+</tr><tr>
+<th>mm&sup2;</th>
+<th>AWG</th>
+</tr></thead><tbody>
+<tr>
+	<th>1</th>
+	<td>31</td>
+	<td>Ground (-)</td>
+	<td>White</td>
+	<td>2.5</td>
+	<td>13</td>
+</tr>
+<tr>
+	<th>2</th>
+	<td></td>
+	<td>ABS Fault indication</td>
+	<td>Black</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>3</th>
+	<td></td>
+	<td>Reversing lamps</td>
+	<td>Yellow</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>4</th>
+	<td>30</td>
+	<td>+24V permanent</td>
+	<td>Red</td>
+	<td>2.5</td>
+	<td>13</td>
+</tr>
+<tr>
+	<th>5</th>
+	<td></td>
+	<td>Control via Ground</td>
+	<td>Green</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+<tr>
+	<th>6</th>
+	<td>15</td>
+	<td>+24V via ignition lock</td>
+	<td>Brown</td>
+	<td>2.5</td>
+	<td>13</td>
+</tr>
+<tr>
+	<th>7</th>
+	<td></td>
+	<td>Rear fog lamps</td>
+	<td>Blue</td>
+	<td>1.5</td>
+	<td>15</td>
+</tr>
+</tbody><tfoot></tfoot></table>
+
+
+
+<br><br><br>
+<p><b>Symbol Guide</b></p>
+<table style="text-align: center">
+<thead>
+<tr>
+	<th>Example</th>
+	<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+	<th><img src="images/trailer_ConnectorSocket.png"></th>
+	<td>Socket</td>
+</tr>
+<tr>
+	<th><img src="images/trailer_ConnectorPin.png"></th>
+	<td>Pin</td>
+</tr>
+</tbody><tfoot></tfoot>
+</table>
+
+<br><br><br>
+<p>source: https://en.wikipedia.org/wiki/ISO_standards_for_trailer_connectors</p>
+
+</body>
+</html>

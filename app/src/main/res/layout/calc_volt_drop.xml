@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:id="@+id/calcbase"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:fillViewport="true"
+        android:layout_weight="1.0">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <Spinner
+                android:id="@+id/voltdrop_material"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:layout_alignParentRight="true" />
+            <Spinner
+                android:id="@+id/voltdrop_awg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/voltdrop_size"
+                android:layout_alignRight="@+id/voltdrop_material"
+                android:layout_alignBottom="@+id/voltdrop_size" />
+            <Button
+                android:theme="@style/mybuttonsmall"
+                android:id="@+id/voltdrop_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="60.0dip"
+                android:lines="1"
+                android:layout_toLeftOf="@+id/voltdrop_awg"
+                android:layout_below="@+id/voltdrop_material" />
+            <TextView
+                android:textSize="16.0sp"
+                android:gravity="center_vertical"
+                android:id="@+id/TextView02"
+                android:paddingLeft="5.0dip"
+                android:paddingRight="5.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/volt_drop_awg"
+                android:layout_toLeftOf="@+id/voltdrop_size"
+                android:layout_alignTop="@+id/voltdrop_size"
+                android:layout_alignBottom="@+id/voltdrop_size"
+                android:layout_alignParentLeft="true" />
+            <Spinner
+                android:id="@+id/voltdrop_volt_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/voltdrop_awg"
+                android:layout_alignRight="@+id/voltdrop_awg" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/voltdrop_btn_lenght"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:text="@string/length"
+                android:width="120.0dip"
+                android:layout_below="@+id/voltdrop_volt_type"
+                android:layout_alignRight="@+id/voltdrop_volt_type" />
+            <TextView
+                android:id="@+id/voltdrop_separator"
+                android:layout_width="10.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_below="@+id/voltdrop_btn_lenght"
+                android:layout_centerHorizontal="true" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/voltdrop_btn_volt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/voltage"
+                android:width="125.0dip"
+                android:layout_toLeftOf="@+id/voltdrop_separator"
+                android:layout_alignTop="@+id/voltdrop_separator" />
+            <TextView
+                android:textSize="16.0sp"
+                android:id="@+id/voltdrop_desc_voltdrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginRight="5.0dip"
+                android:text="@string/volt_drop_voltdrop"
+                android:layout_below="@+id/voltdrop_btn_volt" />
+            <TextView
+                android:textSize="16.0sp"
+                android:id="@+id/voltdrop_voltdrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/voltdrop_desc_voltdrop"
+                android:layout_alignTop="@+id/voltdrop_desc_voltdrop"
+                android:layout_alignBottom="@+id/voltdrop_desc_voltdrop" />
+            <TextView
+                android:textSize="16.0sp"
+                android:id="@+id/voltdrop_voltdrop_perc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip"
+                android:layout_toRightOf="@+id/voltdrop_voltdrop"
+                android:layout_alignTop="@+id/voltdrop_voltdrop"
+                android:layout_alignBottom="@+id/voltdrop_voltdrop" />
+            <TextView
+                android:textSize="16.0sp"
+                android:id="@+id/voltdrop_desc_voltend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginRight="5.0dip"
+                android:text="@string/volt_drop_voltend"
+                android:layout_below="@+id/voltdrop_desc_voltdrop"
+                android:layout_alignLeft="@+id/voltdrop_desc_voltdrop" />
+            <TextView
+                android:textSize="16.0sp"
+                android:id="@+id/voltdrop_voltend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/voltdrop_desc_voltend"
+                android:layout_alignTop="@+id/voltdrop_desc_voltend"
+                android:layout_alignBottom="@+id/voltdrop_desc_voltend" />
+            <TextView
+                android:textSize="16.0sp"
+                android:id="@+id/voltdrop_ploss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:text="@string/pcb_track_loss"
+                android:layout_below="@+id/voltdrop_desc_voltend"
+                android:layout_alignLeft="@+id/voltdrop_desc_voltend" />
+            <TextView
+                android:textSize="16.0sp"
+                android:id="@+id/voltdrop_desc_mils"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:text="@string/volt_drop_mils"
+                android:layout_below="@+id/voltdrop_ploss"
+                android:layout_alignLeft="@+id/voltdrop_desc_voltend" />
+            <TextView
+                android:textSize="16.0sp"
+                android:id="@+id/voltdrop_cmil_mm"
+                android:paddingLeft="20.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/voltdrop_desc_mils"
+                android:layout_alignLeft="@+id/voltdrop_desc_mils" />
+            <TextView
+                android:textSize="16.0sp"
+                android:id="@+id/voltdrop_diametr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_below="@+id/voltdrop_cmil_mm"
+                android:layout_alignLeft="@+id/voltdrop_cmil_mm" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/voltdrop_btn_amp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/load"
+                android:width="125.0dip"
+                android:layout_toRightOf="@+id/voltdrop_separator"
+                android:layout_alignTop="@+id/voltdrop_separator" />
+            <Spinner
+                android:gravity="center_vertical"
+                android:id="@+id/voltdrop_spin_lenght"
+                android:paddingLeft="5.0dip"
+                android:paddingRight="5.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/voltdrop_btn_lenght"
+                android:layout_alignTop="@+id/voltdrop_btn_lenght"
+                android:layout_alignBottom="@+id/voltdrop_btn_lenght"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:textSize="16.0sp"
+                android:gravity="center_vertical"
+                android:id="@+id/TextView03"
+                android:paddingLeft="5.0dip"
+                android:paddingRight="5.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/volt_drop_volt"
+                android:layout_toLeftOf="@+id/voltdrop_volt_type"
+                android:layout_alignTop="@+id/voltdrop_volt_type"
+                android:layout_alignBottom="@+id/voltdrop_volt_type"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:textSize="16.0sp"
+                android:gravity="center_vertical"
+                android:id="@+id/TextView01"
+                android:paddingLeft="5.0dip"
+                android:paddingRight="5.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/volt_drop_material"
+                android:layout_toLeftOf="@+id/voltdrop_material"
+                android:layout_alignTop="@+id/voltdrop_material"
+                android:layout_alignBottom="@+id/voltdrop_material"
+                android:layout_alignParentLeft="true" />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

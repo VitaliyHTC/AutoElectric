@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center_vertical"
+    android:id="@+id/res_serie_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:textSize="16.0sp"
+        android:id="@+id/serie_descr"
+        android:padding="5.0dip"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:text="@string/ratio_serie_descr"
+        android:layout_weight="1.0" />
+    <Spinner
+        android:id="@+id/spinSerie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5.0dip"
+        android:layout_marginRight="5.0dip"
+        android:minWidth="100.0dip" />
+</LinearLayout>

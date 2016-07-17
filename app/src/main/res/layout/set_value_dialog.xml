@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_gravity="center_horizontal"
+    android:padding="10.0dip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:textSize="16.0sp"
+        android:id="@+id/txtDescr"
+        android:layout_width="245.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5.0dip"
+        android:text="@string/insert_res" />
+    <EditText
+        android:id="@+id/editResValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5.0dip"
+        android:lines="1"
+        android:layout_toLeftOf="@+id/spinUnit"
+        android:layout_below="@+id/txtDescr"
+        android:layout_alignParentLeft="true"
+        android:inputType="numberDecimal" />
+    <Spinner
+        android:gravity="center_vertical"
+        android:id="@+id/spinUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="100.0dip"
+        android:layout_alignTop="@+id/editResValue"
+        android:layout_alignRight="@+id/txtDescr"
+        android:layout_alignBottom="@+id/editResValue" />
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="120.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5.0dip"
+        android:text="@string/cancel"
+        android:lines="1"
+        android:layout_below="@+id/editResValue" />
+    <Button
+        android:theme="@style/ColoredButton"
+        android:id="@+id/btnOK"
+        android:layout_width="120.0dip"
+        android:layout_height="wrap_content"
+        android:text="@string/ok"
+        android:lines="1"
+        android:layout_alignTop="@+id/btnCancel"
+        android:layout_alignRight="@+id/spinUnit" />
+</RelativeLayout>

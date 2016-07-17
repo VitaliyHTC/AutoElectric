@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="16.0sp"
+            android:id="@+id/TextView01"
+            android:padding="5.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ser_par_descr" />
+        <TextView
+            android:textSize="16.0sp"
+            android:gravity="center_vertical"
+            android:id="@+id/TextView02"
+            android:padding="5.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/desired_value"
+            android:lines="2"
+            android:layout_toLeftOf="@+id/sepa_Rdes"
+            android:layout_alignTop="@+id/sepa_Rdes"
+            android:layout_alignBottom="@+id/sepa_Rdes"
+            android:layout_alignParentLeft="true" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/sepa_Rdes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5.0dip"
+            android:text="R" android:width="110.0dip"
+            android:layout_below="@+id/TextView01"
+            android:layout_alignParentRight="true" />
+        <include
+            android:id="@+id/res_serie_layout_ref"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sepa_Rdes"
+            layout="@layout/embed_res_serie_layout" />
+        <TextView
+            android:textSize="16.0sp"
+            android:id="@+id/sepa_neardescr"
+            android:padding="5.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:text="@string/nearest_value"
+            android:lines="1"
+            android:layout_below="@+id/res_serie_layout_ref" />
+        <TextView
+            android:textSize="18.0sp"
+            android:gravity="center"
+            android:id="@+id/sepa_txtNearValue"
+            android:paddingLeft="5.0dip"
+            android:paddingRight="5.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="R"
+            android:lines="1"
+            android:layout_below="@+id/sepa_neardescr" />
+        <ImageView
+            android:id="@+id/sepa_img_paral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55.0dip"
+            android:layout_marginRight="25.0dip"
+            android:src="@drawable/calc_res_paral"
+            android:layout_alignTop="@+id/sepa_img_serie"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/cont_desc_circuit" />
+        <Button android:theme="@style/mybutton"
+            android:id="@+id/sepa_Rp2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3.0dip"
+            android:text="Rp2"
+            android:lines="1"
+            android:layout_below="@+id/sepa_img_paral"
+            android:layout_alignLeft="@+id/sepa_img_paral" />
+        <TextView
+            android:gravity="center"
+            android:id="@+id/sepa_txtTotP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-30.0dip"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginBottom="5.0dip"
+            android:text="Total Parallel"
+            android:width="150.0dip"
+            android:layout_below="@+id/sepa_Rp2"
+            android:layout_alignLeft="@+id/sepa_Rp2" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/sepa_Rp1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50.0dip"
+            android:text="Rp1" android:lines="1"
+            android:layout_alignLeft="@+id/sepa_img_paral"
+            android:layout_alignTop="@+id/sepa_img_serie" />
+        <ImageView
+            android:id="@+id/sepa_img_serie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25.0dip"
+            android:layout_marginTop="20.0dip"
+            android:src="@drawable/calc_res_serie"
+            android:layout_below="@+id/sepa_txtNearValue"
+            android:layout_alignParentLeft="true"
+            android:contentDescription="@string/cont_desc_circuit" />
+        <TextView
+            android:gravity="center"
+            android:id="@+id/sepa_txtTotS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-15.0dip"
+            android:layout_marginBottom="5.0dip"
+            android:text="Total Series"
+            android:width="150.0dip"
+            android:layout_below="@+id/sepa_img_serie"
+            android:layout_alignLeft="@+id/sepa_img_serie"
+            android:layout_alignTop="@+id/sepa_txtTotP" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/sepa_Rs2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginBottom="10.0dip"
+            android:text="Rs2"
+            android:lines="1"
+            android:layout_toRightOf="@+id/sepa_img_serie"
+            android:layout_alignBottom="@+id/sepa_img_serie" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/sepa_Rs1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginTop="10.0dip"
+            android:text="Rs1"
+            android:lines="1"
+            android:layout_toRightOf="@+id/sepa_img_serie"
+            android:layout_alignTop="@+id/sepa_img_serie" />
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="334.0dip">
+        <TextView
+            android:id="@+id/energy_descr"
+            android:padding="5.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/energy_descr"
+            android:maxLines="3" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/energy_Wh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wh"
+            android:layout_below="@+id/energy_descr"
+            android:layout_centerHorizontal="true" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/energy_BTU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BTU"
+            android:layout_below="@+id/energy_Wh"
+            android:layout_alignLeft="@+id/energy_Wh" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/energy_J"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="J"
+            android:layout_below="@+id/energy_BTU"
+            android:layout_alignLeft="@+id/energy_BTU" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/energy_cal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cal"
+            android:layout_below="@+id/energy_J"
+            android:layout_alignLeft="@+id/energy_J" />
+    </RelativeLayout>
+</ScrollView>
