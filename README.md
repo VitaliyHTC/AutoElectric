@@ -1,5 +1,5 @@
 # AutoElectric
-Application for automotive enthusiast, which help them with basic calculations and resources.
+Application for automotive enthusiast, which helps them in basic calculations and resources.
 
 What we have:
 - MainActivity for navigation between calculators and resources.
