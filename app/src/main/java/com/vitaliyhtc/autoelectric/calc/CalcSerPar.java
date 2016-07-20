@@ -35,6 +35,12 @@ public class CalcSerPar extends CalcActivity implements View.OnClickListener {
     static EIAValuesTable a(CalcSerPar calcSerPar) {
         return calcSerPar.m;
     }
+    static void a(CalcSerPar calcSerPar, int n2) {
+        calcSerPar.l = n2;
+    }
+    static void b(CalcSerPar calcSerPar) {
+        calcSerPar.d();
+    }
 
     private String a(double d2) {
         String string;
@@ -55,10 +61,6 @@ public class CalcSerPar extends CalcActivity implements View.OnClickListener {
         return String.valueOf(string3) + string2;
     }
 
-    static void a(CalcSerPar calcSerPar, int n2) {
-        calcSerPar.l = n2;
-    }
-
     private String b(double d2) {
         String string;
         String string2 = string = Double.toString((double)Math.round(d2 * 100.0) / 100.0).replace(',', '.');
@@ -75,10 +77,6 @@ public class CalcSerPar extends CalcActivity implements View.OnClickListener {
         this.e.a(this.m.y);
         this.f.a(this.m.z);
         this.e();
-    }
-
-    static void b(CalcSerPar calcSerPar) {
-        calcSerPar.d();
     }
 
     private void c() {
@@ -106,13 +104,13 @@ public class CalcSerPar extends CalcActivity implements View.OnClickListener {
         this.i.setText((CharSequence)(String.valueOf(this.getString(R.string.total)) + ": \u200e" + this.a(this.e.h() * this.f.h() / (this.e.h() + this.f.h())) + "\n (" + this.b(this.m.A) + ")"));
     }
 
-    private void f() {
+    private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
         this.b.a((double)sharedPreferences.getFloat("ser_par_R", 10000.0f));
         this.l = sharedPreferences.getInt("ser_par_SpinSerie", 2);
     }
 
-    public void a() {
+    public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
         editor.putFloat("ser_par_R", (float)this.b.h());
         editor.putInt("ser_par_SpinSerie", this.l);
@@ -189,7 +187,7 @@ public class CalcSerPar extends CalcActivity implements View.OnClickListener {
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.k.setAdapter((SpinnerAdapter)arrayAdapter);
         this.m = new EIAValuesTable(EIAValuesLines.c);
-        this.f();
+        this.readSharedPreferences();
         this.k.setSelection(this.l);
         this.m.a(this.l);
         this.d();
@@ -199,6 +197,6 @@ public class CalcSerPar extends CalcActivity implements View.OnClickListener {
     @Override
     protected void onStop() {
         super.onStop();
-        this.a();
+        this.writeSharedPreferences();
     }
 }

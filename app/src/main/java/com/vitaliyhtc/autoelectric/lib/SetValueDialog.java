@@ -30,7 +30,7 @@ public class SetValueDialog extends AppCompatActivity {
     private TextView txtDescr;
     private Spinner spinUnit;
     private SetValueDialogUnit setValueDialogUnit;
-    private UnitValue e;
+    private UnitValue value;
     private int f;
     private int g;
     private SharedPreferences sharedPreferences;
@@ -50,23 +50,23 @@ public class SetValueDialog extends AppCompatActivity {
 
     public void a() {
         try {
-            this.e.a(Double.parseDouble(this.editResValue.getText().toString()));
+            this.value.a(Double.parseDouble(this.editResValue.getText().toString()));
         }
         catch (NumberFormatException var1_1) {
-            this.e.a(0.0);
+            this.value.a(0.0);
         }
         if (this.spinUnit.getVisibility() == View.VISIBLE) {
-            if (!this.sharedPreferences.getBoolean("Unit_tempC", true) && this.e.i().equals("\u00b0C")) {
-                this.e.a((this.e.h() - 32.0) * 5.0 / 9.0);
+            if (!this.sharedPreferences.getBoolean("Unit_tempC", true) && this.value.i().equals("\u00b0C")) {
+                this.value.a((this.value.h() - 32.0) * 5.0 / 9.0);
             } else {
-                this.e.a(this.e.h() * this.setValueDialogUnit.a(this.f));
+                this.value.a(this.value.h() * this.setValueDialogUnit.a(this.f));
             }
         }
-        this.e.a(this.e.h() * (double)this.g);
+        this.value.a(this.value.h() * (double)this.g);
         Intent intent = new Intent();
-        intent.putExtra(String.valueOf(this.packageName) + ".comp_name", this.e.j());
-        intent.putExtra(String.valueOf(this.packageName) + ".comp_value", this.e.h());
-        intent.putExtra(String.valueOf(this.packageName) + ".comp_unit", this.e.i());
+        intent.putExtra(String.valueOf(this.packageName) + ".comp_name", this.value.j());
+        intent.putExtra(String.valueOf(this.packageName) + ".comp_value", this.value.h());
+        intent.putExtra(String.valueOf(this.packageName) + ".comp_unit", this.value.i());
         this.setResult(-1, intent);
         ((InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(this.editResValue.getWindowToken(), 0);
         this.finish();
@@ -90,24 +90,24 @@ public class SetValueDialog extends AppCompatActivity {
         if (string != null) {
             this.txtDescr.setText((CharSequence)String.format(this.getString(R.string.insert_res), string));
         }
-        this.e = new UnitValue(string, d2, string2, (Context)this);
-        this.e.e(bl2);
-        this.e.d(false);
-        this.e.c(false);
-        this.e.b(5);
-        if (this.e.d()) {
+        this.value = new UnitValue(string, d2, string2, (Context)this);
+        this.value.e(bl2);
+        this.value.d(false);
+        this.value.c(false);
+        this.value.b(5);
+        if (this.value.d()) {
             this.editResValue.setInputType(12290);
             this.g = 1;
-        } else if (this.e.h() < 0.0) {
-            this.e.a(Math.abs(this.e.h()));
+        } else if (this.value.h() < 0.0) {
+            this.value.a(Math.abs(this.value.h()));
             this.g = -1;
         } else {
             this.g = 1;
         }
-        if (this.e.h() == 0.0) {
+        if (this.value.h() == 0.0) {
             this.editResValue.setText((CharSequence)"");
         } else {
-            this.editResValue.setText((CharSequence)this.e.e());
+            this.editResValue.setText((CharSequence)this.value.e());
         }
         if (this.sharedPreferences.getBoolean("Text_Highlighted", true)) {
             this.editResValue.selectAll();
@@ -115,7 +115,7 @@ public class SetValueDialog extends AppCompatActivity {
         ((InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(2, 0);
         this.setValueDialogUnit = new SetValueDialogUnit(this, string2);
         if (this.setValueDialogUnit.b() > 0) {
-            this.f = !this.sharedPreferences.getBoolean("Unit_SI", true) && this.e.i().equals("m") ? this.setValueDialogUnit.a(this.e.g()) : this.setValueDialogUnit.a(this.e.f());
+            this.f = !this.sharedPreferences.getBoolean("Unit_SI", true) && this.value.i().equals("m") ? this.setValueDialogUnit.a(this.value.g()) : this.setValueDialogUnit.a(this.value.f());
             ArrayAdapter arrayAdapter = new ArrayAdapter((Context)this, android.R.layout.simple_spinner_item, (List)this.setValueDialogUnit.a());
             arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             this.spinUnit.setAdapter((SpinnerAdapter)arrayAdapter);

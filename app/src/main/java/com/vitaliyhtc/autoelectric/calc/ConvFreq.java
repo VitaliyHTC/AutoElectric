@@ -83,14 +83,14 @@ public class ConvFreq extends CalcActivity implements View.OnClickListener {
         this.j.setText((CharSequence)(String.valueOf(this.f.l()) + " - " + this.g.l() + " - " + this.h.l() + '\n'));
     }
 
-    private void f() {
+    private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
         this.b.a((double)sharedPreferences.getFloat("convFreq_freq", 1000.0f));
         this.d.a((double)sharedPreferences.getFloat("convFreq_Wvel", 3.0E8f));
         this.i.setSelection(sharedPreferences.getInt("convFreq_spinWvel", 1));
     }
 
-    public void a() {
+    public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
         editor.putFloat("convFreq_freq", (float)this.b.h());
         editor.putFloat("convFreq_Wvel", (float)this.d.h());
@@ -160,12 +160,12 @@ public class ConvFreq extends CalcActivity implements View.OnClickListener {
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.i.setAdapter((SpinnerAdapter)arrayAdapter);
         this.i.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)new ConvFreq0Listener(this));
-        this.f();
+        this.readSharedPreferences();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        this.a();
+        this.writeSharedPreferences();
     }
 }

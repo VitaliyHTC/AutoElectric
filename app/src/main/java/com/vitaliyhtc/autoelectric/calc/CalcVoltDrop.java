@@ -168,7 +168,7 @@ public class CalcVoltDrop extends CalcActivity implements View.OnClickListener {
         calcVoltDrop.c(n2);
     }
 
-    private void d() {
+    private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
         this.g.a((double)sharedPreferences.getFloat("voltdrop_V", 14.4f));
         this.h.a((double)sharedPreferences.getFloat("voltdrop_I", 370.0f));
@@ -180,7 +180,7 @@ public class CalcVoltDrop extends CalcActivity implements View.OnClickListener {
         this.q.setSelection(sharedPreferences.getInt("voltdrop_spinLength", 0));
     }
 
-    public void a() {
+    public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
         editor.putFloat("voltdrop_V", (float)this.g.h());
         editor.putFloat("voltdrop_I", (float)this.h.h());
@@ -265,12 +265,12 @@ public class CalcVoltDrop extends CalcActivity implements View.OnClickListener {
         arrayAdapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.q.setAdapter((SpinnerAdapter)arrayAdapter3);
         this.q.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)new CalcVoltDrop3Listener(this));
-        this.d();
+        this.readSharedPreferences();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        this.a();
+        this.writeSharedPreferences();
     }
 }

@@ -31,6 +31,15 @@ public class CalcCapacitorCharge extends CalcActivity implements View.OnClickLis
     static UnitValue a(CalcCapacitorCharge calcCapacitorCharge) {
         return calcCapacitorCharge.b;
     }
+    static UnitValue b(CalcCapacitorCharge calcCapacitorCharge) {
+        return calcCapacitorCharge.g;
+    }
+    static UnitValue c(CalcCapacitorCharge calcCapacitorCharge) {
+        return calcCapacitorCharge.d;
+    }
+    static void d(CalcCapacitorCharge calcCapacitorCharge) {
+        calcCapacitorCharge.c();
+    }
 
     private void a(int n2) {
         if (n2 == R.id.charge_btnRC) {
@@ -50,18 +59,10 @@ public class CalcCapacitorCharge extends CalcActivity implements View.OnClickLis
         this.c();
     }
 
-    static UnitValue b(CalcCapacitorCharge calcCapacitorCharge) {
-        return calcCapacitorCharge.g;
-    }
-
     private void b() {
         this.h.a(this.k.h() * this.g.h());
         this.i.a(this.e.h() * Math.exp((- this.h.h()) / this.g.h()));
         this.j.a(this.f.h() * (1.0 - Math.exp((- this.h.h()) / this.g.h())));
-    }
-
-    static UnitValue c(CalcCapacitorCharge calcCapacitorCharge) {
-        return calcCapacitorCharge.d;
     }
 
     private void c() {
@@ -71,7 +72,7 @@ public class CalcCapacitorCharge extends CalcActivity implements View.OnClickLis
         this.b();
     }
 
-    private void d() {
+    private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
         this.b.a((double)sharedPreferences.getFloat("Ccapcharge_R", 62.0f));
         this.d.a((double)sharedPreferences.getFloat("Ccapcharge_C", 4.7E-5f));
@@ -79,11 +80,7 @@ public class CalcCapacitorCharge extends CalcActivity implements View.OnClickLis
         this.k.a((double)sharedPreferences.getFloat("Ccapcharge_tRC", 2.0f));
     }
 
-    static void d(CalcCapacitorCharge calcCapacitorCharge) {
-        calcCapacitorCharge.c();
-    }
-
-    public void a() {
+    public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
         editor.putFloat("Ccapcharge_R", (float)this.b.h());
         editor.putFloat("Ccapcharge_C", (float)this.d.h());
@@ -150,13 +147,13 @@ public class CalcCapacitorCharge extends CalcActivity implements View.OnClickLis
         this.f = new UnitValue("Q max (t\u2192\u221e)", "C", " = ", true, (Context)this, (TextView)this.findViewById(R.id.charge_Qmax), null);
         this.i = new UnitValue("I", "A", " = ", true, (Context)this, (TextView)this.findViewById(R.id.charge_Iist), null);
         this.j = new UnitValue("Q", "C", " = ", true, (Context)this, (TextView)this.findViewById(R.id.charge_Qist), null);
-        this.d();
+        this.readSharedPreferences();
         this.c();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        this.a();
+        this.writeSharedPreferences();
     }
 }

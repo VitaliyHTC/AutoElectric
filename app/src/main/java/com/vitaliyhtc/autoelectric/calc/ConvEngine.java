@@ -18,29 +18,29 @@ public class ConvEngine extends CalcActivity implements View.OnClickListener {
     private UnitValue d; //hp
     private UnitValue e; //W
 
-    private void b() {
+    private void calcLbFt() {
         this.c.a(this.b.h() * 1.35581794833);
     }
 
-    private void c() {
+    private void calcNm() {
         this.b.a(this.c.h() / 1.35581794833);
     }
 
-    private void d() {
+    private void calcHp() {
         this.e.a((this.d.h() * 1000 ) / 1.3410220888);
     }
 
-    private void e() {
+    private void calcKw() {
         this.d.a((this.e.h() * 1.3410220888) / 1000);
     }
 
-    private void f() {
+    private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
         this.b.a((double)sharedPreferences.getFloat("engine_torque_lbft", 650.0f));
         this.d.a((double)sharedPreferences.getFloat("engine_power_hp", 650.0f));
     }
 
-    public void a() {
+    public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
         editor.putFloat("engine_torque_lbft", (float)this.b.h());
         editor.putFloat("engine_power_hp", (float)this.d.h());
@@ -56,22 +56,22 @@ public class ConvEngine extends CalcActivity implements View.OnClickListener {
         double d2 = intent.getDoubleExtra(String.valueOf(this.getPackageName()) + ".comp_value", 0.0);
         if ((n2 = this.a(R.id.torque_lbft, n2)) == R.id.torque_lbft) {
             this.b.a(d2);
-            this.b();
+            this.calcLbFt();
             return;
         }
         if (n2 == R.id.torque_nm) {
             this.c.a(d2);
-            this.c();
+            this.calcNm();
             return;
         }
         if (n2 == R.id.power_hp) {
             this.d.a(d2);
-            this.d();
+            this.calcHp();
             return;
         }
         if (n2 == R.id.power_kw) {
             this.e.a(d2);
-            this.e();
+            this.calcKw();
             return;
         }
     }
@@ -101,14 +101,14 @@ public class ConvEngine extends CalcActivity implements View.OnClickListener {
         this.c = new UnitValue("", "Nm", "", false, (Context)this, (TextView)this.findViewById(R.id.torque_nm), this);
         this.d = new UnitValue("", "hp", "", false, (Context)this, (TextView)this.findViewById(R.id.power_hp), this);
         this.e = new UnitValue("", "W", "", false, (Context)this, (TextView)this.findViewById(R.id.power_kw), this);
-        this.f();
-        this.b();
-        this.d();
+        this.readSharedPreferences();
+        this.calcLbFt();
+        this.calcHp();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        this.a();
+        this.writeSharedPreferences();
     }
 }

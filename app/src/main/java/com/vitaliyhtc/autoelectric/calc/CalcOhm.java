@@ -42,6 +42,24 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
     static UnitValue a(CalcOhm calcOhm) {
         return calcOhm.e;
     }
+    static void a(CalcOhm calcOhm, int n2) {
+        calcOhm.a(n2);
+    }
+    static void a(CalcOhm calcOhm, String string) {
+        calcOhm.a(string);
+    }
+    static UnitValue b(CalcOhm calcOhm) {
+        return calcOhm.i;
+    }
+    static void b(CalcOhm calcOhm, int n2) {
+        calcOhm.m = n2;
+    }
+    static EIAValuesTable c(CalcOhm calcOhm) {
+        return calcOhm.n;
+    }
+    static void d(CalcOhm calcOhm) {
+        calcOhm.g();
+    }
 
     private String a(double d2) {
         String string;
@@ -68,14 +86,6 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
                 this.d();
         }
         this.e();
-    }
-
-    static void a(CalcOhm calcOhm, int n2) {
-        calcOhm.a(n2);
-    }
-
-    static void a(CalcOhm calcOhm, String string) {
-        calcOhm.a(string);
     }
 
     private void a(String string) {
@@ -115,20 +125,8 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
         }
     }
 
-    static UnitValue b(CalcOhm calcOhm) {
-        return calcOhm.i;
-    }
-
     private void b() {
         this.g.a(this.f.h() / this.e.h());
-    }
-
-    static void b(CalcOhm calcOhm, int n2) {
-        calcOhm.m = n2;
-    }
-
-    static EIAValuesTable c(CalcOhm calcOhm) {
-        return calcOhm.n;
     }
 
     private void c() {
@@ -138,10 +136,6 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
     private void d() {
         this.e.a(this.f.h() / this.g.h());
         this.g();
-    }
-
-    static void d(CalcOhm calcOhm) {
-        calcOhm.g();
     }
 
     private void e() {
@@ -167,7 +161,7 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
         this.j.setText((CharSequence)(String.valueOf(this.i.l()) + "  (" + this.a(this.n.u) + ")"));
     }
 
-    private void h() {
+    private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
         this.f.a((double)sharedPreferences.getFloat("ohm_V", 13.2f));
         this.g.a((double)sharedPreferences.getFloat("ohm_I", 5.5f));
@@ -176,7 +170,7 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
         this.p = sharedPreferences.getInt("ohm_Last_but_one", d);
     }
 
-    public void a() {
+    public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
         editor.putFloat("ohm_V", (float)this.f.h());
         editor.putFloat("ohm_I", (float)this.g.h());
@@ -246,7 +240,7 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.l.setAdapter((SpinnerAdapter)arrayAdapter);
         this.n = new EIAValuesTable(EIAValuesLines.c);
-        this.h();
+        this.readSharedPreferences();
         this.l.setSelection(this.m);
         this.d();
         this.e();
@@ -259,6 +253,6 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
     @Override
     protected void onStop() {
         super.onStop();
-        this.a();
+        this.writeSharedPreferences();
     }
 }

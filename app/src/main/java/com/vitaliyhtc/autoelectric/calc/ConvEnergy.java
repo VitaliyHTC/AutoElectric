@@ -18,36 +18,36 @@ public class ConvEnergy extends CalcActivity implements View.OnClickListener {
     private UnitValue d; //J
     private UnitValue e; //cal
 
-    private void b() {
+    private void calcWh() {
         this.c.a(this.b.h() * 3.41214163312794);
         this.d.a(this.b.h() * 3600.0);
         this.e.a(this.b.h() * 859.84522785899);
     }
 
-    private void c() {
+    private void calcBTU() {
         this.b.a(this.c.h() / 3.41214163312794);
         this.d.a(this.c.h() * 1055.05585262);
         this.e.a(this.c.h() * 252.19021687207);
     }
 
-    private void d() {
+    private void calcJ() {
         this.b.a(this.d.h() / 3600.0);
         this.c.a(this.d.h() / 1055.05585262);
         this.e.a(this.d.h() / 4.1868);
     }
 
-    private void e() {
+    private void calcCal() {
         this.b.a(this.e.h() / 859.84522785899);
         this.c.a(this.e.h() / 252.19021687207);
         this.d.a(this.e.h() * 4.1868);
     }
 
-    private void f() {
+    private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
         this.b.a((double)sharedPreferences.getFloat("energy_Wh", 25.0f));
     }
 
-    public void a() {
+    public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
         editor.putFloat("energy_Wh", (float)this.b.h());
         editor.commit();
@@ -62,22 +62,22 @@ public class ConvEnergy extends CalcActivity implements View.OnClickListener {
         double d2 = intent.getDoubleExtra(String.valueOf(this.getPackageName()) + ".comp_value", 0.0);
         if ((n2 = this.a(R.id.energy_Wh, n2)) == R.id.energy_Wh) {
             this.b.a(d2);
-            this.b();
+            this.calcWh();
             return;
         }
         if (n2 == R.id.energy_BTU) {
             this.c.a(d2);
-            this.c();
+            this.calcBTU();
             return;
         }
         if (n2 == R.id.energy_J) {
             this.d.a(d2);
-            this.d();
+            this.calcJ();
             return;
         }
         if (n2 == R.id.energy_cal) {
             this.e.a(d2);
-            this.e();
+            this.calcCal();
             return;
         }
     }
@@ -107,13 +107,13 @@ public class ConvEnergy extends CalcActivity implements View.OnClickListener {
         this.c = new UnitValue("", "BTU", "", false, (Context)this, (TextView)this.findViewById(R.id.energy_BTU), this);
         this.d = new UnitValue("", "J", "", false, (Context)this, (TextView)this.findViewById(R.id.energy_J), this);
         this.e = new UnitValue("", "cal", "", false, (Context)this, (TextView)this.findViewById(R.id.energy_cal), this);
-        this.f();
-        this.b();
+        this.readSharedPreferences();
+        this.calcWh();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        this.a();
+        this.writeSharedPreferences();
     }
 }

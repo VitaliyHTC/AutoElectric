@@ -40,26 +40,12 @@ public class CalcVoltageDivider extends CalcActivity implements View.OnClickList
     static Spinner a(CalcVoltageDivider calc_vd) {
         return calc_vd.n;
     }
-
     static EIAValuesTable b(CalcVoltageDivider calc_vd) {
         return calc_vd.o;
     }
-
     static UnitValue c(CalcVoltageDivider calc_vd) {
         return calc_vd.e;
     }
-
-    private void c() {
-        SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.b.a((double)sharedPreferences.getFloat("part_R1", 1000.0f));
-        this.c.a((double)sharedPreferences.getFloat("part_R2", 1000.0f));
-        this.d.a((double)sharedPreferences.getFloat("part_RL", 100000.0f));
-        this.e.a((double)sharedPreferences.getFloat("part_Vin", 5.0f));
-        this.l.setChecked(sharedPreferences.getBoolean("part_RLon", false));
-        this.m.setSelection(sharedPreferences.getInt("part_spinLock", 0));
-        this.n.setSelection(sharedPreferences.getInt("part_SpinSerie", 2));
-    }
-
     static UnitValue d(CalcVoltageDivider calc_vd) {
         return calc_vd.f;
     }
@@ -122,7 +108,18 @@ public class CalcVoltageDivider extends CalcActivity implements View.OnClickList
         this.b.a(d2);
     }
 
-    public void b() {
+    private void readSharedPreferences() {
+        SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
+        this.b.a((double)sharedPreferences.getFloat("part_R1", 1000.0f));
+        this.c.a((double)sharedPreferences.getFloat("part_R2", 1000.0f));
+        this.d.a((double)sharedPreferences.getFloat("part_RL", 100000.0f));
+        this.e.a((double)sharedPreferences.getFloat("part_Vin", 5.0f));
+        this.l.setChecked(sharedPreferences.getBoolean("part_RLon", false));
+        this.m.setSelection(sharedPreferences.getInt("part_spinLock", 0));
+        this.n.setSelection(sharedPreferences.getInt("part_SpinSerie", 2));
+    }
+
+    public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
         editor.putFloat("part_R1", (float)this.b.h());
         editor.putFloat("part_R2", (float)this.c.h());
@@ -215,7 +212,7 @@ public class CalcVoltageDivider extends CalcActivity implements View.OnClickList
         arrayAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.m = (Spinner)this.findViewById(R.id.part_spinner_fix);
         this.m.setAdapter((SpinnerAdapter)arrayAdapter1);
-        this.c();
+        this.readSharedPreferences();
         this.o.a(this.n.getSelectedItemPosition());
         this.a();
         this.l.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener)new CalcVoltageDividerLoadListener(this));
@@ -225,6 +222,6 @@ public class CalcVoltageDivider extends CalcActivity implements View.OnClickList
     @Override
     protected void onStop() {
         super.onStop();
-        this.b();
+        this.writeSharedPreferences();
     }
 }

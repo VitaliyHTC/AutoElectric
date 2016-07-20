@@ -32,6 +32,34 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
     private Spinner i;
     private double j = 1.0;
 
+    static void a(CalcPower calcPower) {
+        calcPower.b();
+    }
+    static void a(CalcPower calcPower, int n2) {
+        calcPower.a(n2);
+    }
+    static UnitValue b(CalcPower calcPower) {
+        return calcPower.b;
+    }
+    static void b(CalcPower calcPower, int n2) {
+        calcPower.b(n2);
+    }
+    static void c(CalcPower calcPower) {
+        calcPower.e();
+    }
+    static void c(CalcPower calcPower, int n2) {
+        calcPower.c(n2);
+    }
+    static UnitValue d(CalcPower calcPower) {
+        return calcPower.c;
+    }
+    static void e(CalcPower calcPower) {
+        calcPower.f();
+    }
+    static UnitValue f(CalcPower calcPower) {
+        return calcPower.d;
+    }
+
     private void a(int n2) {
         switch (n2) {
             case 0: {
@@ -54,18 +82,6 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
             return;
         }
         this.j = 1.0;
-    }
-
-    static void a(CalcPower calcPower) {
-        calcPower.b();
-    }
-
-    static void a(CalcPower calcPower, int n2) {
-        calcPower.a(n2);
-    }
-
-    static UnitValue b(CalcPower calcPower) {
-        return calcPower.b;
     }
 
     private void b() {
@@ -97,10 +113,6 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
         }
     }
 
-    static void b(CalcPower calcPower, int n2) {
-        calcPower.b(n2);
-    }
-
     private void c() {
         double d2 = this.e.h() * 3.141592653589793 / 180.0;
         this.d.a(Math.cos(d2));
@@ -119,18 +131,6 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
                 return;
             }
         }
-    }
-
-    static void c(CalcPower calcPower) {
-        calcPower.e();
-    }
-
-    static void c(CalcPower calcPower, int n2) {
-        calcPower.c(n2);
-    }
-
-    static UnitValue d(CalcPower calcPower) {
-        return calcPower.c;
     }
 
     private void d() {
@@ -153,19 +153,11 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
         this.b.a(this.f.h() / this.c.h() / this.j);
     }
 
-    static void e(CalcPower calcPower) {
-        calcPower.f();
-    }
-
-    static UnitValue f(CalcPower calcPower) {
-        return calcPower.d;
-    }
-
     private void f() {
         this.c.a(this.f.h() / this.b.h() / this.j);
     }
 
-    private void g() {
+    private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
         this.b.a((double)sharedPreferences.getFloat("pwcalc_V", 230.0f));
         this.c.a((double)sharedPreferences.getFloat("pwcalc_I", 4.35f));
@@ -173,7 +165,7 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
         this.i.setSelection(sharedPreferences.getInt("pwcalc_spinCurrType", 1));
     }
 
-    public void a() {
+    public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
         editor.putFloat("pwcalc_V", (float)this.b.h());
         editor.putFloat("pwcalc_I", (float)this.c.h());
@@ -277,7 +269,7 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.i.setAdapter((SpinnerAdapter)arrayAdapter);
         this.i.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)new CalcPowerCurrentTypeListener(this));
-        this.g();
+        this.readSharedPreferences();
         this.c();
         this.b();
     }
@@ -285,6 +277,6 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
     @Override
     protected void onStop() {
         super.onStop();
-        this.a();
+        this.writeSharedPreferences();
     }
 }

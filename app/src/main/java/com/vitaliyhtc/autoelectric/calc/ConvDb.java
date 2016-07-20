@@ -29,14 +29,6 @@ public class ConvDb extends CalcActivity implements View.OnClickListener {
     private Spinner k;
     private Spinner l;
 
-    private void g() {
-        SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.h.a((double)sharedPreferences.getFloat("conv_db_val", 100.0f));
-        this.i.a((double)sharedPreferences.getFloat("conv_db_rif", 1.0f));
-        this.k.setSelection(sharedPreferences.getInt("conv_db_spinType", 0));
-        this.l.setSelection(sharedPreferences.getInt("conv_db_spinUnit", 0));
-    }
-
     void a() {
         String[] var1 = null;
         switch(this.k.getSelectedItemPosition()) {
@@ -177,7 +169,15 @@ public class ConvDb extends CalcActivity implements View.OnClickListener {
         this.j.a(d2);
     }
 
-    public void f() {
+    private void readSharedPreferences() {
+        SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
+        this.h.a((double)sharedPreferences.getFloat("conv_db_val", 100.0f));
+        this.i.a((double)sharedPreferences.getFloat("conv_db_rif", 1.0f));
+        this.k.setSelection(sharedPreferences.getInt("conv_db_spinType", 0));
+        this.l.setSelection(sharedPreferences.getInt("conv_db_spinUnit", 0));
+    }
+
+    public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
         editor.putFloat("conv_db_val", (float)this.h.h());
         editor.putFloat("conv_db_rif", (float)this.i.h());
@@ -247,13 +247,13 @@ public class ConvDb extends CalcActivity implements View.OnClickListener {
         this.k.setAdapter((SpinnerAdapter)arrayAdapter);
         this.k.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)new ConvDb0Listener(this));
         this.l.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)new ConvDb1Listener(this));
-        this.g();
+        this.readSharedPreferences();
         this.c();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        this.f();
+        this.writeSharedPreferences();
     }
 }
