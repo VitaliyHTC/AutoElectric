@@ -10,8 +10,6 @@
 
 
 
-
-
     <style name="ColoredButton" parent="@style/Widget.AppCompat.Button">
         <item name="android:textColor">@color/button_textcolor</item>
         <item name="colorButtonNormal">@color/button_color</item>

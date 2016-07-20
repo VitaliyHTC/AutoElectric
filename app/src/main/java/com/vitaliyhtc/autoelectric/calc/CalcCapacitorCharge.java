@@ -73,10 +73,10 @@ public class CalcCapacitorCharge extends CalcActivity implements View.OnClickLis
 
     private void d() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.b.a((double)sharedPreferences.getFloat("Ccapcharge_R", 100.0f));
-        this.d.a((double)sharedPreferences.getFloat("Ccapcharge_C", 1.0E-5f));
-        this.c.a((double)sharedPreferences.getFloat("Ccapcharge_V", 10.0f));
-        this.k.a((double)sharedPreferences.getFloat("Ccapcharge_tRC", 4.0f));
+        this.b.a((double)sharedPreferences.getFloat("Ccapcharge_R", 62.0f));
+        this.d.a((double)sharedPreferences.getFloat("Ccapcharge_C", 4.7E-5f));
+        this.c.a((double)sharedPreferences.getFloat("Ccapcharge_V", 14.4f));
+        this.k.a((double)sharedPreferences.getFloat("Ccapcharge_tRC", 2.0f));
     }
 
     static void d(CalcCapacitorCharge calcCapacitorCharge) {

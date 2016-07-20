@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:id="@+id/calcbase"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="16.0sp"
+                android:gravity="center_vertical"
+                android:id="@+id/TextView01"
+                android:paddingLeft="5.0dip"
+                android:paddingRight="5.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pw_select_curr"
+                android:layout_toLeftOf="@+id/pw_current_type"
+                android:layout_alignTop="@+id/pw_current_type"
+                android:layout_alignBottom="@+id/pw_current_type"
+                android:layout_alignParentLeft="true"
+                android:layout_toStartOf="@+id/pw_current_type"
+                android:layout_alignParentStart="true" />
+            <Spinner
+                android:id="@+id/pw_current_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+            <View
+                android:id="@+id/separatore"
+                android:layout_width="5.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:layout_below="@+id/pw_current_type"
+                android:layout_centerHorizontal="true" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/pw_btn_volt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/voltage"
+                android:width="145.0dip"
+                android:layout_toLeftOf="@+id/separatore"
+                android:layout_alignTop="@+id/separatore"
+                android:layout_toStartOf="@+id/separatore" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/pw_btn_amp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/current"
+                android:width="145.0dip"
+                android:layout_toRightOf="@+id/separatore"
+                android:layout_alignTop="@+id/separatore"
+                android:layout_toEndOf="@+id/separatore" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/pw_btn_PF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:text="@string/powerfactor"
+                android:width="145.0dip"
+                android:layout_below="@+id/pw_btn_volt"
+                android:layout_alignLeft="@+id/pw_btn_volt"
+                android:layout_alignStart="@+id/pw_btn_volt" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/pw_btn_phase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phase"
+                android:width="145.0dip"
+                android:layout_alignLeft="@+id/pw_btn_amp"
+                android:layout_alignTop="@+id/pw_btn_PF"
+                android:layout_alignStart="@+id/pw_btn_amp" />
+            <Button
+                android:theme="@style/mybutton"
+                android:id="@+id/pw_btn_S"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25.0dip"
+                android:text="@string/powerS"
+                android:width="160.0dip"
+                android:layout_below="@+id/pw_btn_PF"
+                android:layout_centerHorizontal="true" />
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:layout_below="@+id/pw_btn_S"
+                android:layout_centerInParent="true">
+                <Button
+                    android:theme="@style/mybutton"
+                    android:id="@+id/pw_btn_P"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/powerP"
+                    android:width="150.0dip" />
+                <Button
+                    android:theme="@style/mybutton"
+                    android:id="@+id/pw_btn_Q"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:text="@string/powerQ"
+                    android:width="150.0dip"
+                    android:layout_marginStart="10.0dip" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

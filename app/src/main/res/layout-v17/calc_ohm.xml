@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/ohm_I"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:layout_marginRight="-10.0dip"
+            android:layout_marginBottom="10.0dip"
+            android:text="I"
+            android:lines="2"
+            android:width="110.0dip"
+            android:layout_toLeftOf="@+id/ohm_R" />
+        <ImageView
+            android:id="@+id/ohm_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/calc_ohm_law"
+            android:layout_below="@+id/ohm_I"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/cont_desc_circuit" />
+        <TextView
+            android:textSize="16.0sp"
+            android:gravity="center_vertical"
+            android:id="@+id/ohm_txtDescr"
+            android:paddingLeft="5.0dip"
+            android:paddingTop="5.0dip"
+            android:paddingRight="5.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:text="@string/power_diss_resistor"
+            android:minLines="2"
+            android:layout_below="@+id/ohm_img" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/ohm_P"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/power"
+            android:lines="2"
+            android:width="150.0dip"
+            android:layout_below="@+id/ohm_txtDescr"
+            android:layout_centerHorizontal="true" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/ohm_V"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15.0dip"
+            android:layout_marginRight="5.0dip"
+            android:text="V"
+            android:lines="2"
+            android:width="110.0dip"
+            android:layout_toLeftOf="@+id/ohm_img"
+            android:layout_alignTop="@+id/ohm_img" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/ohm_R"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginTop="15.0dip"
+            android:text="R"
+            android:lines="2"
+            android:width="110.0dip"
+            android:layout_toRightOf="@+id/ohm_img"
+            android:layout_alignTop="@+id/ohm_img" />
+        <include
+            android:id="@+id/res_serie_layout_ref"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:layout_below="@+id/ohm_P"
+            layout="@layout/embed_res_serie_layout" />
+        <TextView
+            android:textSize="16.0sp"
+            android:id="@+id/ohm_neardescr"
+            android:paddingLeft="5.0dip"
+            android:paddingTop="5.0dip"
+            android:paddingRight="5.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:text="@string/nearest_value"
+            android:lines="1"
+            android:layout_below="@+id/res_serie_layout_ref" />
+        <TextView
+            android:textSize="16.0sp"
+            android:gravity="center"
+            android:id="@+id/ohm_txtNearValue"
+            android:paddingLeft="5.0dip"
+            android:paddingRight="5.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="."
+            android:layout_toLeftOf="@+id/ohm_btnSetThis"
+            android:layout_alignTop="@+id/ohm_btnSetThis"
+            android:layout_alignBottom="@+id/ohm_btnSetThis"
+            android:layout_alignParentLeft="true"
+            android:layout_toStartOf="@+id/ohm_btnSetThis"
+            android:layout_alignParentStart="true" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/ohm_btnSetThis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5.0dip"
+            android:text="@string/set_this"
+            android:lines="2"
+            android:width="95.0dip"
+            android:layout_below="@+id/ohm_neardescr"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="5.0dip"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</ScrollView>

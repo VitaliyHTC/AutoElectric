@@ -170,13 +170,13 @@ public class CalcVoltDrop extends CalcActivity implements View.OnClickListener {
 
     private void d() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.g.a((double)sharedPreferences.getFloat("voltdrop_V", 12.0f));
-        this.h.a((double)sharedPreferences.getFloat("voltdrop_I", 2.0f));
-        this.f.a((double)sharedPreferences.getFloat("voltdrop_Length", 10.0f));
+        this.g.a((double)sharedPreferences.getFloat("voltdrop_V", 14.4f));
+        this.h.a((double)sharedPreferences.getFloat("voltdrop_I", 370.0f));
+        this.f.a((double)sharedPreferences.getFloat("voltdrop_Length", 3.0f));
         this.p.setSelection(sharedPreferences.getInt("voltdrop_spinVoltType", 0));
         this.n.setSelection(sharedPreferences.getInt("voltdrop_spinMaterial", 0));
-        this.o.setSelection(sharedPreferences.getInt("voltdrop_spinDiam", 0));
-        this.l.a((double)sharedPreferences.getFloat("voltdrop_Wsize", 18.0f));
+        this.o.setSelection(sharedPreferences.getInt("voltdrop_spinDiam", 3));
+        this.l.a((double)sharedPreferences.getFloat("voltdrop_Wsize", 95.0f));
         this.q.setSelection(sharedPreferences.getInt("voltdrop_spinLength", 0));
     }
 

@@ -25,7 +25,9 @@
             android:layout_toLeftOf="@+id/sepa_Rdes"
             android:layout_alignTop="@+id/sepa_Rdes"
             android:layout_alignBottom="@+id/sepa_Rdes"
-            android:layout_alignParentLeft="true" />
+            android:layout_alignParentLeft="true"
+            android:layout_toStartOf="@+id/sepa_Rdes"
+            android:layout_alignParentStart="true" />
         <Button
             android:theme="@style/mybutton"
             android:id="@+id/sepa_Rdes"
@@ -35,7 +37,9 @@
             android:text="R"
             android:width="110.0dip"
             android:layout_below="@+id/TextView01"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="5.0dip"
+            android:layout_alignParentEnd="true" />
         <include
             android:id="@+id/res_serie_layout_ref"
             android:layout_width="fill_parent"
@@ -72,7 +76,9 @@
             android:src="@drawable/calc_res_paral"
             android:layout_alignTop="@+id/sepa_img_serie"
             android:layout_alignParentRight="true"
-            android:contentDescription="@string/cont_desc_circuit" />
+            android:contentDescription="@string/cont_desc_circuit"
+            android:layout_marginEnd="25.0dip"
+            android:layout_alignParentEnd="true" />
         <Button
             android:theme="@style/mybutton"
             android:id="@+id/sepa_Rp2"
@@ -82,7 +88,8 @@
             android:text="Rp2"
             android:lines="1"
             android:layout_below="@+id/sepa_img_paral"
-            android:layout_alignLeft="@+id/sepa_img_paral" />
+            android:layout_alignLeft="@+id/sepa_img_paral"
+            android:layout_alignStart="@+id/sepa_img_paral" />
         <TextView
             android:gravity="center"
             android:id="@+id/sepa_txtTotP"
@@ -94,7 +101,9 @@
             android:text="Total Parallel"
             android:width="150.0dip"
             android:layout_below="@+id/sepa_Rp2"
-            android:layout_alignLeft="@+id/sepa_Rp2" />
+            android:layout_alignLeft="@+id/sepa_Rp2"
+            android:layout_marginStart="-30.0dip"
+            android:layout_alignStart="@+id/sepa_Rp2" />
         <Button
             android:theme="@style/mybutton"
             android:id="@+id/sepa_Rp1"
@@ -104,7 +113,8 @@
             android:text="Rp1"
             android:lines="1"
             android:layout_alignLeft="@+id/sepa_img_paral"
-            android:layout_alignTop="@+id/sepa_img_serie" />
+            android:layout_alignTop="@+id/sepa_img_serie"
+            android:layout_alignStart="@+id/sepa_img_paral" />
         <ImageView
             android:id="@+id/sepa_img_serie"
             android:layout_width="wrap_content"
@@ -114,7 +124,9 @@
             android:src="@drawable/calc_res_serie"
             android:layout_below="@+id/sepa_txtNearValue"
             android:layout_alignParentLeft="true"
-            android:contentDescription="@string/cont_desc_circuit" />
+            android:contentDescription="@string/cont_desc_circuit"
+            android:layout_marginStart="25.0dip"
+            android:layout_alignParentStart="true" />
         <TextView
             android:gravity="center"
             android:id="@+id/sepa_txtTotS"
@@ -126,7 +138,9 @@
             android:width="150.0dip"
             android:layout_below="@+id/sepa_img_serie"
             android:layout_alignLeft="@+id/sepa_img_serie"
-            android:layout_alignTop="@+id/sepa_txtTotP" />
+            android:layout_alignTop="@+id/sepa_txtTotP"
+            android:layout_marginStart="-15.0dip"
+            android:layout_alignStart="@+id/sepa_img_serie" />
         <Button
             android:theme="@style/mybutton"
             android:id="@+id/sepa_Rs2"
@@ -137,7 +151,9 @@
             android:text="Rs2"
             android:lines="1"
             android:layout_toRightOf="@+id/sepa_img_serie"
-            android:layout_alignBottom="@+id/sepa_img_serie" />
+            android:layout_alignBottom="@+id/sepa_img_serie"
+            android:layout_marginStart="5.0dip"
+            android:layout_toEndOf="@+id/sepa_img_serie" />
         <Button
             android:theme="@style/mybutton"
             android:id="@+id/sepa_Rs1"
@@ -148,6 +164,8 @@
             android:text="Rs1"
             android:lines="1"
             android:layout_toRightOf="@+id/sepa_img_serie"
-            android:layout_alignTop="@+id/sepa_img_serie" />
+            android:layout_alignTop="@+id/sepa_img_serie"
+            android:layout_marginStart="5.0dip"
+            android:layout_toEndOf="@+id/sepa_img_serie" />
     </RelativeLayout>
 </ScrollView>

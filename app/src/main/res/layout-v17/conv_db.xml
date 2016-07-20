@@ -28,7 +28,8 @@
                 android:layout_marginTop="10.0dip"
                 android:minWidth="100.0dip"
                 android:layout_below="@+id/db_textDescr"
-                android:layout_alignRight="@+id/db_textDescr" />
+                android:layout_alignRight="@+id/db_textDescr"
+                android:layout_alignEnd="@+id/db_textDescr" />
             <TextView
                 android:textSize="16.0sp"
                 android:gravity="center_vertical"
@@ -39,7 +40,9 @@
                 android:text="@string/db_quantity"
                 android:layout_toLeftOf="@+id/db_spinType"
                 android:layout_alignTop="@+id/db_spinType"
-                android:layout_alignBottom="@+id/db_spinType" />
+                android:layout_alignBottom="@+id/db_spinType"
+                android:layout_marginStart="5.0dip"
+                android:layout_toStartOf="@+id/db_spinType" />
             <Button
                 android:theme="@style/mybutton"
                 android:id="@+id/db_btn_decibel"
@@ -50,7 +53,10 @@
                 android:layout_marginRight="5.0dip"
                 android:text="@string/decibel"
                 android:layout_toLeftOf="@+id/db_spin_unit"
-                android:layout_below="@+id/db_text_spinType" />
+                android:layout_below="@+id/db_text_spinType"
+                android:layout_marginStart="20.0dip"
+                android:layout_marginEnd="5.0dip"
+                android:layout_toStartOf="@+id/db_spin_unit" />
             <Spinner
                 android:gravity="center_vertical"
                 android:id="@+id/db_spin_unit"
@@ -59,7 +65,9 @@
                 android:layout_marginRight="20.0dip"
                 android:layout_alignTop="@+id/db_btn_decibel"
                 android:layout_alignRight="@+id/db_spinType"
-                android:layout_alignBottom="@+id/db_btn_decibel" />
+                android:layout_alignBottom="@+id/db_btn_decibel"
+                android:layout_marginEnd="20.0dip"
+                android:layout_alignEnd="@+id/db_spinType" />
             <Button
                 android:theme="@style/mybutton"
                 android:id="@+id/db_btn_ref"
@@ -85,7 +93,9 @@
                 android:text="@string/gain"
                 android:layout_below="@+id/db_btn_value"
                 android:layout_alignLeft="@+id/db_btn_value"
-                android:layout_alignRight="@+id/db_btn_value" />
+                android:layout_alignRight="@+id/db_btn_value"
+                android:layout_alignStart="@+id/db_btn_value"
+                android:layout_alignEnd="@+id/db_btn_value" />
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>

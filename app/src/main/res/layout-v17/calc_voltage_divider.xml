@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/part_imgPart"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:src="@drawable/calc_voltage_divider"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/cont_desc_circuit" />
+        <CheckBox
+            android:id="@+id/chkEnableRL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10.0dip"
+            android:checked="true"
+            android:text="@string/enableRL"
+            android:layout_below="@+id/part_imgPart"
+            android:layout_alignParentRight="true" />
+        <TextView
+            android:textSize="16.0sp"
+            android:id="@+id/part_txtDescr2"
+            android:paddingLeft="5.0dip"
+            android:paddingRight="5.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginBottom="5.0dip"
+            android:text="@string/part_txtDescr2"
+            android:layout_below="@+id/chkEnableRL" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/part_btnVratio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.0dip"
+            android:text="Vin/Vout"
+            android:width="120.0dip"
+            android:layout_toRightOf="@+id/part_btnRratio"
+            android:layout_alignTop="@+id/part_btnRratio"
+            android:layout_marginStart="20.0dip"
+            android:layout_toEndOf="@+id/part_btnRratio" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/part_btnRratio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30.0dip"
+            android:text="R1/R2"
+            android:width="120.0dip"
+            android:layout_below="@+id/part_txtDescr2"
+            android:layout_marginStart="30.0dip" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/part_RL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RL"
+            android:layout_toRightOf="@+id/part_imgPart"
+            android:layout_below="@+id/part_Vout"
+            android:layout_alignLeft="@+id/part_Vout" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/part_Vout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:text="Vout"
+            android:layout_toRightOf="@+id/part_imgPart"
+            android:layout_below="@+id/part_Vin" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/part_Vin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-40.0dip"
+            android:text="Vin"
+            android:layout_toRightOf="@+id/part_imgPart"
+            android:layout_alignTop="@+id/part_imgPart" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/part_R2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10.0dip"
+            android:layout_marginBottom="28.0dip"
+            android:text="R2"
+            android:layout_toLeftOf="@+id/part_imgPart"
+            android:layout_alignBottom="@+id/part_imgPart" />
+        <Button
+            android:theme="@style/mybutton"
+            android:id="@+id/part_R1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.0dip"
+            android:layout_marginRight="10.0dip"
+            android:text="R1"
+            android:layout_toLeftOf="@+id/part_imgPart"
+            android:layout_alignTop="@+id/part_imgPart" />
+        <Spinner
+            android:id="@+id/part_spinner_fix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:layout_below="@+id/part_btnRratio"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="5.0dip"
+            android:layout_alignParentEnd="true" />
+        <TextView
+            android:textSize="16.0sp"
+            android:gravity="center_vertical"
+            android:id="@+id/textView1"
+            android:paddingLeft="5.0dip"
+            android:paddingRight="5.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lock_value"
+            android:layout_toLeftOf="@+id/part_spinner_fix"
+            android:layout_alignTop="@+id/part_spinner_fix"
+            android:layout_alignBottom="@+id/part_spinner_fix"
+            android:layout_alignParentLeft="true"
+            android:paddingStart="5.0dip"
+            android:paddingEnd="5.0dip"
+            android:layout_toStartOf="@+id/part_spinner_fix"
+            android:layout_alignParentStart="true" />
+        <include
+            android:id="@+id/res_serie_layout_ref"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0.0dip"
+            android:layout_below="@+id/part_spinner_fix"
+            layout="@layout/embed_res_serie_layout" />
+        <TextView
+            android:textSize="16.0sp"
+            android:id="@+id/TextView03"
+            android:padding="5.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:text="@string/power_dissipated"
+            android:layout_below="@+id/res_serie_layout_ref" />
+        <TextView
+            android:textSize="18.0sp"
+            android:id="@+id/part_Ptot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:text="Ptot"
+            android:width="150.0dip"
+            android:layout_below="@+id/TextView03"
+            android:layout_marginStart="5.0dip" />
+        <TextView
+            android:textSize="18.0sp"
+            android:id="@+id/part_Pout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="5.0dip"
+            android:text="Pout"
+            android:width="150.0dip"
+            android:layout_toRightOf="@+id/part_Ptot"
+            android:layout_below="@+id/TextView03"
+            android:layout_marginStart="10.0dip"
+            android:layout_marginEnd="5.0dip"
+            android:layout_toEndOf="@+id/part_Ptot" />
+        <TextView
+            android:textSize="18.0sp"
+            android:id="@+id/part_Itot"
+            android:padding="5.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Iout="
+            android:layout_below="@+id/part_Ptot" />
+    </RelativeLayout>
+</ScrollView>

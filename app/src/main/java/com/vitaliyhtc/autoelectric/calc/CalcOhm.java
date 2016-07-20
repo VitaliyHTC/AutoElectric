@@ -169,8 +169,8 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
 
     private void h() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.f.a((double)sharedPreferences.getFloat("ohm_V", 5.0f));
-        this.g.a((double)sharedPreferences.getFloat("ohm_I", 1.0f));
+        this.f.a((double)sharedPreferences.getFloat("ohm_V", 13.2f));
+        this.g.a((double)sharedPreferences.getFloat("ohm_I", 5.5f));
         this.m = sharedPreferences.getInt("ohm_SpinSerie", 2);
         this.o = sharedPreferences.getInt("ohm_Last", c);
         this.p = sharedPreferences.getInt("ohm_Last_but_one", d);

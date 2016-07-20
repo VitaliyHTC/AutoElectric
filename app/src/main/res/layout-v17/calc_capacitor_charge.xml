@@ -108,7 +108,8 @@
                 android:text="t"
                 android:lines="1"
                 android:layout_toLeftOf="@+id/TextView05"
-                android:layout_below="@+id/TextView03" />
+                android:layout_below="@+id/TextView03"
+                android:layout_toStartOf="@+id/TextView05" />
             <TextView
                 android:gravity="center"
                 android:id="@+id/TextView05"
@@ -128,7 +129,8 @@
                 android:text="RC"
                 android:lines="1"
                 android:layout_toRightOf="@+id/TextView05"
-                android:layout_alignTop="@+id/charge_btnT" />
+                android:layout_alignTop="@+id/charge_btnT"
+                android:layout_toEndOf="@+id/TextView05" />
             <TextView
                 android:textSize="16.0sp"
                 android:id="@+id/charge_Iist"
@@ -138,7 +140,8 @@
                 android:layout_marginTop="5.0dip"
                 android:text="I ist"
                 android:width="155.0dip"
-                android:layout_below="@+id/charge_btnT" />
+                android:layout_below="@+id/charge_btnT"
+                android:paddingStart="5.0dip" />
             <TextView
                 android:textSize="16.0sp"
                 android:id="@+id/charge_Qist"
@@ -150,7 +153,10 @@
                 android:text="Q ist"
                 android:width="155.0dip"
                 android:layout_toRightOf="@+id/charge_Iist"
-                android:layout_below="@+id/charge_btnT" />
+                android:layout_below="@+id/charge_btnT"
+                android:paddingStart="5.0dip"
+                android:layout_marginStart="5.0dip"
+                android:layout_toEndOf="@+id/charge_Iist" />
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>

@@ -35,7 +35,7 @@
     <string name="pref_res_keepScreenOn">Keep Screen On</string>
     <string name="pref_res_keepScreenOn_sum">Keep the Screen turned on in Resources</string>
 
-    <string name="list_calc_ohm">Ohm's Law</string>
+    <string name="list_calc_ohm">Ohm\'s Law</string>
     <string name="list_calc_voltage_divider">Voltage divider</string>
     <string name="list_calc_sepa">Resistor series/parallel</string>
     <string name="list_calc_cap_chg">Capacitor charge</string>
