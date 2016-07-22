@@ -10,6 +10,6 @@ class SetValueDialog_btnOKListener implements View.OnClickListener {
     }
 
     public void onClick(View view) {
-        this.setValueDialog.a();
+        this.setValueDialog.actionSetResult();
     }
 }

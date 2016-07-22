@@ -13,7 +13,7 @@ class SetValueDialog_btnCancelListener implements View.OnClickListener {
 
     public void onClick(View view) {
         this.setValueDialog.setResult(0);
-        ((InputMethodManager)this.setValueDialog.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(SetValueDialog.b(this.setValueDialog).getWindowToken(), 0);
+        ((InputMethodManager)this.setValueDialog.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(SetValueDialog.getEditText(this.setValueDialog).getWindowToken(), 0);
         this.setValueDialog.finish();
     }
 }

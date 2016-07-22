@@ -19,37 +19,37 @@ public class ConvEnergy extends CalcActivity implements View.OnClickListener {
     private UnitValue e; //cal
 
     private void calcWh() {
-        this.c.a(this.b.h() * 3.41214163312794);
-        this.d.a(this.b.h() * 3600.0);
-        this.e.a(this.b.h() * 859.84522785899);
+        this.c.validateUnitValueDouble(this.b.getUnitValue() * 3.41214163312794);
+        this.d.validateUnitValueDouble(this.b.getUnitValue() * 3600.0);
+        this.e.validateUnitValueDouble(this.b.getUnitValue() * 859.84522785899);
     }
 
     private void calcBTU() {
-        this.b.a(this.c.h() / 3.41214163312794);
-        this.d.a(this.c.h() * 1055.05585262);
-        this.e.a(this.c.h() * 252.19021687207);
+        this.b.validateUnitValueDouble(this.c.getUnitValue() / 3.41214163312794);
+        this.d.validateUnitValueDouble(this.c.getUnitValue() * 1055.05585262);
+        this.e.validateUnitValueDouble(this.c.getUnitValue() * 252.19021687207);
     }
 
     private void calcJ() {
-        this.b.a(this.d.h() / 3600.0);
-        this.c.a(this.d.h() / 1055.05585262);
-        this.e.a(this.d.h() / 4.1868);
+        this.b.validateUnitValueDouble(this.d.getUnitValue() / 3600.0);
+        this.c.validateUnitValueDouble(this.d.getUnitValue() / 1055.05585262);
+        this.e.validateUnitValueDouble(this.d.getUnitValue() / 4.1868);
     }
 
     private void calcCal() {
-        this.b.a(this.e.h() / 859.84522785899);
-        this.c.a(this.e.h() / 252.19021687207);
-        this.d.a(this.e.h() * 4.1868);
+        this.b.validateUnitValueDouble(this.e.getUnitValue() / 859.84522785899);
+        this.c.validateUnitValueDouble(this.e.getUnitValue() / 252.19021687207);
+        this.d.validateUnitValueDouble(this.e.getUnitValue() * 4.1868);
     }
 
     private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.b.a((double)sharedPreferences.getFloat("energy_Wh", 25.0f));
+        this.b.validateUnitValueDouble((double)sharedPreferences.getFloat("energy_Wh", 25.0f));
     }
 
     public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
-        editor.putFloat("energy_Wh", (float)this.b.h());
+        editor.putFloat("energy_Wh", (float)this.b.getUnitValue());
         editor.commit();
     }
 
@@ -61,22 +61,22 @@ public class ConvEnergy extends CalcActivity implements View.OnClickListener {
         }
         double d2 = intent.getDoubleExtra(String.valueOf(this.getPackageName()) + ".comp_value", 0.0);
         if ((n2 = this.a(R.id.energy_Wh, n2)) == R.id.energy_Wh) {
-            this.b.a(d2);
+            this.b.validateUnitValueDouble(d2);
             this.calcWh();
             return;
         }
         if (n2 == R.id.energy_BTU) {
-            this.c.a(d2);
+            this.c.validateUnitValueDouble(d2);
             this.calcBTU();
             return;
         }
         if (n2 == R.id.energy_J) {
-            this.d.a(d2);
+            this.d.validateUnitValueDouble(d2);
             this.calcJ();
             return;
         }
         if (n2 == R.id.energy_cal) {
-            this.e.a(d2);
+            this.e.validateUnitValueDouble(d2);
             this.calcCal();
             return;
         }
@@ -87,13 +87,13 @@ public class ConvEnergy extends CalcActivity implements View.OnClickListener {
         Intent intent = new Intent((Context)this, (Class)SetValueDialog.class);
         int n2 = view.getId();
         if (n2 == R.id.energy_Wh) {
-            this.b.a(intent, string);
+            this.b.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.energy_BTU) {
-            this.c.a(intent, string);
+            this.c.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.energy_J) {
-            this.d.a(intent, string);
+            this.d.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.energy_cal) {
-            this.e.a(intent, string);
+            this.e.setValueDialogIntent(intent, string);
         }
         this.startActivityForResult(intent, n2);
     }

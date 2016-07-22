@@ -13,5 +13,5 @@ public enum EIAValuesLines {
 
     private static final EIAValuesLines[] g = new EIAValuesLines[]{a, b, c, d, e, f};
 
-    private EIAValuesLines(String var1, int var2) {}
+    EIAValuesLines(String var1, int var2) {}
 }

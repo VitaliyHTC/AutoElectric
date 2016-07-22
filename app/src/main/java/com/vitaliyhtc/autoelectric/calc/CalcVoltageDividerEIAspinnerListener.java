@@ -12,9 +12,9 @@ class CalcVoltageDividerEIAspinnerListener implements AdapterView.OnItemSelected
 
     public void onItemSelected(AdapterView adapterView, View view, int n2, long l2) {
         CalcVoltageDivider.a(this.calcVoltageDivider).setSelection(n2);
-        CalcVoltageDivider.b(this.calcVoltageDivider).a(n2);
-        this.calcVoltageDivider.a(CalcVoltageDivider.c(this.calcVoltageDivider).h() /
-                CalcVoltageDivider.d(this.calcVoltageDivider).h() - 1.0);
+        CalcVoltageDivider.b(this.calcVoltageDivider).selectEIAValuesLine(n2);
+        this.calcVoltageDivider.a(CalcVoltageDivider.c(this.calcVoltageDivider).getUnitValue() /
+                CalcVoltageDivider.d(this.calcVoltageDivider).getUnitValue() - 1.0);
     }
 
     public void onNothingSelected(AdapterView adapterView) {

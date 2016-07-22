@@ -33,19 +33,19 @@ public class ConvFreq extends CalcActivity implements View.OnClickListener {
                 return;
             }
             case 1: {
-                this.d.a(3.0E8);
+                this.d.validateUnitValueDouble(3.0E8);
                 return;
             }
             case 2: {
-                this.d.a(2.25E8);
+                this.d.validateUnitValueDouble(2.25E8);
                 return;
             }
             case 3: {
-                this.d.a(343.0);
+                this.d.validateUnitValueDouble(343.0);
                 return;
             }
             case 4: {
-                this.d.a(1600.0);
+                this.d.validateUnitValueDouble(1600.0);
             }
         }
     }
@@ -59,41 +59,41 @@ public class ConvFreq extends CalcActivity implements View.OnClickListener {
     }
 
     private void b() {
-        this.b.a(1.0 / this.c.h());
-        this.e.a(this.d.h() / this.b.h());
+        this.b.validateUnitValueDouble(1.0 / this.c.getUnitValue());
+        this.e.validateUnitValueDouble(this.d.getUnitValue() / this.b.getUnitValue());
         this.e();
     }
 
     private void c() {
-        this.b.a(this.d.h() / this.e.h());
-        this.c.a(1.0 / this.b.h());
+        this.b.validateUnitValueDouble(this.d.getUnitValue() / this.e.getUnitValue());
+        this.c.validateUnitValueDouble(1.0 / this.b.getUnitValue());
         this.e();
     }
 
     private void d() {
-        this.c.a(1.0 / this.b.h());
-        this.e.a(this.d.h() / this.b.h());
+        this.c.validateUnitValueDouble(1.0 / this.b.getUnitValue());
+        this.e.validateUnitValueDouble(this.d.getUnitValue() / this.b.getUnitValue());
         this.e();
     }
 
     private void e() {
-        this.f.a(this.e.h() / 2.0);
-        this.g.a(this.e.h() / 4.0);
-        this.h.a(this.e.h() / 8.0);
-        this.j.setText((CharSequence)(String.valueOf(this.f.l()) + " - " + this.g.l() + " - " + this.h.l() + '\n'));
+        this.f.validateUnitValueDouble(this.e.getUnitValue() / 2.0);
+        this.g.validateUnitValueDouble(this.e.getUnitValue() / 4.0);
+        this.h.validateUnitValueDouble(this.e.getUnitValue() / 8.0);
+        this.j.setText((CharSequence)(String.valueOf(this.f.getTextViewString()) + " - " + this.g.getTextViewString() + " - " + this.h.getTextViewString() + '\n'));
     }
 
     private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.b.a((double)sharedPreferences.getFloat("convFreq_freq", 1000.0f));
-        this.d.a((double)sharedPreferences.getFloat("convFreq_Wvel", 3.0E8f));
+        this.b.validateUnitValueDouble((double)sharedPreferences.getFloat("convFreq_freq", 1000.0f));
+        this.d.validateUnitValueDouble((double)sharedPreferences.getFloat("convFreq_Wvel", 3.0E8f));
         this.i.setSelection(sharedPreferences.getInt("convFreq_spinWvel", 1));
     }
 
     public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
-        editor.putFloat("convFreq_freq", (float)this.b.h());
-        editor.putFloat("convFreq_Wvel", (float)this.d.h());
+        editor.putFloat("convFreq_freq", (float)this.b.getUnitValue());
+        editor.putFloat("convFreq_Wvel", (float)this.d.getUnitValue());
         editor.putInt("convFreq_spinWvel", this.i.getSelectedItemPosition());
         editor.commit();
     }
@@ -106,23 +106,23 @@ public class ConvFreq extends CalcActivity implements View.OnClickListener {
         }
         double d2 = intent.getDoubleExtra(String.valueOf(this.getPackageName()) + ".comp_value", 0.0);
         if ((n2 = this.a(R.id.freq_btnFreq, n2)) == R.id.freq_btnFreq) {
-            this.b.a(d2);
+            this.b.validateUnitValueDouble(d2);
             this.d();
             return;
         }
         if (n2 == R.id.freq_btnPer) {
-            this.c.a(d2);
+            this.c.validateUnitValueDouble(d2);
             this.b();
             return;
         }
         if (n2 == R.id.freq_btnWvel) {
-            this.d.a(d2);
+            this.d.validateUnitValueDouble(d2);
             this.i.setSelection(0);
             this.d();
             return;
         }
         if (n2 != R.id.freq_btnWlen) return;
-        this.e.a(d2);
+        this.e.validateUnitValueDouble(d2);
         this.c();
     }
 
@@ -131,13 +131,13 @@ public class ConvFreq extends CalcActivity implements View.OnClickListener {
         Intent intent = new Intent((Context)this, (Class)SetValueDialog.class);
         int n2 = view.getId();
         if (n2 == R.id.freq_btnFreq) {
-            this.b.a(intent, string);
+            this.b.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.freq_btnPer) {
-            this.c.a(intent, string);
+            this.c.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.freq_btnWvel) {
-            this.d.a(intent, string);
+            this.d.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.freq_btnWlen) {
-            this.e.a(intent, string);
+            this.e.setValueDialogIntent(intent, string);
         }
         this.startActivityForResult(intent, n2);
     }

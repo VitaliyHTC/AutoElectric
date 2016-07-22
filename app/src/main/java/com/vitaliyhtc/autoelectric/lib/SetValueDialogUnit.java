@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public final class SetValueDialogUnit {
     final SetValueDialog setValueDialog;
-    private ArrayList unitsArray;
+    private ArrayList unitsArraySymbols;
     private String compUnit;
 
     public SetValueDialogUnit(SetValueDialog setValueDialog, String string) {
         this.setValueDialog = setValueDialog;
-        this.unitsArray = new ArrayList();
+        this.unitsArraySymbols = new ArrayList();
         this.compUnit = string;
         Boolean bl2 = false;
         if (string.equals("s")) {
@@ -17,44 +17,44 @@ public final class SetValueDialogUnit {
         }
         if(!string.equals("") && !string.equals("RC")) {
             if(string.startsWith("°C")) {
-                if(!SetValueDialog.a(setValueDialog).getBoolean("Unit_tempC", true) && string.equals("°C")) {
-                    this.unitsArray.add("°F");
+                if(!SetValueDialog.getSharedPreferences(setValueDialog).getBoolean("Unit_tempC", true) && string.equals("°C")) {
+                    this.unitsArraySymbols.add("°F");
                 } else {
-                    this.unitsArray.add(string);
+                    this.unitsArraySymbols.add(string);
                 }
             } else if(!string.startsWith("dB") && !string.equals("%") && !string.equals("bit") && !string.equals("°")) {
-                if(!SetValueDialog.a(setValueDialog).getBoolean("Unit_SI", true) && string.equals("m")) {
-                    this.unitsArray.add("in");
-                    this.unitsArray.add("ft");
-                    this.unitsArray.add("mi");
+                if(!SetValueDialog.getSharedPreferences(setValueDialog).getBoolean("Unit_SI", true) && string.equals("m")) {
+                    this.unitsArraySymbols.add("in");
+                    this.unitsArraySymbols.add("ft");
+                    this.unitsArraySymbols.add("mi");
                 } else if(bl2.booleanValue()) {
-                    this.unitsArray.add("p" + string);
-                    this.unitsArray.add("n" + string);
-                    this.unitsArray.add("μ" + string);
-                    this.unitsArray.add("m" + string);
-                    this.unitsArray.add(string);
+                    this.unitsArraySymbols.add("p" + string);
+                    this.unitsArraySymbols.add("n" + string);
+                    this.unitsArraySymbols.add("μ" + string);
+                    this.unitsArraySymbols.add("m" + string);
+                    this.unitsArraySymbols.add(string);
                 } else {
-                    this.unitsArray.add("p" + string);
-                    this.unitsArray.add("n" + string);
-                    this.unitsArray.add("μ" + string);
-                    this.unitsArray.add("m" + string);
-                    this.unitsArray.add(string);
-                    this.unitsArray.add("k" + string);
-                    this.unitsArray.add("M" + string);
-                    this.unitsArray.add("G" + string);
+                    this.unitsArraySymbols.add("p" + string);
+                    this.unitsArraySymbols.add("n" + string);
+                    this.unitsArraySymbols.add("μ" + string);
+                    this.unitsArraySymbols.add("m" + string);
+                    this.unitsArraySymbols.add(string);
+                    this.unitsArraySymbols.add("k" + string);
+                    this.unitsArraySymbols.add("M" + string);
+                    this.unitsArraySymbols.add("G" + string);
                 }
             } else {
-                this.unitsArray.add(string);
+                this.unitsArraySymbols.add(string);
             }
         }
     }
 
-    public double a(int n2) {
-        String string = (String)this.unitsArray.get(n2);
+    public double getUnitMultiplier(int n2) {
+        String string = (String)this.unitsArraySymbols.get(n2);
         if (string.equals("m") || string.equals("m/s")) {
             return 1.0;
         }
-        if (!SetValueDialog.a(this.setValueDialog).getBoolean("Unit_SI", true) && this.compUnit.equals("m")) {
+        if (!SetValueDialog.getSharedPreferences(this.setValueDialog).getBoolean("Unit_SI", true) && this.compUnit.equals("m")) {
             switch (string.charAt(0)) {
                 default: {
                     return 1.0;
@@ -98,25 +98,25 @@ public final class SetValueDialogUnit {
         }
     }
 
-    public int a(char c2) {
+    public int getCompUnitIndex(char c2) {
         String string;
         if (c2 == '\u0000') {
             string = this.compUnit;
         }else{
             string = c2 + this.compUnit;
         }
-        return this.unitsArray.indexOf(string);
+        return this.unitsArraySymbols.indexOf(string);
     }
 
-    public int a(String string) {
-        return this.unitsArray.indexOf(string);
+    public int getUnitSymbolIndex(String string) {
+        return this.unitsArraySymbols.indexOf(string);
     }
 
-    public ArrayList a() {
-        return this.unitsArray;
+    public ArrayList getUnitsArraySymbols() {
+        return this.unitsArraySymbols;
     }
 
-    public int b() {
-        return this.unitsArray.size();
+    public int getUnitsArraySymbolsSize() {
+        return this.unitsArraySymbols.size();
     }
 }

@@ -10,7 +10,7 @@ class CalcOhmSetThisListener implements View.OnClickListener {
     }
 
     public void onClick(View view) {
-        CalcOhm.a(this.calcOhm).a(CalcOhm.b(this.calcOhm).h());
+        CalcOhm.a(this.calcOhm).validateUnitValueDouble(CalcOhm.b(this.calcOhm).getUnitValue());
         CalcOhm.a(this.calcOhm, CalcOhm.b);
     }
 }

@@ -13,15 +13,15 @@ public class UnitValueTextViewHandler implements Runnable {
     @TargetApi(value=16)
     @Override
     public void run() {
-        if (Build.VERSION.SDK_INT < 16 || UnitValue.a(this.unitValue).getMaxLines() == -1) return;
-        int n2 = UnitValue.b(this.unitValue);
+        if (Build.VERSION.SDK_INT < 16 || UnitValue.getTextView(this.unitValue).getMaxLines() == -1) return;
+        int n2 = UnitValue.getRoundDigits(this.unitValue);
         do {
-            if (UnitValue.a(this.unitValue).getLineCount() <= UnitValue.a(this.unitValue).getMaxLines() || UnitValue.b(this.unitValue) < 0) {
-                this.unitValue.b(n2);
+            if (UnitValue.getTextView(this.unitValue).getLineCount() <= UnitValue.getTextView(this.unitValue).getMaxLines() || UnitValue.getRoundDigits(this.unitValue) < 0) {
+                this.unitValue.setRoundDigits(n2);
                 return;
             }
-            this.unitValue.b(UnitValue.b(this.unitValue) - 1);
-            UnitValue.a(this.unitValue).setText(this.unitValue.l());
+            this.unitValue.setRoundDigits(UnitValue.getRoundDigits(this.unitValue) - 1);
+            UnitValue.getTextView(this.unitValue).setText(this.unitValue.getTextViewString());
         } while (true);
     }
 }

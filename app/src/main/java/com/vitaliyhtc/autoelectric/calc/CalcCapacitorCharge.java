@@ -44,15 +44,15 @@ public class CalcCapacitorCharge extends CalcActivity implements View.OnClickLis
     private void a(int n2) {
         if (n2 == R.id.charge_btnRC) {
             ArrayList arrayList = new ArrayList();
-            arrayList.add(this.b.j());
-            arrayList.add(this.d.j());
+            arrayList.add(this.b.getUnitName());
+            arrayList.add(this.d.getUnitName());
             CharSequence[] charSequences = (CharSequence[])arrayList.toArray(new CharSequence[0]);
             new AlertDialog.Builder((Context)this).setTitle(R.string.select_calc).setCancelable(false)
                     .setItems(charSequences, (DialogInterface.OnClickListener)new CalcCapacitorChargeDIListener(this, charSequences)).show();
             return;
         }
         if (n2 == R.id.charge_btnT) {
-            this.k.a(this.h.h() / this.g.h());
+            this.k.validateUnitValueDouble(this.h.getUnitValue() / this.g.getUnitValue());
             this.b();
             return;
         }
@@ -60,32 +60,32 @@ public class CalcCapacitorCharge extends CalcActivity implements View.OnClickLis
     }
 
     private void b() {
-        this.h.a(this.k.h() * this.g.h());
-        this.i.a(this.e.h() * Math.exp((- this.h.h()) / this.g.h()));
-        this.j.a(this.f.h() * (1.0 - Math.exp((- this.h.h()) / this.g.h())));
+        this.h.validateUnitValueDouble(this.k.getUnitValue() * this.g.getUnitValue());
+        this.i.validateUnitValueDouble(this.e.getUnitValue() * Math.exp((- this.h.getUnitValue()) / this.g.getUnitValue()));
+        this.j.validateUnitValueDouble(this.f.getUnitValue() * (1.0 - Math.exp((- this.h.getUnitValue()) / this.g.getUnitValue())));
     }
 
     private void c() {
-        this.g.a(this.b.h() * this.d.h());
-        this.e.a(this.c.h() / this.b.h());
-        this.f.a(this.d.h() * this.c.h());
+        this.g.validateUnitValueDouble(this.b.getUnitValue() * this.d.getUnitValue());
+        this.e.validateUnitValueDouble(this.c.getUnitValue() / this.b.getUnitValue());
+        this.f.validateUnitValueDouble(this.d.getUnitValue() * this.c.getUnitValue());
         this.b();
     }
 
     private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.b.a((double)sharedPreferences.getFloat("Ccapcharge_R", 62.0f));
-        this.d.a((double)sharedPreferences.getFloat("Ccapcharge_C", 4.7E-5f));
-        this.c.a((double)sharedPreferences.getFloat("Ccapcharge_V", 14.4f));
-        this.k.a((double)sharedPreferences.getFloat("Ccapcharge_tRC", 2.0f));
+        this.b.validateUnitValueDouble((double)sharedPreferences.getFloat("Ccapcharge_R", 62.0f));
+        this.d.validateUnitValueDouble((double)sharedPreferences.getFloat("Ccapcharge_C", 4.7E-5f));
+        this.c.validateUnitValueDouble((double)sharedPreferences.getFloat("Ccapcharge_V", 14.4f));
+        this.k.validateUnitValueDouble((double)sharedPreferences.getFloat("Ccapcharge_tRC", 2.0f));
     }
 
     public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
-        editor.putFloat("Ccapcharge_R", (float)this.b.h());
-        editor.putFloat("Ccapcharge_C", (float)this.d.h());
-        editor.putFloat("Ccapcharge_V", (float)this.c.h());
-        editor.putFloat("Ccapcharge_tRC", (float)this.k.h());
+        editor.putFloat("Ccapcharge_R", (float)this.b.getUnitValue());
+        editor.putFloat("Ccapcharge_C", (float)this.d.getUnitValue());
+        editor.putFloat("Ccapcharge_V", (float)this.c.getUnitValue());
+        editor.putFloat("Ccapcharge_tRC", (float)this.k.getUnitValue());
         editor.commit();
     }
 
@@ -97,17 +97,17 @@ public class CalcCapacitorCharge extends CalcActivity implements View.OnClickLis
         }
         double d2 = intent.getDoubleExtra(String.valueOf(this.getPackageName()) + ".comp_value", 0.0);
         if ((n2 = this.a(R.id.charge_btnR, n2)) == R.id.charge_btnR) {
-            this.b.a(d2);
+            this.b.validateUnitValueDouble(d2);
         } else if (n2 == R.id.charge_btnV) {
-            this.c.a(d2);
+            this.c.validateUnitValueDouble(d2);
         } else if (n2 == R.id.charge_btnC) {
-            this.d.a(d2);
+            this.d.validateUnitValueDouble(d2);
         } else if (n2 == R.id.charge_btnRC) {
-            this.g.a(d2);
+            this.g.validateUnitValueDouble(d2);
         } else if (n2 == R.id.charge_btnT) {
-            this.h.a(d2);
+            this.h.validateUnitValueDouble(d2);
         } else if (n2 == R.id.charge_btntRC) {
-            this.k.a(d2);
+            this.k.validateUnitValueDouble(d2);
         }
         this.a(n2);
     }
@@ -117,17 +117,17 @@ public class CalcCapacitorCharge extends CalcActivity implements View.OnClickLis
         Intent intent = new Intent((Context)this, (Class)SetValueDialog.class);
         int n2 = view.getId();
         if (n2 == R.id.charge_btnR) {
-            this.b.a(intent, string);
+            this.b.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.charge_btnV) {
-            this.c.a(intent, string);
+            this.c.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.charge_btnC) {
-            this.d.a(intent, string);
+            this.d.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.charge_btnRC) {
-            this.g.a(intent, string);
+            this.g.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.charge_btnT) {
-            this.h.a(intent, string);
+            this.h.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.charge_btntRC) {
-            this.k.a(intent, string);
+            this.k.setValueDialogIntent(intent, string);
         }
         this.startActivityForResult(intent, n2);
     }

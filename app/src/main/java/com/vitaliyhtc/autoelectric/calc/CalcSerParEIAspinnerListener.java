@@ -12,7 +12,7 @@ class CalcSerParEIAspinnerListener implements AdapterView.OnItemSelectedListener
 
     public void onItemSelected(AdapterView adapterView, View view, int n2, long l2) {
         CalcSerPar.a(this.calcSerPar, n2);
-        CalcSerPar.a(this.calcSerPar).a(n2);
+        CalcSerPar.a(this.calcSerPar).selectEIAValuesLine(n2);
         CalcSerPar.b(this.calcSerPar);
     }
 

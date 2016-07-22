@@ -19,31 +19,31 @@ public class ConvEngine extends CalcActivity implements View.OnClickListener {
     private UnitValue e; //W
 
     private void calcLbFt() {
-        this.c.a(this.b.h() * 1.35581794833);
+        this.c.validateUnitValueDouble(this.b.getUnitValue() * 1.35581794833);
     }
 
     private void calcNm() {
-        this.b.a(this.c.h() / 1.35581794833);
+        this.b.validateUnitValueDouble(this.c.getUnitValue() / 1.35581794833);
     }
 
     private void calcHp() {
-        this.e.a((this.d.h() * 1000 ) / 1.3410220888);
+        this.e.validateUnitValueDouble((this.d.getUnitValue() * 1000 ) / 1.3410220888);
     }
 
     private void calcKw() {
-        this.d.a((this.e.h() * 1.3410220888) / 1000);
+        this.d.validateUnitValueDouble((this.e.getUnitValue() * 1.3410220888) / 1000);
     }
 
     private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.b.a((double)sharedPreferences.getFloat("engine_torque_lbft", 650.0f));
-        this.d.a((double)sharedPreferences.getFloat("engine_power_hp", 650.0f));
+        this.b.validateUnitValueDouble((double)sharedPreferences.getFloat("engine_torque_lbft", 650.0f));
+        this.d.validateUnitValueDouble((double)sharedPreferences.getFloat("engine_power_hp", 650.0f));
     }
 
     public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
-        editor.putFloat("engine_torque_lbft", (float)this.b.h());
-        editor.putFloat("engine_power_hp", (float)this.d.h());
+        editor.putFloat("engine_torque_lbft", (float)this.b.getUnitValue());
+        editor.putFloat("engine_power_hp", (float)this.d.getUnitValue());
         editor.commit();
     }
 
@@ -55,22 +55,22 @@ public class ConvEngine extends CalcActivity implements View.OnClickListener {
         }
         double d2 = intent.getDoubleExtra(String.valueOf(this.getPackageName()) + ".comp_value", 0.0);
         if ((n2 = this.a(R.id.torque_lbft, n2)) == R.id.torque_lbft) {
-            this.b.a(d2);
+            this.b.validateUnitValueDouble(d2);
             this.calcLbFt();
             return;
         }
         if (n2 == R.id.torque_nm) {
-            this.c.a(d2);
+            this.c.validateUnitValueDouble(d2);
             this.calcNm();
             return;
         }
         if (n2 == R.id.power_hp) {
-            this.d.a(d2);
+            this.d.validateUnitValueDouble(d2);
             this.calcHp();
             return;
         }
         if (n2 == R.id.power_kw) {
-            this.e.a(d2);
+            this.e.validateUnitValueDouble(d2);
             this.calcKw();
             return;
         }
@@ -81,13 +81,13 @@ public class ConvEngine extends CalcActivity implements View.OnClickListener {
         Intent intent = new Intent((Context)this, (Class)SetValueDialog.class);
         int n2 = view.getId();
         if (n2 == R.id.torque_lbft) {
-            this.b.a(intent, string);
+            this.b.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.torque_nm) {
-            this.c.a(intent, string);
+            this.c.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.power_hp) {
-            this.d.a(intent, string);
+            this.d.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.power_kw) {
-            this.e.a(intent, string);
+            this.e.setValueDialogIntent(intent, string);
         }
         this.startActivityForResult(intent, n2);
     }

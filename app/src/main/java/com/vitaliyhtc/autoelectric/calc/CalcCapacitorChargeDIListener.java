@@ -12,10 +12,10 @@ class CalcCapacitorChargeDIListener implements DialogInterface.OnClickListener {
     }
 
     public void onClick(DialogInterface dialogInterface, int n2) {
-        if (this.charSequences[n2].equals(CalcCapacitorCharge.a(this.calcCapacitorCharge).j())) {
-            CalcCapacitorCharge.a(this.calcCapacitorCharge).a(CalcCapacitorCharge.b(this.calcCapacitorCharge).h() / CalcCapacitorCharge.c(this.calcCapacitorCharge).h());
-        } else if (this.charSequences[n2].equals(CalcCapacitorCharge.c(this.calcCapacitorCharge).j())) {
-            CalcCapacitorCharge.c(this.calcCapacitorCharge).a(CalcCapacitorCharge.b(this.calcCapacitorCharge).h() / CalcCapacitorCharge.a(this.calcCapacitorCharge).h());
+        if (this.charSequences[n2].equals(CalcCapacitorCharge.a(this.calcCapacitorCharge).getUnitName())) {
+            CalcCapacitorCharge.a(this.calcCapacitorCharge).validateUnitValueDouble(CalcCapacitorCharge.b(this.calcCapacitorCharge).getUnitValue() / CalcCapacitorCharge.c(this.calcCapacitorCharge).getUnitValue());
+        } else if (this.charSequences[n2].equals(CalcCapacitorCharge.c(this.calcCapacitorCharge).getUnitName())) {
+            CalcCapacitorCharge.c(this.calcCapacitorCharge).validateUnitValueDouble(CalcCapacitorCharge.b(this.calcCapacitorCharge).getUnitValue() / CalcCapacitorCharge.a(this.calcCapacitorCharge).getUnitValue());
         }
         CalcCapacitorCharge.d(this.calcCapacitorCharge);
     }

@@ -12,7 +12,7 @@ class CalcOhmEIAspinnerListener implements AdapterView.OnItemSelectedListener {
 
     public void onItemSelected(AdapterView adapterView, View view, int n2, long l2) {
         CalcOhm.b(this.calcOhm, n2);
-        CalcOhm.c(this.calcOhm).a(n2);
+        CalcOhm.c(this.calcOhm).selectEIAValuesLine(n2);
         CalcOhm.d(this.calcOhm);
     }
 

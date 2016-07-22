@@ -14,13 +14,13 @@ class CalcPowerDIListener implements DialogInterface.OnClickListener {
     }
 
     public void onClick(DialogInterface dialogInterface, int n2) {
-        if (this.charSequences[n2].equals(CalcPower.b(this.calcPower).j())) {
+        if (this.charSequences[n2].equals(CalcPower.b(this.calcPower).getUnitName())) {
             CalcPower.b(this.calcPower, this.anInt);
             CalcPower.c(this.calcPower);
-        } else if (this.charSequences[n2].equals(CalcPower.d(this.calcPower).j())) {
+        } else if (this.charSequences[n2].equals(CalcPower.d(this.calcPower).getUnitName())) {
             CalcPower.b(this.calcPower, this.anInt);
             CalcPower.e(this.calcPower);
-        } else if (this.charSequences[n2].toString().startsWith(CalcPower.f(this.calcPower).j())) {
+        } else if (this.charSequences[n2].toString().startsWith(CalcPower.f(this.calcPower).getUnitName())) {
             CalcPower.c(this.calcPower, this.anInt);
         }
         CalcPower.a(this.calcPower);

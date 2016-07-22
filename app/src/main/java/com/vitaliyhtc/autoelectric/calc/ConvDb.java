@@ -60,17 +60,17 @@ public class ConvDb extends CalcActivity implements View.OnClickListener {
 
     void a(double d2, String string, String string2, String string3) {
         if (d2 != 0.0) {
-            this.i.a(d2);
+            this.i.validateUnitValueDouble(d2);
         }
-        this.i.a(string);
-        this.h.a(string);
-        this.h.b(string3);
-        this.g.a(string2);
+        this.i.setUnitSymbol(string);
+        this.h.setUnitSymbol(string);
+        this.h.setTextViewString(string3);
+        this.g.setUnitSymbol(string2);
         if (string2 == "dB") {
-            this.i.b(true);
+            this.i.enableTextView(true);
             return;
         }
-        this.i.b(false);
+        this.i.enableTextView(false);
     }
 
     void b() {
@@ -148,39 +148,39 @@ public class ConvDb extends CalcActivity implements View.OnClickListener {
 
     void c() {
         int n2 = this.k.getSelectedItemPosition();
-        double d2 = this.h.h() / this.i.h();
-        this.j.a(d2);
+        double d2 = this.h.getUnitValue() / this.i.getUnitValue();
+        this.j.validateUnitValueDouble(d2);
         n2 = n2 == 0 || n2 == 3 ? 10 : 20;
         UnitValue unitValue2 = this.g;
         double d3 = n2;
-        unitValue2.a(Math.log(d2) * d3 * Math.log10(2.718281828459045));
+        unitValue2.validateUnitValueDouble(Math.log(d2) * d3 * Math.log10(2.718281828459045));
     }
 
     void d() {
-        this.h.a(this.j.h() * this.i.h());
+        this.h.validateUnitValueDouble(this.j.getUnitValue() * this.i.getUnitValue());
         this.c();
     }
 
     void e() {
         int n2 = this.k.getSelectedItemPosition();
         n2 = n2 == 0 || n2 == 3 ? 10 : 20;
-        double d2 = Math.pow(10.0, this.g.h() / (double)n2);
-        this.h.a(this.i.h() * d2);
-        this.j.a(d2);
+        double d2 = Math.pow(10.0, this.g.getUnitValue() / (double)n2);
+        this.h.validateUnitValueDouble(this.i.getUnitValue() * d2);
+        this.j.validateUnitValueDouble(d2);
     }
 
     private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.h.a((double)sharedPreferences.getFloat("conv_db_val", 100.0f));
-        this.i.a((double)sharedPreferences.getFloat("conv_db_rif", 1.0f));
+        this.h.validateUnitValueDouble((double)sharedPreferences.getFloat("conv_db_val", 100.0f));
+        this.i.validateUnitValueDouble((double)sharedPreferences.getFloat("conv_db_rif", 1.0f));
         this.k.setSelection(sharedPreferences.getInt("conv_db_spinType", 0));
         this.l.setSelection(sharedPreferences.getInt("conv_db_spinUnit", 0));
     }
 
     public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
-        editor.putFloat("conv_db_val", (float)this.h.h());
-        editor.putFloat("conv_db_rif", (float)this.i.h());
+        editor.putFloat("conv_db_val", (float)this.h.getUnitValue());
+        editor.putFloat("conv_db_rif", (float)this.i.getUnitValue());
         editor.putInt("conv_db_spinType", this.k.getSelectedItemPosition());
         editor.putInt("conv_db_spinUnit", this.l.getSelectedItemPosition());
         editor.commit();
@@ -194,22 +194,22 @@ public class ConvDb extends CalcActivity implements View.OnClickListener {
         }
         double d2 = intent.getDoubleExtra(String.valueOf(this.getPackageName()) + ".comp_value", 0.0);
         if ((n2 = this.a(R.id.db_btn_decibel, n2)) == R.id.db_btn_decibel) {
-            this.g.a(d2);
+            this.g.validateUnitValueDouble(d2);
             this.e();
             return;
         }
         if (n2 == R.id.db_btn_value) {
-            this.h.a(d2);
+            this.h.validateUnitValueDouble(d2);
             this.c();
             return;
         }
         if (n2 == R.id.db_btn_gain) {
-            this.j.a(d2);
+            this.j.validateUnitValueDouble(d2);
             this.d();
             return;
         }
         if (n2 != R.id.db_btn_ref) return;
-        this.i.a(d2);
+        this.i.validateUnitValueDouble(d2);
         this.d();
     }
 
@@ -218,13 +218,13 @@ public class ConvDb extends CalcActivity implements View.OnClickListener {
         Intent intent = new Intent((Context)this, (Class)SetValueDialog.class);
         int n2 = view.getId();
         if (n2 == R.id.db_btn_decibel) {
-            this.g.a(intent, string);
+            this.g.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.db_btn_value) {
-            this.h.a(intent, string);
+            this.h.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.db_btn_gain) {
-            this.j.a(intent, string);
+            this.j.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.db_btn_ref) {
-            this.i.a(intent, string);
+            this.i.setValueDialogIntent(intent, string);
         }
         this.startActivityForResult(intent, n2);
     }
@@ -235,8 +235,8 @@ public class ConvDb extends CalcActivity implements View.OnClickListener {
         this.setContentView(R.layout.conv_db);
         this.setTitle(R.string.list_conv_db);
         this.g = new UnitValue(this.getString(R.string.decibel), "", "\n", true, (Context)this, (TextView)this.findViewById(R.id.db_btn_decibel), this);
-        this.g.e(true);
-        this.g.d(false);
+        this.g.setCompSign(true);
+        this.g.setMustBeGreaterThan(false);
         this.h = new UnitValue("***", "", "\n", false, (Context)this, (TextView)this.findViewById(R.id.db_btn_value), this);
         this.i = new UnitValue(this.getString(R.string.db_ref), "", "\n", false, (Context)this, (TextView)this.findViewById(R.id.db_btn_ref), this);
         this.j = new UnitValue(this.getString(R.string.gain), "", "\n", false, (Context)this, (TextView)this.findViewById(R.id.db_btn_gain), this);

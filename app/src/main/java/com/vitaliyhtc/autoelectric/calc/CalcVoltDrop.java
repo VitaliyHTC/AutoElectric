@@ -86,20 +86,20 @@ public class CalcVoltDrop extends CalcActivity implements View.OnClickListener {
                 return;
             }
             case 0: {
-                double d2 = 5.0 * Math.pow(92.0, (36.0 - this.l.h()) / 39.0);
+                double d2 = 5.0 * Math.pow(92.0, (36.0 - this.l.getUnitValue()) / 39.0);
                 this.d = d2 * d2;
                 return;
             }
             case 1: {
-                this.d = Double.parseDouble(this.l.e()) * 1000.0;
+                this.d = Double.parseDouble(this.l.getUnitValueString()) * 1000.0;
                 return;
             }
             case 2: {
-                this.d = 3.141592653589793 * this.l.h() * this.l.h() * 40000.0 / 20.26829916389991;
+                this.d = 3.141592653589793 * this.l.getUnitValue() * this.l.getUnitValue() * 40000.0 / 20.26829916389991;
                 return;
             }
             case 3: {
-                this.d = this.l.h() * 40000.0 / 20.26829916389991;
+                this.d = this.l.getUnitValue() * 40000.0 / 20.26829916389991;
             }
         }
     }
@@ -141,15 +141,15 @@ public class CalcVoltDrop extends CalcActivity implements View.OnClickListener {
         double d3 = Math.sqrt(d2 / 3.141592653589793) * 2.0;
         this.s.setText((CharSequence)("\u200e" + Long.toString(Math.round(this.d)) + " cmil (" + this.b(d2) + " mm\u00b2)"));
         this.t.setText((CharSequence)(String.valueOf(this.getString(R.string.diameter)) + ": \u200e" + this.b(d3 / 25.4) + " inch, " + this.b(d3) + " mm"));
-        d2 = this.f.h() / 0.3048;
-        this.i.a(d2 * (this.e * this.b) * this.h.h() / this.d * this.c);
-        if (this.i.h() > this.g.h()) {
-            this.i.a(this.g.h());
+        d2 = this.f.getUnitValue() / 0.3048;
+        this.i.validateUnitValueDouble(d2 * (this.e * this.b) * this.h.getUnitValue() / this.d * this.c);
+        if (this.i.getUnitValue() > this.g.getUnitValue()) {
+            this.i.validateUnitValueDouble(this.g.getUnitValue());
         }
-        this.j.a(this.i.h() / this.g.h() * 100.0);
-        this.r.setText((CharSequence)this.a(this.j.h()));
-        this.k.a(this.g.h() - this.i.h());
-        this.m.a(this.i.h() * this.h.h());
+        this.j.validateUnitValueDouble(this.i.getUnitValue() / this.g.getUnitValue() * 100.0);
+        this.r.setText((CharSequence)this.a(this.j.getUnitValue()));
+        this.k.validateUnitValueDouble(this.g.getUnitValue() - this.i.getUnitValue());
+        this.m.validateUnitValueDouble(this.i.getUnitValue() * this.h.getUnitValue());
     }
 
     private void c(int n2) {
@@ -170,25 +170,25 @@ public class CalcVoltDrop extends CalcActivity implements View.OnClickListener {
 
     private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.g.a((double)sharedPreferences.getFloat("voltdrop_V", 14.4f));
-        this.h.a((double)sharedPreferences.getFloat("voltdrop_I", 370.0f));
-        this.f.a((double)sharedPreferences.getFloat("voltdrop_Length", 3.0f));
+        this.g.validateUnitValueDouble((double)sharedPreferences.getFloat("voltdrop_V", 14.4f));
+        this.h.validateUnitValueDouble((double)sharedPreferences.getFloat("voltdrop_I", 370.0f));
+        this.f.validateUnitValueDouble((double)sharedPreferences.getFloat("voltdrop_Length", 3.0f));
         this.p.setSelection(sharedPreferences.getInt("voltdrop_spinVoltType", 0));
         this.n.setSelection(sharedPreferences.getInt("voltdrop_spinMaterial", 0));
         this.o.setSelection(sharedPreferences.getInt("voltdrop_spinDiam", 3));
-        this.l.a((double)sharedPreferences.getFloat("voltdrop_Wsize", 95.0f));
+        this.l.validateUnitValueDouble((double)sharedPreferences.getFloat("voltdrop_Wsize", 95.0f));
         this.q.setSelection(sharedPreferences.getInt("voltdrop_spinLength", 0));
     }
 
     public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
-        editor.putFloat("voltdrop_V", (float)this.g.h());
-        editor.putFloat("voltdrop_I", (float)this.h.h());
-        editor.putFloat("voltdrop_Length", (float)this.f.h());
+        editor.putFloat("voltdrop_V", (float)this.g.getUnitValue());
+        editor.putFloat("voltdrop_I", (float)this.h.getUnitValue());
+        editor.putFloat("voltdrop_Length", (float)this.f.getUnitValue());
         editor.putInt("voltdrop_spinMaterial", this.n.getSelectedItemPosition());
         editor.putInt("voltdrop_spinVoltType", this.p.getSelectedItemPosition());
         editor.putInt("voltdrop_spinDiam", this.o.getSelectedItemPosition());
-        editor.putFloat("voltdrop_Wsize", (float)this.l.h());
+        editor.putFloat("voltdrop_Wsize", (float)this.l.getUnitValue());
         editor.putInt("voltdrop_spinLength", this.q.getSelectedItemPosition());
         editor.commit();
     }
@@ -201,13 +201,13 @@ public class CalcVoltDrop extends CalcActivity implements View.OnClickListener {
         }
         double d2 = intent.getDoubleExtra(String.valueOf(this.getPackageName()) + ".comp_value", 0.0);
         if ((n2 = this.a(R.id.voltdrop_btn_lenght, n2)) == R.id.voltdrop_btn_lenght) {
-            this.f.a(d2);
+            this.f.validateUnitValueDouble(d2);
         } else if (n2 == R.id.voltdrop_btn_volt) {
-            this.g.a(d2);
+            this.g.validateUnitValueDouble(d2);
         } else if (n2 == R.id.voltdrop_btn_amp) {
-            this.h.a(d2);
+            this.h.validateUnitValueDouble(d2);
         } else if (n2 == R.id.voltdrop_size) {
-            this.l.a(d2);
+            this.l.validateUnitValueDouble(d2);
             this.b();
         }
         this.c();
@@ -218,13 +218,13 @@ public class CalcVoltDrop extends CalcActivity implements View.OnClickListener {
         Intent intent = new Intent((Context)this, (Class)SetValueDialog.class);
         int n2 = view.getId();
         if (n2 == R.id.voltdrop_btn_lenght) {
-            this.f.a(intent, string);
+            this.f.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.voltdrop_btn_volt) {
-            this.g.a(intent, string);
+            this.g.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.voltdrop_btn_amp) {
-            this.h.a(intent, string);
+            this.h.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.voltdrop_size) {
-            this.l.a(intent, string);
+            this.l.setValueDialogIntent(intent, string);
         }
         this.startActivityForResult(intent, n2);
     }

@@ -52,68 +52,68 @@ public class CalcVoltageDivider extends CalcActivity implements View.OnClickList
 
     public void a() {
         if (this.l.isChecked()) {
-            double d2 = this.c.h() * this.d.h() / (this.c.h() + this.d.h());
-            this.f.a(this.e.h() * d2 / (this.b.h() + d2));
-            this.j.a(true);
-            this.j.a(this.f.h() * this.f.h() / this.d.h());
-            this.k.a(this.e.h() / (d2 + this.b.h()));
-            this.i.a(this.e.h() * this.k.h());
+            double d2 = this.c.getUnitValue() * this.d.getUnitValue() / (this.c.getUnitValue() + this.d.getUnitValue());
+            this.f.validateUnitValueDouble(this.e.getUnitValue() * d2 / (this.b.getUnitValue() + d2));
+            this.j.setTextViewVisibility(true);
+            this.j.validateUnitValueDouble(this.f.getUnitValue() * this.f.getUnitValue() / this.d.getUnitValue());
+            this.k.validateUnitValueDouble(this.e.getUnitValue() / (d2 + this.b.getUnitValue()));
+            this.i.validateUnitValueDouble(this.e.getUnitValue() * this.k.getUnitValue());
         } else {
-            this.f.a(this.e.h() * this.c.h() / (this.b.h() + this.c.h()));
-            this.j.a(false);
-            this.k.a(this.e.h() / (this.b.h() + this.c.h()));
-            this.i.a(this.e.h() * this.k.h());
+            this.f.validateUnitValueDouble(this.e.getUnitValue() * this.c.getUnitValue() / (this.b.getUnitValue() + this.c.getUnitValue()));
+            this.j.setTextViewVisibility(false);
+            this.k.validateUnitValueDouble(this.e.getUnitValue() / (this.b.getUnitValue() + this.c.getUnitValue()));
+            this.i.validateUnitValueDouble(this.e.getUnitValue() * this.k.getUnitValue());
         }
-        this.g.a(this.f.h() / this.e.h());
-        this.h.a(this.b.h() / this.c.h());
+        this.g.validateUnitValueDouble(this.f.getUnitValue() / this.e.getUnitValue());
+        this.h.validateUnitValueDouble(this.b.getUnitValue() / this.c.getUnitValue());
     }
 
     public void a(double d2) {
         if (this.m.getSelectedItemPosition() == 1) {
-            d2 = this.b.h() / d2;
+            d2 = this.b.getUnitValue() / d2;
             if (this.l.isChecked()) {
-                this.o.b(this.d.h() * d2 / (this.d.h() - d2));
+                this.o.calcError(this.d.getUnitValue() * d2 / (this.d.getUnitValue() - d2));
             } else {
-                this.o.b(d2);
+                this.o.calcError(d2);
             }
-            this.c.a(this.o.t);
+            this.c.validateUnitValueDouble(this.o.t);
             return;
         }
         if (this.m.getSelectedItemPosition() == 2) {
-            double d3 = this.l.isChecked() ? this.c.h() * this.d.h() / (this.c.h() + this.d.h()) : this.c.h();
-            this.o.b(d3 * d2);
-            this.b.a(this.o.t);
+            double d3 = this.l.isChecked() ? this.c.getUnitValue() * this.d.getUnitValue() / (this.c.getUnitValue() + this.d.getUnitValue()) : this.c.getUnitValue();
+            this.o.calcError(d3 * d2);
+            this.b.validateUnitValueDouble(this.o.t);
             return;
         }
         this.o.a(d2);
         d2 = this.o.i;
         if (!this.l.isChecked()) {
-            this.c.a(this.o.j);
+            this.c.validateUnitValueDouble(this.o.j);
         } else {
             double d4 = this.o.j;
             do {
-                if (d4 <= this.d.h()) {
-                    if (this.d.h() - d4 == 0.0) {
-                        this.c.a(1.0E9);
+                if (d4 <= this.d.getUnitValue()) {
+                    if (this.d.getUnitValue() - d4 == 0.0) {
+                        this.c.validateUnitValueDouble(1.0E9);
                         break;
                     }
-                    this.o.b(this.d.h() * d4 / (this.d.h() - d4));
-                    this.c.a(this.o.t);
+                    this.o.calcError(this.d.getUnitValue() * d4 / (this.d.getUnitValue() - d4));
+                    this.c.validateUnitValueDouble(this.o.t);
                     break;
                 }
                 d2 /= 10.0;
                 d4 /= 10.0;
             } while (true);
         }
-        this.b.a(d2);
+        this.b.validateUnitValueDouble(d2);
     }
 
     private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.b.a((double)sharedPreferences.getFloat("part_R1", 1000.0f));
-        this.c.a((double)sharedPreferences.getFloat("part_R2", 1000.0f));
-        this.d.a((double)sharedPreferences.getFloat("part_RL", 100000.0f));
-        this.e.a((double)sharedPreferences.getFloat("part_Vin", 5.0f));
+        this.b.validateUnitValueDouble((double)sharedPreferences.getFloat("part_R1", 1000.0f));
+        this.c.validateUnitValueDouble((double)sharedPreferences.getFloat("part_R2", 1000.0f));
+        this.d.validateUnitValueDouble((double)sharedPreferences.getFloat("part_RL", 100000.0f));
+        this.e.validateUnitValueDouble((double)sharedPreferences.getFloat("part_Vin", 5.0f));
         this.l.setChecked(sharedPreferences.getBoolean("part_RLon", false));
         this.m.setSelection(sharedPreferences.getInt("part_spinLock", 0));
         this.n.setSelection(sharedPreferences.getInt("part_SpinSerie", 2));
@@ -121,10 +121,10 @@ public class CalcVoltageDivider extends CalcActivity implements View.OnClickList
 
     public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
-        editor.putFloat("part_R1", (float)this.b.h());
-        editor.putFloat("part_R2", (float)this.c.h());
-        editor.putFloat("part_RL", (float)this.d.h());
-        editor.putFloat("part_Vin", (float)this.e.h());
+        editor.putFloat("part_R1", (float)this.b.getUnitValue());
+        editor.putFloat("part_R2", (float)this.c.getUnitValue());
+        editor.putFloat("part_RL", (float)this.d.getUnitValue());
+        editor.putFloat("part_Vin", (float)this.e.getUnitValue());
         editor.putBoolean("part_RLon", this.l.isChecked());
         editor.putInt("part_spinLock", this.m.getSelectedItemPosition());
         editor.putInt("part_SpinSerie", this.n.getSelectedItemPosition());
@@ -139,27 +139,27 @@ public class CalcVoltageDivider extends CalcActivity implements View.OnClickList
         }
         double d2 = object.getDoubleExtra(String.valueOf(this.getPackageName()) + ".comp_value", 0.0);
         if ((n2 = this.a(R.id.part_R1, n2)) == R.id.part_R1) {
-            this.b.a(d2);
+            this.b.validateUnitValueDouble(d2);
         } else if (n2 == R.id.part_R2) {
-            this.c.a(d2);
+            this.c.validateUnitValueDouble(d2);
         } else if (n2 == R.id.part_RL) {
-            this.d.a(d2);
+            this.d.validateUnitValueDouble(d2);
         } else if (n2 == R.id.part_Vin) {
-            this.e.a(d2);
+            this.e.validateUnitValueDouble(d2);
         } else if (n2 == R.id.part_Vout) {
-            if (d2 > this.e.h()) {
-                String string = String.format(this.getString(R.string.x_mustbe_greater_y), this.e.j(), this.f.j());
+            if (d2 > this.e.getUnitValue()) {
+                String string = String.format(this.getString(R.string.x_mustbe_greater_y), this.e.getUnitName(), this.f.getUnitName());
                 Toast.makeText((Context)this.getApplicationContext(), string, Toast.LENGTH_SHORT).show();
             } else {
-                this.f.a(d2);
-                this.a(this.e.h() / this.f.h() - 1.0);
+                this.f.validateUnitValueDouble(d2);
+                this.a(this.e.getUnitValue() / this.f.getUnitValue() - 1.0);
             }
         } else if (n2 == R.id.part_btnVratio) {
-            this.g.a(d2);
-            this.a(1.0 / this.g.h() - 1.0);
+            this.g.validateUnitValueDouble(d2);
+            this.a(1.0 / this.g.getUnitValue() - 1.0);
         } else if (n2 == R.id.part_btnRratio) {
-            this.h.a(d2);
-            this.a(this.h.h());
+            this.h.validateUnitValueDouble(d2);
+            this.a(this.h.getUnitValue());
         }
         this.a();
     }
@@ -169,19 +169,19 @@ public class CalcVoltageDivider extends CalcActivity implements View.OnClickList
         Intent intent = new Intent((Context)this, (Class)SetValueDialog.class);
         int n2 = view.getId();
         if (n2 == R.id.part_R1) {
-            this.b.a(intent, string);
+            this.b.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.part_R2) {
-            this.c.a(intent, string);
+            this.c.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.part_RL) {
-            this.d.a(intent, string);
+            this.d.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.part_Vin) {
-            this.e.a(intent, string);
+            this.e.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.part_Vout) {
-            this.f.a(intent, string);
+            this.f.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.part_btnVratio) {
-            this.g.a(intent, string);
+            this.g.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.part_btnRratio) {
-            this.h.a(intent, string);
+            this.h.setValueDialogIntent(intent, string);
         }
         this.startActivityForResult(intent, n2);
     }
@@ -203,7 +203,7 @@ public class CalcVoltageDivider extends CalcActivity implements View.OnClickList
         this.k = new UnitValue(this.getString(R.string.current), "A", " = ", true, (Context)this, (TextView)this.findViewById(R.id.part_Itot), null);
         this.l = (CheckBox)this.findViewById(R.id.chkEnableRL);
         this.n = (Spinner)this.findViewById(R.id.spinSerie);
-        this.g.a(1.0f);
+        this.g.setTopLimit(1.0f);
         ArrayAdapter arrayAdapter0 = new ArrayAdapter((Context)this, android.R.layout.simple_spinner_item, EIAValuesTable.exxArray);
         arrayAdapter0.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.n.setAdapter((SpinnerAdapter)arrayAdapter0);
@@ -213,7 +213,7 @@ public class CalcVoltageDivider extends CalcActivity implements View.OnClickList
         this.m = (Spinner)this.findViewById(R.id.part_spinner_fix);
         this.m.setAdapter((SpinnerAdapter)arrayAdapter1);
         this.readSharedPreferences();
-        this.o.a(this.n.getSelectedItemPosition());
+        this.o.selectEIAValuesLine(this.n.getSelectedItemPosition());
         this.a();
         this.l.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener)new CalcVoltageDividerLoadListener(this));
         this.n.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)new CalcVoltageDividerEIAspinnerListener(this));

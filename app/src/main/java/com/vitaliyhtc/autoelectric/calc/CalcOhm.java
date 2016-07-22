@@ -90,35 +90,35 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
 
     private void a(String string) {
         if (string.equals("R = P / I\u00b2")) {
-            this.e.a(this.h.h() / (this.g.h() * this.g.h()));
+            this.e.validateUnitValueDouble(this.h.getUnitValue() / (this.g.getUnitValue() * this.g.getUnitValue()));
             this.c();
             this.g();
             return;
         } else {
             if (string.equals("R = V\u00b2 / P")) {
-                this.e.a(this.f.h() * this.f.h() / this.h.h());
+                this.e.validateUnitValueDouble(this.f.getUnitValue() * this.f.getUnitValue() / this.h.getUnitValue());
                 this.b();
                 this.g();
                 return;
             }
             if (string.equals("I = P / V")) {
-                this.g.a(this.h.h() / this.f.h());
+                this.g.validateUnitValueDouble(this.h.getUnitValue() / this.f.getUnitValue());
                 this.d();
                 return;
             }
             if (string.equals("I = \u221a(P / R)")) {
-                this.g.a(Math.sqrt(this.h.h() / this.e.h()));
+                this.g.validateUnitValueDouble(Math.sqrt(this.h.getUnitValue() / this.e.getUnitValue()));
                 this.c();
                 return;
             }
             if (string.equals("V = P / I")) {
-                this.f.a(this.h.h() / this.g.h());
+                this.f.validateUnitValueDouble(this.h.getUnitValue() / this.g.getUnitValue());
                 this.d();
                 return;
             }
             if (!string.equals("V = \u221a(P x R)")) return;
             {
-                this.f.a(Math.sqrt(this.h.h() * this.e.h()));
+                this.f.validateUnitValueDouble(Math.sqrt(this.h.getUnitValue() * this.e.getUnitValue()));
                 this.b();
                 return;
             }
@@ -126,20 +126,20 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
     }
 
     private void b() {
-        this.g.a(this.f.h() / this.e.h());
+        this.g.validateUnitValueDouble(this.f.getUnitValue() / this.e.getUnitValue());
     }
 
     private void c() {
-        this.f.a(this.e.h() * this.g.h());
+        this.f.validateUnitValueDouble(this.e.getUnitValue() * this.g.getUnitValue());
     }
 
     private void d() {
-        this.e.a(this.f.h() / this.g.h());
+        this.e.validateUnitValueDouble(this.f.getUnitValue() / this.g.getUnitValue());
         this.g();
     }
 
     private void e() {
-        this.h.a(this.f.h() * this.g.h());
+        this.h.validateUnitValueDouble(this.f.getUnitValue() * this.g.getUnitValue());
     }
 
     private void f() {
@@ -156,15 +156,15 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
     }
 
     private void g() {
-        this.n.b(this.e.h());
-        this.i.a(this.n.t);
-        this.j.setText((CharSequence)(String.valueOf(this.i.l()) + "  (" + this.a(this.n.u) + ")"));
+        this.n.calcError(this.e.getUnitValue());
+        this.i.validateUnitValueDouble(this.n.t);
+        this.j.setText((CharSequence)(String.valueOf(this.i.getTextViewString()) + "  (" + this.a(this.n.error1Is) + ")"));
     }
 
     private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.f.a((double)sharedPreferences.getFloat("ohm_V", 13.2f));
-        this.g.a((double)sharedPreferences.getFloat("ohm_I", 5.5f));
+        this.f.validateUnitValueDouble((double)sharedPreferences.getFloat("ohm_V", 13.2f));
+        this.g.validateUnitValueDouble((double)sharedPreferences.getFloat("ohm_I", 5.5f));
         this.m = sharedPreferences.getInt("ohm_SpinSerie", 2);
         this.o = sharedPreferences.getInt("ohm_Last", c);
         this.p = sharedPreferences.getInt("ohm_Last_but_one", d);
@@ -172,8 +172,8 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
 
     public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
-        editor.putFloat("ohm_V", (float)this.f.h());
-        editor.putFloat("ohm_I", (float)this.g.h());
+        editor.putFloat("ohm_V", (float)this.f.getUnitValue());
+        editor.putFloat("ohm_I", (float)this.g.getUnitValue());
         editor.putInt("ohm_SpinSerie", this.m);
         editor.putInt("ohm_Last", this.o);
         editor.putInt("ohm_Last_but_one", this.p);
@@ -188,23 +188,23 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
         }
         double d2 = intent.getDoubleExtra(String.valueOf(this.getPackageName()) + ".comp_value", 0.0);
         if ((n2 = this.a(R.id.ohm_R, n2)) == R.id.ohm_R) {
-            this.e.a(d2);
+            this.e.validateUnitValueDouble(d2);
             this.a(b);
             this.g();
             return;
         }
         if (n2 == R.id.ohm_V) {
-            this.f.a(d2);
+            this.f.validateUnitValueDouble(d2);
             this.a(c);
             return;
         }
         if (n2 == R.id.ohm_I) {
-            this.g.a(d2);
+            this.g.validateUnitValueDouble(d2);
             this.a(d);
             return;
         }
         if (n2 != R.id.ohm_P) return;
-        this.h.a(d2);
+        this.h.validateUnitValueDouble(d2);
         this.f();
     }
 
@@ -213,13 +213,13 @@ public class CalcOhm extends CalcActivity implements View.OnClickListener {
         Intent intent = new Intent((Context)this, (Class)SetValueDialog.class);
         int n2 = view.getId();
         if (n2 == R.id.ohm_R) {
-            this.e.a(intent, string);
+            this.e.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.ohm_V) {
-            this.f.a(intent, string);
+            this.f.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.ohm_I) {
-            this.g.a(intent, string);
+            this.g.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.ohm_P) {
-            this.h.a(intent, string);
+            this.h.setValueDialogIntent(intent, string);
         }
         this.startActivityForResult(intent, n2);
     }

@@ -71,48 +71,48 @@ public class CalcSerPar extends CalcActivity implements View.OnClickListener {
     }
 
     private void b() {
-        this.b.a(this.c.h() + this.d.h());
-        this.m.b(this.b.h());
-        this.g.a(this.m.t);
-        this.e.a(this.m.y);
-        this.f.a(this.m.z);
+        this.b.validateUnitValueDouble(this.c.getUnitValue() + this.d.getUnitValue());
+        this.m.calcError(this.b.getUnitValue());
+        this.g.validateUnitValueDouble(this.m.t);
+        this.e.validateUnitValueDouble(this.m.y);
+        this.f.validateUnitValueDouble(this.m.z);
         this.e();
     }
 
     private void c() {
-        this.b.a(this.e.h() * this.f.h() / (this.e.h() + this.f.h()));
-        this.m.b(this.b.h());
-        this.g.a(this.m.t);
-        this.c.a(this.m.v);
-        this.d.a(this.m.w);
+        this.b.validateUnitValueDouble(this.e.getUnitValue() * this.f.getUnitValue() / (this.e.getUnitValue() + this.f.getUnitValue()));
+        this.m.calcError(this.b.getUnitValue());
+        this.g.validateUnitValueDouble(this.m.t);
+        this.c.validateUnitValueDouble(this.m.v);
+        this.d.validateUnitValueDouble(this.m.w);
         this.e();
     }
 
     private void d() {
-        this.m.b(this.b.h());
-        this.g.a(this.m.t);
-        this.c.a(this.m.v);
-        this.d.a(this.m.w);
-        this.e.a(this.m.y);
-        this.f.a(this.m.z);
+        this.m.calcError(this.b.getUnitValue());
+        this.g.validateUnitValueDouble(this.m.t);
+        this.c.validateUnitValueDouble(this.m.v);
+        this.d.validateUnitValueDouble(this.m.w);
+        this.e.validateUnitValueDouble(this.m.y);
+        this.f.validateUnitValueDouble(this.m.z);
         this.e();
     }
 
     private void e() {
-        this.j.setText((CharSequence)(String.valueOf(this.g.l()) + "  (" + this.b(this.m.u) + ")"));
-        this.h.setText((CharSequence)(String.valueOf(this.getString(R.string.total)) + ": \u200e" + this.a(this.c.h() + this.d.h()) + "\n (" + this.b(this.m.x) + ")"));
-        this.i.setText((CharSequence)(String.valueOf(this.getString(R.string.total)) + ": \u200e" + this.a(this.e.h() * this.f.h() / (this.e.h() + this.f.h())) + "\n (" + this.b(this.m.A) + ")"));
+        this.j.setText((CharSequence)(String.valueOf(this.g.getTextViewString()) + "  (" + this.b(this.m.error1Is) + ")"));
+        this.h.setText((CharSequence)(String.valueOf(this.getString(R.string.total)) + ": \u200e" + this.a(this.c.getUnitValue() + this.d.getUnitValue()) + "\n (" + this.b(this.m.error2Is) + ")"));
+        this.i.setText((CharSequence)(String.valueOf(this.getString(R.string.total)) + ": \u200e" + this.a(this.e.getUnitValue() * this.f.getUnitValue() / (this.e.getUnitValue() + this.f.getUnitValue())) + "\n (" + this.b(this.m.error3Is) + ")"));
     }
 
     private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.b.a((double)sharedPreferences.getFloat("ser_par_R", 10000.0f));
+        this.b.validateUnitValueDouble((double)sharedPreferences.getFloat("ser_par_R", 10000.0f));
         this.l = sharedPreferences.getInt("ser_par_SpinSerie", 2);
     }
 
     public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
-        editor.putFloat("ser_par_R", (float)this.b.h());
+        editor.putFloat("ser_par_R", (float)this.b.getUnitValue());
         editor.putInt("ser_par_SpinSerie", this.l);
         editor.commit();
     }
@@ -125,27 +125,27 @@ public class CalcSerPar extends CalcActivity implements View.OnClickListener {
         }
         double d2 = intent.getDoubleExtra(String.valueOf(this.getPackageName()) + ".comp_value", 0.0);
         if ((n2 = this.a(R.id.sepa_Rdes, n2)) == R.id.sepa_Rdes) {
-            this.b.a(d2);
+            this.b.validateUnitValueDouble(d2);
             this.d();
             return;
         }
         if (n2 == R.id.sepa_Rs1) {
-            this.c.a(d2);
+            this.c.validateUnitValueDouble(d2);
             this.b();
             return;
         }
         if (n2 == R.id.sepa_Rs2) {
-            this.d.a(d2);
+            this.d.validateUnitValueDouble(d2);
             this.b();
             return;
         }
         if (n2 == R.id.sepa_Rp1) {
-            this.e.a(d2);
+            this.e.validateUnitValueDouble(d2);
             this.c();
             return;
         }
         if (n2 == R.id.sepa_Rp2) {
-            this.f.a(d2);
+            this.f.validateUnitValueDouble(d2);
             this.c();
         }
     }
@@ -155,15 +155,15 @@ public class CalcSerPar extends CalcActivity implements View.OnClickListener {
         Intent intent = new Intent((Context)this, (Class)SetValueDialog.class);
         int n2 = view.getId();
         if (n2 == R.id.sepa_Rdes) {
-            this.b.a(intent, string);
+            this.b.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.sepa_Rs1) {
-            this.c.a(intent, string);
+            this.c.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.sepa_Rs2) {
-            this.d.a(intent, string);
+            this.d.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.sepa_Rp1) {
-            this.e.a(intent, string);
+            this.e.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.sepa_Rp2) {
-            this.f.a(intent, string);
+            this.f.setValueDialogIntent(intent, string);
         }
         this.startActivityForResult(intent, n2);
     }
@@ -189,7 +189,7 @@ public class CalcSerPar extends CalcActivity implements View.OnClickListener {
         this.m = new EIAValuesTable(EIAValuesLines.c);
         this.readSharedPreferences();
         this.k.setSelection(this.l);
-        this.m.a(this.l);
+        this.m.selectEIAValuesLine(this.l);
         this.d();
         this.k.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)new CalcSerParEIAspinnerListener(this));
     }

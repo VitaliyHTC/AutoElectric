@@ -11,7 +11,7 @@ class SetValueDialog_spinUnitItemSelectedListener implements AdapterView.OnItemS
     }
 
     public void onItemSelected(AdapterView adapterView, View view, int n2, long l2) {
-        SetValueDialog.a(this.setValueDialog, n2);
+        SetValueDialog.setSpinUnitItemSelectedInt(this.setValueDialog, n2);
     }
 
     public void onNothingSelected(AdapterView adapterView) {}

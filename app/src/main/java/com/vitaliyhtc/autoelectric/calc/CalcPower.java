@@ -63,18 +63,18 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
     private void a(int n2) {
         switch (n2) {
             case 0: {
-                this.d.a(false);
-                this.e.a(false);
-                this.f.a(false);
-                this.h.a(false);
+                this.d.setTextViewVisibility(false);
+                this.e.setTextViewVisibility(false);
+                this.f.setTextViewVisibility(false);
+                this.h.setTextViewVisibility(false);
                 break;
             }
             case 1: 
             case 2: {
-                this.d.a(true);
-                this.e.a(true);
-                this.f.a(true);
-                this.h.a(true);
+                this.d.setTextViewVisibility(true);
+                this.e.setTextViewVisibility(true);
+                this.f.setTextViewVisibility(true);
+                this.h.setTextViewVisibility(true);
             }
         }
         if (n2 == 2) {
@@ -85,48 +85,48 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
     }
 
     private void b() {
-        double d2 = this.e.h() * 3.141592653589793 / 180.0;
+        double d2 = this.e.getUnitValue() * 3.141592653589793 / 180.0;
         if (this.i.getSelectedItemPosition() == 0) {
             d2 = 0.0;
         }
-        this.f.a(this.b.h() * this.c.h() * this.j);
-        this.g.a(this.f.h() * Math.cos(d2));
+        this.f.validateUnitValueDouble(this.b.getUnitValue() * this.c.getUnitValue() * this.j);
+        this.g.validateUnitValueDouble(this.f.getUnitValue() * Math.cos(d2));
         UnitValue unitValue2 = this.h;
-        double d3 = this.f.h();
-        unitValue2.a(Math.sin(d2) * d3);
+        double d3 = this.f.getUnitValue();
+        unitValue2.validateUnitValueDouble(Math.sin(d2) * d3);
     }
 
     private void b(int n2) {
-        double d2 = this.e.h() * 3.141592653589793 / 180.0;
+        double d2 = this.e.getUnitValue() * 3.141592653589793 / 180.0;
         if (this.i.getSelectedItemPosition() == 0) {
             d2 = 0.0;
         }
         if (n2 == R.id.pw_btn_P) {
-            this.f.a(this.g.h() / Math.cos(d2));
+            this.f.validateUnitValueDouble(this.g.getUnitValue() / Math.cos(d2));
             return;
         } else {
             if (n2 != R.id.pw_btn_Q) return;
             {
-                this.f.a(this.h.h() / Math.sin(d2));
+                this.f.validateUnitValueDouble(this.h.getUnitValue() / Math.sin(d2));
                 return;
             }
         }
     }
 
     private void c() {
-        double d2 = this.e.h() * 3.141592653589793 / 180.0;
-        this.d.a(Math.cos(d2));
+        double d2 = this.e.getUnitValue() * 3.141592653589793 / 180.0;
+        this.d.validateUnitValueDouble(Math.cos(d2));
     }
 
     private void c(int n2) {
         if (n2 == R.id.pw_btn_P) {
-            this.d.a(this.g.h() / this.f.h());
+            this.d.validateUnitValueDouble(this.g.getUnitValue() / this.f.getUnitValue());
             this.d();
             return;
         } else {
             if (n2 != R.id.pw_btn_Q) return;
             {
-                this.e.a(Math.asin(this.h.h() / this.f.h()) * 180.0 / 3.141592653589793);
+                this.e.validateUnitValueDouble(Math.asin(this.h.getUnitValue() / this.f.getUnitValue()) * 180.0 / 3.141592653589793);
                 this.c();
                 return;
             }
@@ -134,15 +134,15 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
     }
 
     private void d() {
-        this.e.a(Math.acos(this.d.h()) * 180.0 / 3.141592653589793);
+        this.e.validateUnitValueDouble(Math.acos(this.d.getUnitValue()) * 180.0 / 3.141592653589793);
     }
 
     private void d(int n2) {
         ArrayList arrcharSequence = new ArrayList();
-        arrcharSequence.add((String)this.b.j());
-        arrcharSequence.add((String)this.c.j());
+        arrcharSequence.add((String)this.b.getUnitName());
+        arrcharSequence.add((String)this.c.getUnitName());
         if ((n2 == R.id.pw_btn_P || n2 == R.id.pw_btn_Q) && this.i.getSelectedItemPosition() != 0) {
-            arrcharSequence.add(String.valueOf(this.d.j()) + " / " + this.e.j());
+            arrcharSequence.add(String.valueOf(this.d.getUnitName()) + " / " + this.e.getUnitName());
         }
         CharSequence[] arrcharSequence1 = (CharSequence[])arrcharSequence.toArray(new CharSequence[0]);
         new AlertDialog.Builder((Context)this).setTitle(R.string.select_calc).setCancelable(false)
@@ -150,26 +150,26 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
     }
 
     private void e() {
-        this.b.a(this.f.h() / this.c.h() / this.j);
+        this.b.validateUnitValueDouble(this.f.getUnitValue() / this.c.getUnitValue() / this.j);
     }
 
     private void f() {
-        this.c.a(this.f.h() / this.b.h() / this.j);
+        this.c.validateUnitValueDouble(this.f.getUnitValue() / this.b.getUnitValue() / this.j);
     }
 
     private void readSharedPreferences() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("Calc_Setting", 0);
-        this.b.a((double)sharedPreferences.getFloat("pwcalc_V", 230.0f));
-        this.c.a((double)sharedPreferences.getFloat("pwcalc_I", 4.35f));
-        this.e.a((double)sharedPreferences.getFloat("pwcalc_phi", 45.0f));
+        this.b.validateUnitValueDouble((double)sharedPreferences.getFloat("pwcalc_V", 230.0f));
+        this.c.validateUnitValueDouble((double)sharedPreferences.getFloat("pwcalc_I", 4.35f));
+        this.e.validateUnitValueDouble((double)sharedPreferences.getFloat("pwcalc_phi", 45.0f));
         this.i.setSelection(sharedPreferences.getInt("pwcalc_spinCurrType", 1));
     }
 
     public void writeSharedPreferences() {
         SharedPreferences.Editor editor = this.getSharedPreferences("Calc_Setting", 0).edit();
-        editor.putFloat("pwcalc_V", (float)this.b.h());
-        editor.putFloat("pwcalc_I", (float)this.c.h());
-        editor.putFloat("pwcalc_phi", (float)this.e.h());
+        editor.putFloat("pwcalc_V", (float)this.b.getUnitValue());
+        editor.putFloat("pwcalc_I", (float)this.c.getUnitValue());
+        editor.putFloat("pwcalc_phi", (float)this.e.getUnitValue());
         editor.putInt("pwcalc_spinCurrType", this.i.getSelectedItemPosition());
         editor.commit();
     }
@@ -182,49 +182,49 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
         }
         double d2 = object.getDoubleExtra(String.valueOf(this.getPackageName()) + ".comp_value", 0.0);
         if ((n2 = this.a(R.id.pw_btn_volt, n2)) == R.id.pw_btn_volt) {
-            this.b.a(d2);
+            this.b.validateUnitValueDouble(d2);
             this.b();
             return;
         }
         if (n2 == R.id.pw_btn_amp) {
-            this.c.a(d2);
+            this.c.validateUnitValueDouble(d2);
             this.b();
             return;
         }
         if (n2 == R.id.pw_btn_PF) {
-            this.d.a(d2);
+            this.d.validateUnitValueDouble(d2);
             this.d();
             this.b();
             return;
         }
         if (n2 == R.id.pw_btn_phase) {
-            this.e.a(d2);
+            this.e.validateUnitValueDouble(d2);
             this.c();
             this.b();
             return;
         }
         if (n2 == R.id.pw_btn_S) {
-            this.f.a(d2);
+            this.f.validateUnitValueDouble(d2);
             this.d(n2);
             return;
         }
         if (n2 == R.id.pw_btn_P) {
-            if (d2 > this.f.h() && this.f.a()) {
-                String toastString = String.format(this.getString(R.string.x_mustbe_less_y), this.g.j(), this.f.j());
+            if (d2 > this.f.getUnitValue() && this.f.isTextViewVisible()) {
+                String toastString = String.format(this.getString(R.string.x_mustbe_less_y), this.g.getUnitName(), this.f.getUnitName());
                 Toast.makeText((Context)this.getApplicationContext(), toastString, Toast.LENGTH_SHORT).show();
                 return;
             }
-            this.g.a(d2);
+            this.g.validateUnitValueDouble(d2);
             this.d(n2);
             return;
         }
         if (n2 != R.id.pw_btn_Q) return;
-        if (d2 > this.f.h()) {
-            String toastString = String.format(this.getString(R.string.x_mustbe_less_y), this.h.j(), this.f.j());
+        if (d2 > this.f.getUnitValue()) {
+            String toastString = String.format(this.getString(R.string.x_mustbe_less_y), this.h.getUnitName(), this.f.getUnitName());
             Toast.makeText((Context)this.getApplicationContext(), toastString, Toast.LENGTH_SHORT).show();
             return;
         }
-        this.h.a(d2);
+        this.h.validateUnitValueDouble(d2);
         this.d(n2);
     }
 
@@ -233,19 +233,19 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
         Intent intent = new Intent((Context)this, (Class)SetValueDialog.class);
         int n2 = view.getId();
         if (n2 == R.id.pw_btn_volt) {
-            this.b.a(intent, string);
+            this.b.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.pw_btn_amp) {
-            this.c.a(intent, string);
+            this.c.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.pw_btn_PF) {
-            this.d.a(intent, string);
+            this.d.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.pw_btn_phase) {
-            this.e.a(intent, string);
+            this.e.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.pw_btn_S) {
-            this.f.a(intent, string);
+            this.f.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.pw_btn_P) {
-            this.g.a(intent, string);
+            this.g.setValueDialogIntent(intent, string);
         } else if (n2 == R.id.pw_btn_Q) {
-            this.h.a(intent, string);
+            this.h.setValueDialogIntent(intent, string);
         }
         this.startActivityForResult(intent, n2);
     }
@@ -262,8 +262,8 @@ public class CalcPower extends CalcActivity implements View.OnClickListener {
         this.f = new UnitValue(this.getString(R.string.powerS), "VA", "\n", true, (Context)this, (TextView)this.findViewById(R.id.pw_btn_S), this);
         this.g = new UnitValue(this.getString(R.string.powerP), "W", "\n", true, (Context)this, (TextView)this.findViewById(R.id.pw_btn_P), this);
         this.h = new UnitValue(this.getString(R.string.powerQ), "VAR", "\n", true, (Context)this, (TextView)this.findViewById(R.id.pw_btn_Q), this);
-        this.d.a(1.0f, false);
-        this.e.a(90.0f, false);
+        this.d.setTopLimit(1.0f, false);
+        this.e.setTopLimit(90.0f, false);
         this.i = (Spinner)this.findViewById(R.id.pw_current_type);
         ArrayAdapter arrayAdapter = new ArrayAdapter((Context)this, android.R.layout.simple_spinner_item, (Object[])new String[]{this.getString(R.string.voltage_DC), this.getString(R.string.voltage_AC, new Object[]{1}), this.getString(R.string.voltage_AC, new Object[]{3})});
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
