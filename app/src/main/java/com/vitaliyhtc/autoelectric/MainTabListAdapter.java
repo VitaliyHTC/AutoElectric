@@ -13,11 +13,11 @@ import java.util.ArrayList;
 /**
  * Created by VitaliyHTC on 01.07.2016.
  */
-public class MainTab1ListAdapter extends ArrayAdapter<MainTab1ListItem> {
+public class MainTabListAdapter extends ArrayAdapter<MainTabListItem> {
     private final Context context;
-    private final ArrayList<MainTab1ListItem> modelsArrayList;
+    private final ArrayList<MainTabListItem> modelsArrayList;
 
-    public MainTab1ListAdapter(Context context, ArrayList<MainTab1ListItem> modelsArrayList) {
+    public MainTabListAdapter(Context context, ArrayList<MainTabListItem> modelsArrayList) {
         super(context, R.layout.main_tab_list_item, modelsArrayList);
         this.context = context;
         this.modelsArrayList = modelsArrayList;

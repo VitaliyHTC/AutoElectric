@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.vitaliyhtc.autoelectric.activity.ResourcesWebView;
 
@@ -22,31 +23,45 @@ public class MainTab2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.main_tab_2,container,false);
 
-        final ArrayList<MainTab2ListItem> mainTab2ListItems = generateData();
-        MainTab2ListAdapter mainTab2ListAdapter = new MainTab2ListAdapter(getContext(), mainTab2ListItems);
+        final ArrayList<MainTabListItem> mainTabListItems = generateData();
+        MainTabListAdapter mainTabListAdapter = new MainTabListAdapter(getContext(), mainTabListItems);
         final ListView myList = (ListView) view.findViewById(R.id.listView);
-        myList.setAdapter(mainTab2ListAdapter);
+        myList.setAdapter(mainTabListAdapter);
 
         myList.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Intent intent = new Intent(getActivity(), ResourcesWebView.class);
-                        intent.putExtra("targetSource", mainTab2ListItems.get(position).getTargetSource());
-                        intent.putExtra("targetTitle", mainTab2ListItems.get(position).getTitle());
-                        startActivity(intent);
+                        MainTabListItem mainTabListItem = mainTabListItems.get(position);
+                        MainListItemType mainListItemType = mainTabListItem.getMainListItemType();
+                        if(mainListItemType.equals(MainListItemType.Calculator) ||
+                                mainListItemType.equals(MainListItemType.ItemsList)){
+                            Class targetActivityClass = mainTabListItem.getTargetActivityClass();
+                            Intent intent = new Intent(getActivity(), targetActivityClass);
+                            startActivity(intent);
+                        }else if(mainListItemType.equals(MainListItemType.ResourcesWebView)){
+                            Intent intent = new Intent(getActivity(), ResourcesWebView.class);
+                            intent.putExtra("targetSource", mainTabListItem.getTargetSource());
+                            intent.putExtra("targetTitle", mainTabListItem.getTitle());
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(getContext(), "Ooops! There is no such ListItem Type!", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
 
         return view;
     }
 
-    private ArrayList<MainTab2ListItem> generateData(){
-        ArrayList<MainTab2ListItem> models = new ArrayList<MainTab2ListItem>();
-        models.add(new MainTab2ListItem(R.drawable.list_trollface,getString(R.string.index_htm), "index.htm"));
-        models.add(new MainTab2ListItem(R.drawable.list_iso_trailer,getString(R.string.iso_trailer), "iso_trailer.htm"));
+    private ArrayList<MainTabListItem> generateData(){
+        ArrayList<MainTabListItem> models = new ArrayList<MainTabListItem>();
+        models.add(new MainTabListItem(R.drawable.list_trollface,getString(R.string.index_htm), MainListItemType.ResourcesWebView, null, "index.htm"));
+        models.add(new MainTabListItem(R.drawable.list_iso_trailer,getString(R.string.iso_trailer), MainListItemType.ResourcesWebView, null, "iso_trailer.htm"));
 
-        //models.add(new MainTab2ListItem(R.drawable.list_trollface,getString(R.string.index_htm), "index.htm"));
+
+
+        //models.add(new MainTabListItem(R.drawable.list_trollface,getString(R.string.list_conv_energy), MainListItemType.Calculator, ConvEnergy.class, null));
+        //models.add(new MainTabListItem(R.drawable.list_iso_trailer,getString(R.string.iso_trailer), MainListItemType.ResourcesWebView, null, "iso_trailer.htm"));
         return models;
     }
 }

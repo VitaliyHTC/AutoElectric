@@ -9,17 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
-import com.vitaliyhtc.autoelectric.calc.CalcCapacitorCharge;
+import com.vitaliyhtc.autoelectric.activity.ResourcesWebView;
 import com.vitaliyhtc.autoelectric.calc.CalcOhm;
 import com.vitaliyhtc.autoelectric.calc.CalcPower;
-import com.vitaliyhtc.autoelectric.calc.CalcSerPar;
 import com.vitaliyhtc.autoelectric.calc.CalcVoltDrop;
-import com.vitaliyhtc.autoelectric.calc.CalcVoltageDivider;
-import com.vitaliyhtc.autoelectric.calc.ConvDb;
-import com.vitaliyhtc.autoelectric.calc.ConvEnergy;
 import com.vitaliyhtc.autoelectric.calc.ConvEngine;
-import com.vitaliyhtc.autoelectric.calc.ConvFreq;
 
 import java.util.ArrayList;
 
@@ -32,38 +28,48 @@ public class MainTab1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_tab_1,container,false);
 
-        final ArrayList<MainTab1ListItem> mainTab1ListItems = generateData();
-        MainTab1ListAdapter mainTab1ListAdapter = new MainTab1ListAdapter(getContext(), mainTab1ListItems);
+        final ArrayList<MainTabListItem> mainTabListItems = generateData();
+        MainTabListAdapter mainTabListAdapter = new MainTabListAdapter(getContext(), mainTabListItems);
         final ListView myList = (ListView) view.findViewById(R.id.listView);
-        myList.setAdapter(mainTab1ListAdapter);
+        myList.setAdapter(mainTabListAdapter);
 
         myList.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Class targetActivityClass = mainTab1ListItems.get(position).getTargetActivityClass();
-                        Intent intent = new Intent(getActivity(), targetActivityClass);
-                        startActivity(intent);
+                        MainTabListItem mainTabListItem = mainTabListItems.get(position);
+                        MainListItemType mainListItemType = mainTabListItem.getMainListItemType();
+                        if(mainListItemType.equals(MainListItemType.Calculator) ||
+                                mainListItemType.equals(MainListItemType.ItemsList)){
+                            Class targetActivityClass = mainTabListItem.getTargetActivityClass();
+                            Intent intent = new Intent(getActivity(), targetActivityClass);
+                            startActivity(intent);
+                        }else if(mainListItemType.equals(MainListItemType.ResourcesWebView)){
+                            Intent intent = new Intent(getActivity(), ResourcesWebView.class);
+                            intent.putExtra("targetSource", mainTabListItem.getTargetSource());
+                            intent.putExtra("targetTitle", mainTabListItem.getTitle());
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(getContext(), "Ooops! There is no such ListItem Type!", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
 
         return view;
     }
 
-    private ArrayList<MainTab1ListItem> generateData(){
-        ArrayList<MainTab1ListItem> models = new ArrayList<MainTab1ListItem>();
-        models.add(new MainTab1ListItem(R.drawable.list_ohm,getString(R.string.list_calc_ohm), CalcOhm.class));
-        models.add(new MainTab1ListItem(R.drawable.list_resistor,getString(R.string.list_calc_voltage_divider), CalcVoltageDivider.class));
-        models.add(new MainTab1ListItem(R.drawable.list_resistor,getString(R.string.list_calc_sepa), CalcSerPar.class));
-        models.add(new MainTab1ListItem(R.drawable.list_cap_solid,getString(R.string.list_calc_cap_chg), CalcCapacitorCharge.class));
-        models.add(new MainTab1ListItem(R.drawable.list_wire,getString(R.string.list_calc_voltdrop), CalcVoltDrop.class));
-        models.add(new MainTab1ListItem(R.drawable.list_power,getString(R.string.list_calc_power), CalcPower.class));
-        models.add(new MainTab1ListItem(R.drawable.list_freq,getString(R.string.list_conv_freq), ConvFreq.class));
-        models.add(new MainTab1ListItem(R.drawable.list_db,getString(R.string.list_conv_db), ConvDb.class));
-        models.add(new MainTab1ListItem(R.drawable.list_energy,getString(R.string.list_conv_energy), ConvEnergy.class));
-        models.add(new MainTab1ListItem(R.drawable.list_scania_v8,getString(R.string.list_conv_engine), ConvEngine.class));
+    private ArrayList<MainTabListItem> generateData(){
+        ArrayList<MainTabListItem> models = new ArrayList<MainTabListItem>();
+        models.add(new MainTabListItem(R.drawable.list_ohm,getString(R.string.list_calc_ohm), MainListItemType.Calculator, CalcOhm.class, null));
+        models.add(new MainTabListItem(R.drawable.list_base_calculations,getString(R.string.list_MainBaseCalculationsList), MainListItemType.ItemsList, MainBaseCalculationsList.class, null));
+        models.add(new MainTabListItem(R.drawable.list_wire,getString(R.string.list_calc_voltdrop), MainListItemType.Calculator, CalcVoltDrop.class, null));
+        models.add(new MainTabListItem(R.drawable.list_power,getString(R.string.list_calc_power), MainListItemType.Calculator, CalcPower.class, null));
+        models.add(new MainTabListItem(R.drawable.list_scania_v8,getString(R.string.list_conv_engine), MainListItemType.Calculator, ConvEngine.class, null));
 
-        //models.add(new MainTab1ListItem(R.drawable.list_trollface,getString(R.string.list_conv_energy), ConvEnergy.class));
+
+
+        //models.add(new MainTabListItem(R.drawable.list_trollface,getString(R.string.list_conv_energy), MainListItemType.Calculator, ConvEnergy.class, null));
+        //models.add(new MainTabListItem(R.drawable.list_iso_trailer,getString(R.string.iso_trailer), MainListItemType.ResourcesWebView, null, "iso_trailer.htm"));
         return models;
     }
 }

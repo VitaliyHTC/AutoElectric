@@ -43,6 +43,10 @@ public class CalcActivity extends AppCompatActivity {
         super.onResume();
     }
     @Override
+    public void onRestart() {
+        super.onRestart();
+    }
+    @Override
     protected void onStart() {
         super.onStart();
     }
