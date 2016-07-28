@@ -6,6 +6,10 @@
     <string name="app_restart">Restarting app…</string>
     <string name="vitaliyhtc_copyright">© VitaliyHTC</string>
 
+    <string name="main_tab_calculators">Calculators</string>
+    <string name="main_tab_resources">Resources</string>
+    <string name="main_tab_other">Other</string>
+
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="ok">OK</string>
@@ -46,6 +50,12 @@
     <string name="list_conv_energy">Energy conversion</string>
     <string name="list_conv_engine">Engine torque/power</string>
     <string name="list_MainBaseCalculationsList">Base calculations list >>></string>
+
+    <string name="list_iso_trailer">ISO trailer connectors</string>
+    <string name="list_wire_current_amp_nec">Ampacity Table NEC</string>
+    <string name="list_si_units_prefixes">SI Units prefixes</string>
+    <string name="list_resist_table">Resistivity Table</string>
+    <string name="list_resist_eia">Standard Resistors EIA</string>
 
 
 
@@ -123,8 +133,6 @@
     <string name="engine_description_power">Power</string>
 
 
-
-    <string name="iso_trailer">ISO trailer connectors</string>
 
     <!--Temp block-->
     <string name="index_htm">index.htm wroooom!</string>

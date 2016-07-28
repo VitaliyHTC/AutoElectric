@@ -1,4 +1,8 @@
 <resources>
+    <string name="main_tab_calculators">Розрахунки</string>
+    <string name="main_tab_resources">Довідники</string>
+    <string name="main_tab_other">Інше</string>
+
     <string name="yes">Так</string>
     <string name="no">Ні</string>
     <string name="ok">ОК</string>
@@ -39,6 +43,12 @@
     <string name="list_conv_energy">Перетворення енергії</string>
     <string name="list_conv_engine">Двигун крут. м./потужність</string>
     <string name="list_MainBaseCalculationsList">Основні базові розрахунки >>></string>
+
+    <string name="list_iso_trailer">ISO з\'єднання причепів</string>
+    <string name="list_wire_current_amp_nec">Таблиця амперажу NEC</string>
+    <string name="list_si_units_prefixes">Префікси системи SI</string>
+    <string name="list_resist_table">Таблиця питомих опорів</string>
+    <string name="list_resist_eia">Таблиця резисторів EIA</string>
 
 
 

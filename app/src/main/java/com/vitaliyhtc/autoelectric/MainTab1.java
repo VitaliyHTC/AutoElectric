@@ -12,10 +12,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.vitaliyhtc.autoelectric.activity.ResourcesWebView;
-import com.vitaliyhtc.autoelectric.calc.CalcOhm;
-import com.vitaliyhtc.autoelectric.calc.CalcPower;
-import com.vitaliyhtc.autoelectric.calc.CalcVoltDrop;
-import com.vitaliyhtc.autoelectric.calc.ConvEngine;
 
 import java.util.ArrayList;
 
@@ -28,7 +24,7 @@ public class MainTab1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_tab_1,container,false);
 
-        final ArrayList<MainTabListItem> mainTabListItems = generateData();
+        final ArrayList<MainTabListItem> mainTabListItems = MainListItemsConfig.generateListForMainTab1(getContext());
         MainTabListAdapter mainTabListAdapter = new MainTabListAdapter(getContext(), mainTabListItems);
         final ListView myList = (ListView) view.findViewById(R.id.listView);
         myList.setAdapter(mainTabListAdapter);
@@ -58,18 +54,4 @@ public class MainTab1 extends Fragment {
         return view;
     }
 
-    private ArrayList<MainTabListItem> generateData(){
-        ArrayList<MainTabListItem> models = new ArrayList<MainTabListItem>();
-        models.add(new MainTabListItem(R.drawable.list_ohm,getString(R.string.list_calc_ohm), MainListItemType.Calculator, CalcOhm.class, null));
-        models.add(new MainTabListItem(R.drawable.list_base_calculations,getString(R.string.list_MainBaseCalculationsList), MainListItemType.ItemsList, MainBaseCalculationsList.class, null));
-        models.add(new MainTabListItem(R.drawable.list_wire,getString(R.string.list_calc_voltdrop), MainListItemType.Calculator, CalcVoltDrop.class, null));
-        models.add(new MainTabListItem(R.drawable.list_power,getString(R.string.list_calc_power), MainListItemType.Calculator, CalcPower.class, null));
-        models.add(new MainTabListItem(R.drawable.list_scania_v8,getString(R.string.list_conv_engine), MainListItemType.Calculator, ConvEngine.class, null));
-
-
-
-        //models.add(new MainTabListItem(R.drawable.list_trollface,getString(R.string.list_conv_energy), MainListItemType.Calculator, ConvEnergy.class, null));
-        //models.add(new MainTabListItem(R.drawable.list_iso_trailer,getString(R.string.iso_trailer), MainListItemType.ResourcesWebView, null, "iso_trailer.htm"));
-        return models;
-    }
 }

@@ -17,8 +17,9 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
     SlidingTabLayout slidingTabLayout;
-    CharSequence tabsTitles[]={"CALCULATORS","RESOURCES","Other"};
     int numberOfTabs = 3;
+    //set tabs titles in onCreate() method
+    CharSequence tabsTitles[]=new CharSequence[numberOfTabs];
 
     public static String sDefSystemLanguage=null;
 
@@ -31,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.alt_icon);
+
+        //set tabs titles
+        tabsTitles[0] = (CharSequence)getString(R.string.main_tab_calculators);
+        tabsTitles[1] = (CharSequence)getString(R.string.main_tab_resources);
+        tabsTitles[2] = (CharSequence)getString(R.string.main_tab_other);
 
         // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
         viewPagerAdapter =  new ViewPagerAdapter(getSupportFragmentManager(),tabsTitles,numberOfTabs);

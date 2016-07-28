@@ -1,4 +1,5 @@
 package com.vitaliyhtc.autoelectric;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -23,7 +24,7 @@ public class MainTab2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.main_tab_2,container,false);
 
-        final ArrayList<MainTabListItem> mainTabListItems = generateData();
+        final ArrayList<MainTabListItem> mainTabListItems = MainListItemsConfig.generateListForMainTab2(getContext());
         MainTabListAdapter mainTabListAdapter = new MainTabListAdapter(getContext(), mainTabListItems);
         final ListView myList = (ListView) view.findViewById(R.id.listView);
         myList.setAdapter(mainTabListAdapter);
@@ -53,15 +54,4 @@ public class MainTab2 extends Fragment {
         return view;
     }
 
-    private ArrayList<MainTabListItem> generateData(){
-        ArrayList<MainTabListItem> models = new ArrayList<MainTabListItem>();
-        models.add(new MainTabListItem(R.drawable.list_trollface,getString(R.string.index_htm), MainListItemType.ResourcesWebView, null, "index.htm"));
-        models.add(new MainTabListItem(R.drawable.list_iso_trailer,getString(R.string.iso_trailer), MainListItemType.ResourcesWebView, null, "iso_trailer.htm"));
-
-
-
-        //models.add(new MainTabListItem(R.drawable.list_trollface,getString(R.string.list_conv_energy), MainListItemType.Calculator, ConvEnergy.class, null));
-        //models.add(new MainTabListItem(R.drawable.list_iso_trailer,getString(R.string.iso_trailer), MainListItemType.ResourcesWebView, null, "iso_trailer.htm"));
-        return models;
-    }
 }

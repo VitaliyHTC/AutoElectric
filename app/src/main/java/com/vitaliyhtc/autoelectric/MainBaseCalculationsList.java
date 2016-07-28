@@ -12,12 +12,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.vitaliyhtc.autoelectric.activity.ResourcesWebView;
-import com.vitaliyhtc.autoelectric.calc.CalcCapacitorCharge;
-import com.vitaliyhtc.autoelectric.calc.CalcSerPar;
-import com.vitaliyhtc.autoelectric.calc.CalcVoltageDivider;
-import com.vitaliyhtc.autoelectric.calc.ConvDb;
-import com.vitaliyhtc.autoelectric.calc.ConvEnergy;
-import com.vitaliyhtc.autoelectric.calc.ConvFreq;
 
 import java.util.ArrayList;
 
@@ -32,7 +26,7 @@ public class MainBaseCalculationsList extends AppCompatActivity {
         this.setTitle(R.string.list_MainBaseCalculationsList);
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        final ArrayList<MainTabListItem> mainTabListItems = generateData();
+        final ArrayList<MainTabListItem> mainTabListItems = MainListItemsConfig.generateListForMainBaseCalculationsList((Context)this);
         MainTabListAdapter mainTabListAdapter = new MainTabListAdapter((Context)this, mainTabListItems);
         final ListView myList = (ListView) this.findViewById(R.id.listView);
         myList.setAdapter(mainTabListAdapter);
@@ -75,20 +69,4 @@ public class MainBaseCalculationsList extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    private ArrayList<MainTabListItem> generateData(){
-        ArrayList<MainTabListItem> models = new ArrayList<MainTabListItem>();
-        models.add(new MainTabListItem(R.drawable.list_resistor,getString(R.string.list_calc_voltage_divider), MainListItemType.Calculator, CalcVoltageDivider.class, null));
-        models.add(new MainTabListItem(R.drawable.list_resistor,getString(R.string.list_calc_sepa), MainListItemType.Calculator, CalcSerPar.class, null));
-        models.add(new MainTabListItem(R.drawable.list_cap_solid,getString(R.string.list_calc_cap_chg), MainListItemType.Calculator, CalcCapacitorCharge.class, null));
-        models.add(new MainTabListItem(R.drawable.list_freq,getString(R.string.list_conv_freq), MainListItemType.Calculator, ConvFreq.class, null));
-        models.add(new MainTabListItem(R.drawable.list_db,getString(R.string.list_conv_db), MainListItemType.Calculator, ConvDb.class, null));
-        models.add(new MainTabListItem(R.drawable.list_energy,getString(R.string.list_conv_energy), MainListItemType.Calculator, ConvEnergy.class, null));
-
-
-
-        //models.add(new MainTabListItem(R.drawable.list_trollface,getString(R.string.list_conv_energy), MainListItemType.Calculator, ConvEnergy.class, null));
-        //models.add(new MainTabListItem(R.drawable.list_iso_trailer,getString(R.string.iso_trailer), MainListItemType.ResourcesWebView, null, "iso_trailer.htm"));
-        return models;
-    }
 }

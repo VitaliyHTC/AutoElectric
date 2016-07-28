@@ -9,3 +9,9 @@ ul {margin: 0 0 0 20px; padding: 0;}
 ul li {margin:0; padding: 0;}
 
 .second_text {color:#777;}
+
+.lightGreen {background-color:#D6E3BC;}
+.lightGreen1 {background-color:#EAF1DD;}
+
+font.fontxxs {font-family:Arial; font-size:xx-small;}
+div.ls {text-align:left;font-size:80%;}

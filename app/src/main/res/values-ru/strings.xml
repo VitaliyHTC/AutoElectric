@@ -1,4 +1,8 @@
 <resources>
+    <string name="main_tab_calculators">Расчёт</string>
+    <string name="main_tab_resources">Справочник</string>
+    <string name="main_tab_other">Другое</string>
+
     <string name="yes">Да</string>
     <string name="no">Нет</string>
     <string name="ok">OK</string>
@@ -39,6 +43,12 @@
     <string name="list_conv_energy">Преобразование энергии</string>
     <string name="list_conv_engine">Двигатель крут. м./мощность</string>
     <string name="list_MainBaseCalculationsList">Основные базовые расчеты >>></string>
+
+    <string name="list_iso_trailer">ISO соединения прицепов</string>
+    <string name="list_wire_current_amp_nec">Таблица ампеража NEC</string>
+    <string name="list_si_units_prefixes">Cистема SI</string>
+    <string name="list_resist_table">Таблица удельных сопротивлений</string>
+    <string name="list_resist_eia">Таблица резисторов EIA</string>
 
 
 
