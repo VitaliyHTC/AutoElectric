@@ -5,22 +5,12 @@ What we have:
 - MainActivity for navigation between calculators and resources.
 - SettingsActivity
 - MainInfoActivity
+- lib.SetValueDialog, activity.ResourcesWebView; << Is this needed here??
 
 A lot of calculators&resources:
-- CalcOhm
-- CalcVoltageDivider
-- CalcSerPar
-- CalcCapacitorCharge
-- CalcVoltDrop
-- CalcPower
-- ConvFreq
-- ConvDb
-- ConvEnergy
-- ConvEngine - convert torque&power units
-- lib.SetValueDialog
-- activity.ResourcesWebView
+- CalcOhm, CalcVoltageDivider, CalcSerPar, CalcCapacitorCharge, CalcVoltDrop, CalcPower, ConvFreq, ConvDb, ConvEnergy, ConvEngine - convert torque&power units;
+- ISO trailer connectors, Ampacity Table NEC, SI Units prefixes, Resistivity Table, Standard Resistors EIA Table;
 
 ToDo list:
-- review navigation style.
-- add new resources, pin-outs, wire/fuse/relay info, ...
+- add new calculators, resources, pin-outs, wire/fuse/relay info, ...
 - and much more.
