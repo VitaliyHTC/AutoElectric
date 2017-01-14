@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -34,8 +35,14 @@ public class MainTabListAdapter extends ArrayAdapter<MainTabListItem> {
         ImageView imgView = (ImageView) rowView.findViewById(R.id.item_icon);
         TextView titleView = (TextView) rowView.findViewById(R.id.item_title);
 
-        imgView.setImageResource(modelsArrayList.get(position).getIcon());
-        titleView.setText(modelsArrayList.get(position).getTitle());
+        MainTabListItem mainTabListItem = modelsArrayList.get(position);
+        imgView.setImageResource(mainTabListItem.getIcon());
+        titleView.setText(mainTabListItem.getTitle());
+
+        View colorLabelView = rowView.findViewById(R.id.ColorLabelView);
+        if(mainTabListItem.getMainListItemType().equals(MainListItemType.ItemsList)){
+            colorLabelView.setBackgroundColor(context.getResources().getColor(R.color.ListItemToItemsListLabelBG));
+        }
 
         return rowView;
     }

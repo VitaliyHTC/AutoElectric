@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#263838</color>
-    <color name="colorPrimaryDark">#081616</color>
+    <color name="colorPrimaryDark">#263838</color>
+    <color name="colorPrimaryButton">#263838</color>
     <color name="colorAccent">#f44336</color>
     <color name="tabsScrollColor">#ffffff</color>
     <color name="tabsUnselectedTab">#808080</color>
     <color name="Black">#000000</color>
     <color name="White">#ffffff</color>
 
+    <color name="ListItemDefaultLabelBG">#BABABA</color>
+    <color name="ListItemToItemsListLabelBG">#6FBB1B</color>
 
-
-    <color name="button_color">@color/colorPrimary</color>
+    <color name="button_color">@color/colorPrimaryButton</color>
     <color name="button_textcolor">@color/White</color>
 </resources>

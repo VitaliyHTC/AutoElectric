@@ -8,8 +8,8 @@ android {
         applicationId "com.vitaliyhtc.autoelectric"
         minSdkVersion 15
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.00"
+        versionCode 2
+        versionName "1.00 Beta"
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {

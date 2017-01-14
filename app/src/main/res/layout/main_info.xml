@@ -29,6 +29,7 @@
                 android:layout_toRightOf="@+id/imageViewAppIcon"
                 android:layout_toEndOf="@+id/imageViewAppIcon"
                 android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:textColor="@color/Black"
                 android:textSize="24dp"/>
             <TextView
@@ -40,6 +41,7 @@
                 android:layout_toRightOf="@+id/imageViewAppIcon"
                 android:layout_toEndOf="@+id/imageViewAppIcon"
                 android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/Black" />
             <TextView
@@ -51,12 +53,13 @@
                 android:layout_toRightOf="@+id/imageViewAppIcon"
                 android:layout_toEndOf="@+id/imageViewAppIcon"
                 android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/Black" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Text type here..."
+                android:text="@string/app_version_description"
                 android:id="@+id/textView1"
                 android:layout_below="@+id/imageViewAppIcon"
                 android:layout_alignLeft="@+id/imageViewAppIcon"

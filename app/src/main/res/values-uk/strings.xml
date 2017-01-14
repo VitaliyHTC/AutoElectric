@@ -1,4 +1,6 @@
 <resources>
+    <string name="app_version_description">Програма на стадії розробки. Це бета версія, може містити помилки.</string>
+
     <string name="main_tab_calculators">Розрахунки</string>
     <string name="main_tab_resources">Довідники</string>
     <string name="main_tab_other">Інше</string>
@@ -49,6 +51,11 @@
     <string name="list_si_units_prefixes">Префікси системи SI</string>
     <string name="list_resist_table">Таблиця питомих опорів</string>
     <string name="list_resist_eia">Таблиця резисторів EIA</string>
+    <string name="list_fuses_automotive">Запобіжники (автомобільні)</string>
+    <string name="list_awg_table">AWG та SWG переріз струмопровідної жили</string>
+    <string name="list_capacitor_mark">Маркування керамічних конденсаторів</string>
+    <string name="list_capacitor_stand">Стандартні параметри конденсаторів</string>
+    <string name="list_din47100_wire_color">DIN 47100 Кольорове маркування проводів</string>
 
 
 

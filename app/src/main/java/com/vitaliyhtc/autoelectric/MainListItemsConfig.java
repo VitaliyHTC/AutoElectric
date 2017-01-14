@@ -51,9 +51,13 @@ public class MainListItemsConfig {
         models.add(new MainTabListItem(R.drawable.list_trollface,context.getString(R.string.index_htm), MainListItemType.ResourcesWebView, null, "index.htm"));
         models.add(new MainTabListItem(R.drawable.list_iso_trailer,context.getString(R.string.list_iso_trailer), MainListItemType.ResourcesWebView, null, "iso_trailer.htm"));
         models.add(new MainTabListItem(R.drawable.list_wire, context.getString(R.string.list_wire_current_amp_nec), MainListItemType.ResourcesWebView, null, "ampacity_NEC.htm"));
+        models.add(new MainTabListItem(R.drawable.list_wire, context.getString(R.string.list_awg_table), MainListItemType.ResourcesWebView, null, "awg.htm"));
+        models.add(new MainTabListItem(R.drawable.list_fuse_blade, context.getString(R.string.list_fuses_automotive), MainListItemType.ResourcesWebView, null, "fuse_automotive_def.htm"));
         models.add(new MainTabListItem(R.drawable.list_resistance, context.getString(R.string.list_resist_table), MainListItemType.ResourcesWebView, null, "resistivity.htm"));
         models.add(new MainTabListItem(R.drawable.list_si, context.getString(R.string.list_si_units_prefixes), MainListItemType.ResourcesWebView, null, "si_metric_prefix.htm"));
         models.add(new MainTabListItem(R.drawable.list_resistor, context.getString(R.string.list_resist_eia), MainListItemType.ResourcesWebView, null, "eia_values_table.htm"));
+        models.add(new MainTabListItem(R.drawable.list_cap_ceramic, context.getString(R.string.list_capacitor_mark), MainListItemType.ResourcesWebView, null, "capacitor_mark.htm"));
+        models.add(new MainTabListItem(R.drawable.list_cap_ceramic, context.getString(R.string.list_capacitor_stand), MainListItemType.ResourcesWebView, null, "capacitor_stand.htm"));
 
         return models;
     }

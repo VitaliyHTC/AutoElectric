@@ -1,4 +1,6 @@
 <resources>
+    <string name="app_version_description">Програма на стадии разработки. Это бета версия, может содержать ошыбки.</string>
+
     <string name="main_tab_calculators">Расчёт</string>
     <string name="main_tab_resources">Справочник</string>
     <string name="main_tab_other">Другое</string>
@@ -49,6 +51,11 @@
     <string name="list_si_units_prefixes">Cистема SI</string>
     <string name="list_resist_table">Таблица удельных сопротивлений</string>
     <string name="list_resist_eia">Таблица резисторов EIA</string>
+    <string name="list_fuses_automotive">Предохранители (автомобильные)</string>
+    <string name="list_awg_table">AWG и SWG сечение токопроводящей жилы</string>
+    <string name="list_capacitor_mark">Маркировка керамических конденсаторов</string>
+    <string name="list_capacitor_stand">Стандартные параметры конденсаторов</string>
+    <string name="list_din47100_wire_color">DIN 47100 Цветовая маркировка проводов</string>
 
 
 
