@@ -29,28 +29,28 @@
         </activity>
         <activity android:name=".lib.SetValueDialog" android:theme="@style/NoTitleThemeDialog"/>
         <activity android:name=".calc.CalcOhm" android:label="@string/list_calc_ohm"
-            android:parentActivityName="com.vitaliyhtc.autoelectric.MainActivity" >
+            android:parentActivityName="com.vitaliyhtc.autoelectric.MainTabCalculationsSubList" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.vitaliyhtc.autoelectric.MainActivity" />
+                android:value="com.vitaliyhtc.autoelectric.MainTabCalculationsSubList" />
         </activity>
         <activity android:name=".calc.CalcVoltageDivider" android:label="@string/list_calc_voltage_divider"
-            android:parentActivityName="com.vitaliyhtc.autoelectric.MainBaseCalculationsList" >
+            android:parentActivityName="com.vitaliyhtc.autoelectric.MainTabCalculationsSubList" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.vitaliyhtc.autoelectric.MainBaseCalculationsList" />
+                android:value="com.vitaliyhtc.autoelectric.MainTabCalculationsSubList" />
         </activity>
         <activity android:name=".calc.CalcSerPar" android:label="@string/list_calc_sepa"
-            android:parentActivityName="com.vitaliyhtc.autoelectric.MainBaseCalculationsList" >
+            android:parentActivityName="com.vitaliyhtc.autoelectric.MainTabCalculationsSubList" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.vitaliyhtc.autoelectric.MainBaseCalculationsList" />
+                android:value="com.vitaliyhtc.autoelectric.MainTabCalculationsSubList" />
         </activity>
         <activity android:name=".calc.CalcCapacitorCharge" android:label="@string/list_calc_cap_chg"
-            android:parentActivityName="com.vitaliyhtc.autoelectric.MainBaseCalculationsList" >
+            android:parentActivityName="com.vitaliyhtc.autoelectric.MainTabCalculationsSubList" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.vitaliyhtc.autoelectric.MainBaseCalculationsList" />
+                android:value="com.vitaliyhtc.autoelectric.MainTabCalculationsSubList" />
         </activity>
         <activity android:name=".calc.CalcVoltDrop" android:label="@string/list_calc_voltdrop"
             android:parentActivityName="com.vitaliyhtc.autoelectric.MainActivity" >
@@ -59,28 +59,28 @@
                 android:value="com.vitaliyhtc.autoelectric.MainActivity" />
         </activity>
         <activity android:name=".calc.CalcPower" android:label="@string/list_calc_power"
-            android:parentActivityName="com.vitaliyhtc.autoelectric.MainActivity" >
+            android:parentActivityName="com.vitaliyhtc.autoelectric.MainTabCalculationsSubList" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.vitaliyhtc.autoelectric.MainActivity" />
+                android:value="com.vitaliyhtc.autoelectric.MainTabCalculationsSubList" />
         </activity>
         <activity android:name=".calc.ConvFreq" android:label="@string/list_conv_freq"
-            android:parentActivityName="com.vitaliyhtc.autoelectric.MainBaseCalculationsList" >
+            android:parentActivityName="com.vitaliyhtc.autoelectric.MainTabConverters" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.vitaliyhtc.autoelectric.MainBaseCalculationsList" />
+                android:value="com.vitaliyhtc.autoelectric.MainTabConverters" />
         </activity>
         <activity android:name=".calc.ConvDb" android:label="@string/list_conv_db"
-            android:parentActivityName="com.vitaliyhtc.autoelectric.MainBaseCalculationsList" >
+            android:parentActivityName="com.vitaliyhtc.autoelectric.MainTabConverters" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.vitaliyhtc.autoelectric.MainBaseCalculationsList" />
+                android:value="com.vitaliyhtc.autoelectric.MainTabConverters" />
         </activity>
         <activity android:name=".calc.ConvEnergy" android:label="@string/list_conv_energy"
-            android:parentActivityName="com.vitaliyhtc.autoelectric.MainBaseCalculationsList" >
+            android:parentActivityName="com.vitaliyhtc.autoelectric.MainTabConverters" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.vitaliyhtc.autoelectric.MainBaseCalculationsList" />
+                android:value="com.vitaliyhtc.autoelectric.MainTabConverters" />
         </activity>
         <activity android:name=".calc.ConvEngine" android:label="@string/list_conv_engine"
             android:parentActivityName="com.vitaliyhtc.autoelectric.MainActivity" >
@@ -88,7 +88,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.vitaliyhtc.autoelectric.MainActivity" />
         </activity>
-        <activity android:name=".MainBaseCalculationsList" android:label="@string/list_MainBaseCalculationsList"
+        <activity android:name=".MainTabCalculationsSubList" android:label="@string/list_MainBaseCalculationsList"
             android:parentActivityName="com.vitaliyhtc.autoelectric.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

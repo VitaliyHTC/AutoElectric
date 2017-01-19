@@ -18,7 +18,7 @@ import java.util.ArrayList;
 /**
  * Created by VitaliyHTC on 27.07.2016.
  */
-public class MainBaseCalculationsList extends AppCompatActivity {
+public class MainTabCalculationsSubList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +26,7 @@ public class MainBaseCalculationsList extends AppCompatActivity {
         this.setTitle(R.string.list_MainBaseCalculationsList);
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        final ArrayList<MainTabListItem> mainTabListItems = MainListItemsConfig.generateListForMainBaseCalculationsList((Context)this);
+        final ArrayList<MainTabListItem> mainTabListItems = MainListItemsConfig.generateListForMainTabCalculationsSubList((Context)this);
         MainTabListAdapter mainTabListAdapter = new MainTabListAdapter((Context)this, mainTabListItems);
         final ListView myList = (ListView) this.findViewById(R.id.listView);
         myList.setAdapter(mainTabListAdapter);

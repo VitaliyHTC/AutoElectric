@@ -23,22 +23,22 @@ public class MainListItemsConfig {
 
     protected static ArrayList<MainTabListItem> generateListForMainTab1(Context context){
         ArrayList<MainTabListItem> models = new ArrayList<MainTabListItem>();
-        models.add(new MainTabListItem(R.drawable.list_resistor,context.getString(R.string.list_calc_ohm), MainListItemType.Calculator, CalcOhm.class, null));
-        models.add(new MainTabListItem(R.drawable.list_base_calculations,context.getString(R.string.list_MainBaseCalculationsList), MainListItemType.ItemsList, MainBaseCalculationsList.class, null));
-        models.add(new MainTabListItem(R.drawable.list_base_calculations,context.getString(R.string.list_MainTabConverters), MainListItemType.ItemsList, MainTabConverters.class, null));
+        models.add(new MainTabListItem(R.drawable.list_calculations,context.getString(R.string.list_MainBaseCalculationsList), MainListItemType.ItemsList, MainTabCalculationsSubList.class, null));
+        models.add(new MainTabListItem(R.drawable.list_converters,context.getString(R.string.list_MainTabConverters), MainListItemType.ItemsList, MainTabConverters.class, null));
         models.add(new MainTabListItem(R.drawable.list_wire,context.getString(R.string.list_calc_voltdrop), MainListItemType.Calculator, CalcVoltDrop.class, null));
-        models.add(new MainTabListItem(R.drawable.list_power,context.getString(R.string.list_calc_power), MainListItemType.Calculator, CalcPower.class, null));
         models.add(new MainTabListItem(R.drawable.list_scania_v8,context.getString(R.string.list_conv_engine), MainListItemType.Calculator, ConvEngine.class, null));
 
         return models;
     }
 
 
-    protected static ArrayList<MainTabListItem> generateListForMainBaseCalculationsList(Context context){
+    protected static ArrayList<MainTabListItem> generateListForMainTabCalculationsSubList(Context context){
         ArrayList<MainTabListItem> models = new ArrayList<MainTabListItem>();
+        models.add(new MainTabListItem(R.drawable.list_resistor,context.getString(R.string.list_calc_ohm), MainListItemType.Calculator, CalcOhm.class, null));
         models.add(new MainTabListItem(R.drawable.list_resistor,context.getString(R.string.list_calc_voltage_divider), MainListItemType.Calculator, CalcVoltageDivider.class, null));
         models.add(new MainTabListItem(R.drawable.list_resistor,context.getString(R.string.list_calc_sepa), MainListItemType.Calculator, CalcSerPar.class, null));
         models.add(new MainTabListItem(R.drawable.list_cap_solid,context.getString(R.string.list_calc_cap_chg), MainListItemType.Calculator, CalcCapacitorCharge.class, null));
+        models.add(new MainTabListItem(R.drawable.list_power,context.getString(R.string.list_calc_power), MainListItemType.Calculator, CalcPower.class, null));
 
         return models;
     }
