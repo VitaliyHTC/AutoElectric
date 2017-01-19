@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -29,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
         if(sDefSystemLanguage==null){sDefSystemLanguage = Locale.getDefault().getLanguage();}
         setLanguage();
         setContentView(R.layout.main_activity);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.mipmap.alt_icon);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setIcon(R.mipmap.alt_icon);
+
 
         //set tabs titles
         tabsTitles[0] = (CharSequence)getString(R.string.main_tab_calculators);

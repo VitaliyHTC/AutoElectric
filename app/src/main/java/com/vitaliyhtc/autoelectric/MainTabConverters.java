@@ -16,17 +16,17 @@ import com.vitaliyhtc.autoelectric.activity.ResourcesWebView;
 import java.util.ArrayList;
 
 /**
- * Created by VitaliyHTC on 27.07.2016.
+ * Created by VitaliyHTC on 19.01.17.
  */
-public class MainBaseCalculationsList extends AppCompatActivity {
+public class MainTabConverters extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.main_base_calculations_list);
-        this.setTitle(R.string.list_MainBaseCalculationsList);
+        this.setContentView(R.layout.main_tab_sublist);
+        this.setTitle(R.string.list_MainTabConverters);
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        final ArrayList<MainTabListItem> mainTabListItems = MainListItemsConfig.generateListForMainBaseCalculationsList((Context)this);
+        final ArrayList<MainTabListItem> mainTabListItems = MainListItemsConfig.generateListForMainTabConverters((Context)this);
         MainTabListAdapter mainTabListAdapter = new MainTabListAdapter((Context)this, mainTabListItems);
         final ListView myList = (ListView) this.findViewById(R.id.listView);
         myList.setAdapter(mainTabListAdapter);
