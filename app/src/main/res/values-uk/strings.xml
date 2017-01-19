@@ -45,6 +45,7 @@
     <string name="list_conv_energy">Перетворення енергії</string>
     <string name="list_conv_engine">Двигун крут. м./потужність</string>
     <string name="list_MainBaseCalculationsList">Основні базові розрахунки >>></string>
+    <string name="list_MainTabConverters">Конвертація величин >>></string>
 
     <string name="list_iso_trailer">ISO з\'єднання причепів</string>
     <string name="list_wire_current_amp_nec">Таблиця амперажу NEC</string>

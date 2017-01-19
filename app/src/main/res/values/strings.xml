@@ -51,6 +51,7 @@
     <string name="list_conv_energy">Energy conversion</string>
     <string name="list_conv_engine">Engine torque/power</string>
     <string name="list_MainBaseCalculationsList">Base calculations list >>></string>
+    <string name="list_MainTabConverters">Unit Converters >>></string>
 
     <string name="list_iso_trailer">ISO trailer connectors</string>
     <string name="list_wire_current_amp_nec">Ampacity Table NEC</string>

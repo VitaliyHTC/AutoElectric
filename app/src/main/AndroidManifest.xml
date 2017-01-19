@@ -94,6 +94,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.vitaliyhtc.autoelectric.MainActivity" />
         </activity>
+        <activity android:name=".MainTabConverters" android:label="@string/list_MainTabConverters"
+            android:parentActivityName="com.vitaliyhtc.autoelectric.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vitaliyhtc.autoelectric.MainActivity" />
+        </activity>
         <activity android:name=".activity.ResourcesWebView" android:label="@string/app_name"
             android:parentActivityName="com.vitaliyhtc.autoelectric.MainActivity" >
             <meta-data
