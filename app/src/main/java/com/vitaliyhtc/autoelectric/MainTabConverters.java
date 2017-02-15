@@ -22,7 +22,7 @@ public class MainTabConverters extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.main_tab_sublist);
+        this.setContentView(R.layout.main_tab_list);
         this.setTitle(R.string.list_MainTabConverters);
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

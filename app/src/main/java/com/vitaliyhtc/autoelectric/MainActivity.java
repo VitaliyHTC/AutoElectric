@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPagerAdapter viewPagerAdapter;
     SlidingTabLayout slidingTabLayout;
     int numberOfTabs = 3;
-    //set tabs titles in onCreate() method
+
     CharSequence tabsTitles[]=new CharSequence[numberOfTabs];
 
     public static String sDefSystemLanguage=null;
@@ -35,32 +35,31 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setIcon(R.mipmap.alt_icon);
 
-
-        //set tabs titles
         tabsTitles[0] = (CharSequence)getString(R.string.main_tab_calculators);
         tabsTitles[1] = (CharSequence)getString(R.string.main_tab_resources);
         tabsTitles[2] = (CharSequence)getString(R.string.main_tab_other);
 
-        // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
         viewPagerAdapter =  new ViewPagerAdapter(getSupportFragmentManager(),tabsTitles,numberOfTabs);
-        // Assigning ViewPager View and setting the adapter
+
         viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(viewPagerAdapter);
-        // Assiging the Sliding Tab Layout View
+
         slidingTabLayout = (SlidingTabLayout) findViewById(R.id.tabs);
-        slidingTabLayout.setDistributeEvenly(false); // To make the Tabs Fixed set this true, This makes the tabs Space Evenly in Available width
-        // Setting Custom Color for the Scroll bar indicator of the Tab View
+        slidingTabLayout.setDistributeEvenly(false);
+
         slidingTabLayout.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
                 return getResources().getColor(R.color.tabsScrollColor);
             }
         });
-        // Setting the ViewPager For the SlidingTabsLayout
+
         slidingTabLayout.setViewPager(viewPager);
 
     }
 
+    // String locale = context.getResources().getConfiguration().locale.getDisplayName();
+    // https://developer.android.com/guide/topics/resources/localization.html
     private void setLanguage() {
         String language = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("Language", "default");
         if (language.equals("default")) {

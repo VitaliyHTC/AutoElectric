@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="0dp"
     tools:context="com.vitaliyhtc.autoelectric.MainActivity">
@@ -16,7 +15,7 @@
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_weight="1" />
 

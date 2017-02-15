@@ -6,6 +6,7 @@
     <string name="app_restart" translatable="false">Restarting app…</string>
     <string name="vitaliyhtc_copyright" translatable="false">© VitaliyHTC</string>
     <string name="app_version_description">App is currently under development. This is beta version, may contain errors.</string>
+    <string name="alt_icon_description" translatable="false">Alternator</string>
 
     <string name="main_tab_calculators">Calculators</string>
     <string name="main_tab_resources">Resources</string>

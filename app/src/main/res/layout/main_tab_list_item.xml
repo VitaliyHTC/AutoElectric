@@ -11,7 +11,8 @@
         android:id="@+id/item_icon"
         android:layout_width="32.0dp"
         android:layout_height="32.0dp"
-        android:layout_margin="8.0dp" />
+        android:layout_margin="8.0dp"
+        android:contentDescription="@null"/>
     <TextView
         android:id="@+id/item_title"
         android:textAppearance="?textAppearanceLargePopupMenu"
@@ -19,10 +20,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:singleLine="true"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/item_icon"
-        android:layout_toEndOf="@+id/item_icon" />
+        android:layout_toEndOf="@+id/item_icon"
+        android:textSize="@dimen/main_tab_list_item_textsize"
+        android:maxLines="1" />
     <View
         android:id="@+id/ColorLabelView"
         android:layout_width="8dp"

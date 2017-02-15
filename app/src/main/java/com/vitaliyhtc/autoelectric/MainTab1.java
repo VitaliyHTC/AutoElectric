@@ -22,7 +22,7 @@ public class MainTab1 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.main_tab_1,container,false);
+        View view = inflater.inflate(R.layout.main_tab_list,container,false);
 
         final ArrayList<MainTabListItem> mainTabListItems = MainListItemsConfig.generateListForMainTab1(getContext());
         MainTabListAdapter mainTabListAdapter = new MainTabListAdapter(getContext(), mainTabListItems);

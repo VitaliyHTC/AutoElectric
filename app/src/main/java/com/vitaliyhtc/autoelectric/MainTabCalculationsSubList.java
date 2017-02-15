@@ -22,7 +22,7 @@ public class MainTabCalculationsSubList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.main_tab_sublist);
+        this.setContentView(R.layout.main_tab_list);
         this.setTitle(R.string.list_MainBaseCalculationsList);
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
