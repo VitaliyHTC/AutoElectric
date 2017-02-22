@@ -22,9 +22,6 @@ import com.vitaliyhtc.autoelectric.R;
 
 import java.util.List;
 
-/**
- * Created by VitaliyHTC on 04.07.2016.
- */
 public class SetValueDialog extends AppCompatActivity {
     private EditText editTextValue;
     private TextView textView;

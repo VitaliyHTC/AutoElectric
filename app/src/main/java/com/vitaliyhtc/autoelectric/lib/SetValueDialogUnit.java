@@ -3,7 +3,7 @@ package com.vitaliyhtc.autoelectric.lib;
 import java.util.ArrayList;
 
 public final class SetValueDialogUnit {
-    final SetValueDialog setValueDialog;
+    private final SetValueDialog setValueDialog;
     private ArrayList unitsArraySymbols;
     private String compUnit;
 

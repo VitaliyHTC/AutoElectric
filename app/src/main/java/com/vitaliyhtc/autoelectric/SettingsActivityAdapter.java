@@ -9,9 +9,6 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by VitaliyHTC on 28.06.2016.
- */
 public class SettingsActivityAdapter extends PreferenceActivity {
     private AppCompatDelegate appCompatDelegate;
 

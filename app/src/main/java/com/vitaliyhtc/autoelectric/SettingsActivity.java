@@ -11,9 +11,6 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-/**
- * Created by VitaliyHTC on 28.06.2016.
- */
 public class SettingsActivity extends SettingsActivityAdapter {
 
     @Override
@@ -68,10 +65,4 @@ public class SettingsActivity extends SettingsActivityAdapter {
         return super.onOptionsItemSelected(item);
     }
 
-    protected void onStart() {
-        super.onStart();
-    }
-    protected void onStop() {
-        super.onStop();
-    }
 }

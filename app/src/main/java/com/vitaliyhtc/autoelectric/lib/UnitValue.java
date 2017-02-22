@@ -11,10 +11,6 @@ import android.widget.Toast;
 
 import com.vitaliyhtc.autoelectric.R;
 
-/**
- * Created by VitaliyHTC on 04.07.2016.
- */
-
 public class UnitValue {
     private String unitName;
     private String unitSymbol;

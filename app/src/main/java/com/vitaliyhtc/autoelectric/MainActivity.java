@@ -11,16 +11,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.vitaliyhtc.autoelectric.lib.SlidingTabLayout;
+
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    ViewPager viewPager;
-    ViewPagerAdapter viewPagerAdapter;
-    SlidingTabLayout slidingTabLayout;
-    int numberOfTabs = 3;
+    private int numberOfTabs = 3;
 
-    CharSequence tabsTitles[]=new CharSequence[numberOfTabs];
+    private CharSequence tabsTitles[]=new CharSequence[numberOfTabs];
 
     public static String sDefSystemLanguage=null;
 
@@ -35,16 +34,18 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setIcon(R.mipmap.alt_icon);
 
+
+
         tabsTitles[0] = (CharSequence)getString(R.string.main_tab_calculators);
         tabsTitles[1] = (CharSequence)getString(R.string.main_tab_resources);
         tabsTitles[2] = (CharSequence)getString(R.string.main_tab_other);
 
-        viewPagerAdapter =  new ViewPagerAdapter(getSupportFragmentManager(),tabsTitles,numberOfTabs);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), tabsTitles, numberOfTabs);
 
-        viewPager = (ViewPager) findViewById(R.id.pager);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(viewPagerAdapter);
 
-        slidingTabLayout = (SlidingTabLayout) findViewById(R.id.tabs);
+        SlidingTabLayout slidingTabLayout = (SlidingTabLayout) findViewById(R.id.tabs);
         slidingTabLayout.setDistributeEvenly(false);
 
         slidingTabLayout.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {

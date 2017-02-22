@@ -4,12 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-/**
- * Created by VitaliyHTC on 24.06.2016.
- */
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
-    CharSequence Titles[]; // This will Store the Titles of the Tabs which are Going to be passed when ViewPagerAdapter is created
-    int NumbOfTabs; // Store the number of tabs, this will also be passed when the ViewPagerAdapter is created
+    private CharSequence Titles[]; // This will Store the Titles of the Tabs which are Going to be passed when ViewPagerAdapter is created
+    private int NumbOfTabs; // Store the number of tabs, this will also be passed when the ViewPagerAdapter is created
 
 
     // Build exxpArray Constructor and assign the passed Values to appropriate values in the class
@@ -23,16 +20,13 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if(position == 0) {
-            MainTab1 mainTab1 = new MainTab1();
-            return mainTab1;
+            return new MainTab1();
         }
         if(position == 1) {
-            MainTab2 mainTab2 = new MainTab2();
-            return mainTab2;
+            return new MainTab2();
         }
         else {
-            MainTab3 mainTab3 = new MainTab3();
-            return mainTab3;
+            return new MainTab3();
         }
     }
 

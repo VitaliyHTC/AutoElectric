@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.vitaliyhtc.autoelectric;
+package com.vitaliyhtc.autoelectric.lib;
 
 import android.content.Context;
 import android.graphics.Canvas;

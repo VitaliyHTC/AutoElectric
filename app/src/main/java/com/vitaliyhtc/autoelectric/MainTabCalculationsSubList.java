@@ -15,9 +15,6 @@ import com.vitaliyhtc.autoelectric.activity.ResourcesWebView;
 
 import java.util.ArrayList;
 
-/**
- * Created by VitaliyHTC on 27.07.2016.
- */
 public class MainTabCalculationsSubList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,28 +23,28 @@ public class MainTabCalculationsSubList extends AppCompatActivity {
         this.setTitle(R.string.list_MainBaseCalculationsList);
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        final ArrayList<MainTabListItem> mainTabListItems = MainListItemsConfig.generateListForMainTabCalculationsSubList((Context)this);
-        MainTabListAdapter mainTabListAdapter = new MainTabListAdapter((Context)this, mainTabListItems);
-        final ListView myList = (ListView) this.findViewById(R.id.listView);
-        myList.setAdapter(mainTabListAdapter);
+        final ArrayList<MainListItem> mainListItems = MainListItemsConfig.generateListForMainTabCalculationsSubList((Context)this);
+        MainListAdapter mainListAdapter = new MainListAdapter((Context)this, mainListItems);
+        final ListView myListView = (ListView) this.findViewById(R.id.listView);
+        myListView.setAdapter(mainListAdapter);
 
         final Context context = (Context)this;
 
-        myList.setOnItemClickListener(
+        myListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        MainTabListItem mainTabListItem = mainTabListItems.get(position);
-                        MainListItemType mainListItemType = mainTabListItem.getMainListItemType();
+                        MainListItem mainListItem = mainListItems.get(position);
+                        MainListItemType mainListItemType = mainListItem.getMainListItemType();
                         if(mainListItemType.equals(MainListItemType.Calculator) ||
                                 mainListItemType.equals(MainListItemType.ItemsList)){
-                            Class targetActivityClass = mainTabListItem.getTargetActivityClass();
+                            Class targetActivityClass = mainListItem.getTargetActivityClass();
                             Intent intent = new Intent(context, targetActivityClass);
                             startActivity(intent);
                         }else if(mainListItemType.equals(MainListItemType.ResourcesWebView)){
                             Intent intent = new Intent(context, ResourcesWebView.class);
-                            intent.putExtra("targetSource", mainTabListItem.getTargetSource());
-                            intent.putExtra("targetTitle", mainTabListItem.getTitle());
+                            intent.putExtra("targetSource", mainListItem.getTargetSource());
+                            intent.putExtra("targetTitle", mainListItem.getTitle());
                             startActivity(intent);
                         }else{
                             Toast.makeText(context, "Ooops! There is no such ListItem Type!", Toast.LENGTH_SHORT).show();

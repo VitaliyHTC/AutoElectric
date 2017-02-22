@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.vitaliyhtc.autoelectric;
+package com.vitaliyhtc.autoelectric.lib;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -30,6 +30,8 @@ import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.vitaliyhtc.autoelectric.R;
 
 /**
  * To be used with ViewPager to provide exxpArray tab indicator component which give constant feedback as to

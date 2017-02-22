@@ -1,8 +1,5 @@
 package com.vitaliyhtc.autoelectric.lib;
 
-/**
- * Created by VitaliyHTC on 04.07.2016.
- */
 public enum EIAValuesLines {
     a("E6", 0),
     b("E12", 1),

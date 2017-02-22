@@ -1,9 +1,5 @@
 package com.vitaliyhtc.autoelectric.lib;
 
-/**
- * Created by VitaliyHTC on 04.07.2016.
- */
-
 public class EIAValuesTable {
     public static String[] exxpArray = new String[]{"E6 (20%)", "E12 (10%)", "E24 (5%)", "E48 (2%)", "E96 (1%)", "E192 (\u22640.5%)"};
     public static String[] exxArray = new String[]{" E6", " E12", " E24", " E48", " E96", "E192"};

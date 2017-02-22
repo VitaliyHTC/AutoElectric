@@ -7,9 +7,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
-/**
- * Created by VitaliyHTC on 29.07.2016.
- */
 public class SQLiteDBHelper extends SQLiteOpenHelper implements BaseColumns {
 
     private static final String DATABASE_NAME = "autoelectric.db";

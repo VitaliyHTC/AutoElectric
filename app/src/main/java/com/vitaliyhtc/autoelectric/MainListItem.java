@@ -1,16 +1,13 @@
 package com.vitaliyhtc.autoelectric;
 
-/**
- * Created by VitaliyHTC on 01.07.2016.
- */
-public class MainTabListItem {
+public class MainListItem {
     private int icon;
     private String title;
     private MainListItemType mainListItemType;
     private Class targetActivityClass = MainActivity.class;
     private String targetSource;
 
-    public MainTabListItem(int icon, String title, MainListItemType mainListItemType, Class clazz, String targetSource) {
+    public MainListItem(int icon, String title, MainListItemType mainListItemType, Class clazz, String targetSource) {
         this.icon = icon;
         this.title = title;
         this.mainListItemType = mainListItemType;
