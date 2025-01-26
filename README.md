@@ -18,9 +18,7 @@ ToDo list:
 
 Download links <b>AutoElectric_1.00_Beta_Build_3.apk _2017.01.19</b>:<br>
 <a href="https://drive.google.com/open?id=0BzoKZrHsxcSbeGJxZUhhUnBJeU0" target="_blank">Google Drive</a><br>
-<a href="https://yadi.sk/d/ekzqWh3B39sgD6" target="_blank">Yandex Disk</a><br>
 
 
 Download links <b>AutoElectric_1.00_Beta_release.apk _2017.01.14</b>:<br>
 <a href="https://drive.google.com/open?id=0BzoKZrHsxcSbeEtTUkVNSV95Rnc" target="_blank">Google Drive</a><br>
-<a href="https://yadi.sk/d/FNHF8dr838vxT8" target="_blank">Yandex Disk</a><br>
